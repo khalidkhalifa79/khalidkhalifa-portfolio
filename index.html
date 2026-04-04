@@ -884,6 +884,99 @@
       visibility: visible;
     }
 
+    .tabs-wrap {
+      display: flex;
+      border: 2px solid var(--primary);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .tab-btn {
+      flex: 1;
+      border: 0;
+      background: #fff;
+      color: var(--dark);
+      font-weight: 700;
+      padding: 1rem 1.25rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .tab-btn.active {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.95rem 1rem;
+      border: 1px solid rgba(18, 20, 29, 0.12);
+      border-radius: 14px;
+      font-family: inherit;
+      font-size: 1rem;
+      color: var(--dark);
+      outline: none;
+      transition: 0.3s ease;
+      background: #fff;
+    }
+
+    .form-control:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(98, 68, 197, 0.08);
+    }
+
+    textarea.form-control {
+      min-height: 160px;
+      resize: vertical;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--primary);
+      color: #fff;
+      transition: 0.3s ease;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-3px);
+      background: #5037a8;
+      color: #fff;
+    }
+
     @media (max-width: 991.98px) {
       .menu-toggle {
         display: inline-flex;
@@ -916,6 +1009,10 @@
         border-left: 0;
         border-top: 1px solid var(--border);
       }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 767.98px) {
@@ -945,6 +1042,10 @@
 
       .gallery-grid img {
         height: auto;
+      }
+
+      .tabs-wrap {
+        max-width: 100%;
       }
     }
   </style>
@@ -978,15 +1079,13 @@
             <div class="eyebrow">Available for Business Websites • Admin Panels • Web Systems</div>
             <h1 class="display-3 mb-3">Khalid Khalifa</h1>
             <div class="typed-text-output" id="typedText"></div>
+
             <p class="lead mb-4">
               I build professional business websites, custom admin panels, and database-driven web systems designed around real operational needs.
-
-My work focuses on practical, structured, and scalable solutions that improve workflows, support management, and strengthen digital presence.
             </p>
-            <p class="mb-0">
-             I build professional business websites, custom admin panels, and database-driven web systems designed around real operational needs.
 
-My work focuses on practical, structured, and scalable solutions that improve workflows, support management, and strengthen digital presence.
+            <p class="mb-0">
+              My work focuses on practical, structured, and scalable solutions that improve workflows, support management, and strengthen digital presence.
             </p>
 
             <div class="hero-actions">
@@ -1019,8 +1118,7 @@ My work focuses on practical, structured, and scalable solutions that improve wo
       </div>
     </div>
   </section>
-
-  <section class="container-xxl py-6" id="about">
+    <section class="container-xxl py-6" id="about">
     <div class="container">
       <div class="section-title">
         <h2>About Me</h2>
@@ -1111,44 +1209,108 @@ My work focuses on practical, structured, and scalable solutions that improve wo
 
         <div class="col-lg-6">
           <div class="timeline-panel">
-            <div class="timeline-title">
-              <i class="fas fa-briefcase"></i>
-              <div>
-                <h3 class="mb-1">Project Experience</h3>
-                <p class="mb-0">Selected examples of the type of work I focus on.</p>
+            <div class="tabs-wrap">
+              <button class="tab-btn active" data-tab="experience" type="button">Experience</button>
+              <button class="tab-btn" data-tab="education" type="button">Education</button>
+            </div>
+
+            <div class="tab-panel active" id="experience-tab">
+              <div class="timeline-title">
+                <i class="fas fa-briefcase"></i>
+                <div>
+                  <h3 class="mb-1">Project Experience</h3>
+                  <p class="mb-0">Selected examples of the type of work I focus on.</p>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <h5>Safety Horizon System</h5>
+                <small>Business Management System / Certificate Platform</small>
+                <p class="mb-0">
+                  Developed a custom internal system for certificate workflows, client records,
+                  product data, permissions, and print-ready PDF generation.
+                </p>
+              </div>
+
+              <div class="timeline-item">
+                <h5>Safety Horizon ECI</h5>
+                <small>Corporate Website</small>
+                <p class="mb-0">
+                  Built the company’s professional public-facing website to present services,
+                  certifications, credibility, and international business presence.
+                </p>
+              </div>
+
+              <div class="timeline-item">
+                <h5>ABC News 24/7</h5>
+                <small>News Platform / Media Admin System</small>
+                <p class="mb-0">
+                  Developed a public news website and an internal publishing system for article
+                  management, authors, ads, permissions, and editorial workflow.
+                </p>
+              </div>
+
+              <div class="timeline-item mb-0">
+                <h5>Client-Oriented Website Projects</h5>
+                <small>Custom Web Development</small>
+                <p class="mb-0">
+                  Designed and developed additional websites for business and education-focused
+                  clients in different international contexts.
+                </p>
               </div>
             </div>
 
-            <div class="timeline-item">
-              <h5>Safety Horizon System</h5>
-              <small>Business Management System / Certificate Platform</small>
-              <p class="mb-0">Developed a custom internal system for certificate workflows, client records, product data, permissions, and print-ready PDF generation.</p>
-            </div>
+            <div class="tab-panel" id="education-tab">
+              <div class="timeline-title">
+                <i class="fas fa-graduation-cap"></i>
+                <div>
+                  <h3 class="mb-1">Education</h3>
+                  <p class="mb-0">Academic background and continuous practical learning.</p>
+                </div>
+              </div>
 
-            <div class="timeline-item">
-              <h5>Safety Horizon ECI</h5>
-              <small>Corporate Website</small>
-              <p class="mb-0">Built the company’s professional public-facing website to present services, certifications, credibility, and international business presence.</p>
-            </div>
+              <div class="timeline-item">
+                <h5>Biotechnology Studies</h5>
+                <small>University Education</small>
+                <p class="mb-0">
+                  Academic studies with a scientific background that strengthened analytical thinking,
+                  structured problem solving, and disciplined learning.
+                </p>
+              </div>
 
-            <div class="timeline-item">
-              <h5>ABC News 24/7</h5>
-              <small>News Platform / Media Admin System</small>
-              <p class="mb-0">Developed a public news website and an internal publishing system for article management, authors, ads, permissions, and editorial workflow.</p>
-            </div>
+              <div class="timeline-item">
+                <h5>Self-Directed Full-Stack Development</h5>
+                <small>Practical Technical Training</small>
+                <p class="mb-0">
+                  Developed practical expertise through real projects involving front-end interfaces,
+                  back-end logic, business workflows, and database systems.
+                </p>
+              </div>
 
-            <div class="timeline-item mb-0">
-              <h5>Client-Oriented Website Projects</h5>
-              <small>Custom Web Development</small>
-              <p class="mb-0">Designed and developed additional websites for business and education-focused clients in different international contexts.</p>
+              <div class="timeline-item">
+                <h5>Database & System Logic</h5>
+                <small>Applied Project Learning</small>
+                <p class="mb-0">
+                  Built hands-on experience in designing structured data relationships,
+                  administrative flows, and system behavior for real operational needs.
+                </p>
+              </div>
+
+              <div class="timeline-item mb-0">
+                <h5>Continuous Improvement</h5>
+                <small>Project-Based Growth</small>
+                <p class="mb-0">
+                  Ongoing refinement through developing business websites, media systems,
+                  internal dashboards, and custom management platforms.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-
-  <section class="container-xxl py-6" id="service">
+    <section class="container-xxl py-6" id="service">
     <div class="container">
       <div class="section-title">
         <h2>Services</h2>
@@ -1162,7 +1324,9 @@ My work focuses on practical, structured, and scalable solutions that improve wo
           <div class="service-item">
             <div class="service-icon"><i class="fas fa-globe"></i></div>
             <h4 class="mb-3">Business Website Development</h4>
-            <p class="mb-0">Professional websites built to present services clearly, support trust, and strengthen the client’s online presence.</p>
+            <p class="mb-0">
+              Professional websites built to present services clearly, support trust, and strengthen the client’s online presence.
+            </p>
           </div>
         </div>
 
@@ -1170,7 +1334,9 @@ My work focuses on practical, structured, and scalable solutions that improve wo
           <div class="service-item">
             <div class="service-icon"><i class="fas fa-cogs"></i></div>
             <h4 class="mb-3">Admin Panels & Internal Systems</h4>
-            <p class="mb-0">Custom administrative systems designed around real workflows, operational needs, and structured management logic.</p>
+            <p class="mb-0">
+              Custom administrative systems designed around real workflows, operational needs, and structured management logic.
+            </p>
           </div>
         </div>
 
@@ -1178,7 +1344,9 @@ My work focuses on practical, structured, and scalable solutions that improve wo
           <div class="service-item">
             <div class="service-icon"><i class="fas fa-database"></i></div>
             <h4 class="mb-3">Database-Driven Platforms</h4>
-            <p class="mb-0">Web platforms that connect interfaces, back-end functionality, and well-structured database design into one working solution.</p>
+            <p class="mb-0">
+              Web platforms that connect interfaces, back-end functionality, and well-structured database design into one working solution.
+            </p>
           </div>
         </div>
 
@@ -1186,7 +1354,9 @@ My work focuses on practical, structured, and scalable solutions that improve wo
           <div class="service-item">
             <div class="service-icon"><i class="fas fa-tools"></i></div>
             <h4 class="mb-3">Product Improvement & Enhancement</h4>
-            <p class="mb-0">Practical technical improvements that raise efficiency, usability, and business value in existing digital products.</p>
+            <p class="mb-0">
+              Practical technical improvements that raise efficiency, usability, and business value in existing digital products.
+            </p>
           </div>
         </div>
       </div>
@@ -1352,8 +1522,7 @@ My work focuses on practical, structured, and scalable solutions that improve wo
       </article>
     </div>
   </section>
-
-  <section class="container-xxl py-6" id="references">
+    <section class="container-xxl py-6" id="references">
     <div class="container">
       <div class="section-title">
         <h2>Professional References & Collaborations</h2>
@@ -1435,57 +1604,65 @@ My work focuses on practical, structured, and scalable solutions that improve wo
   <section class="container-xxl py-6 bg-light" id="contact">
     <div class="container">
       <div class="section-title">
-        <h2>Contact</h2>
+        <h2>Let’s Work Together</h2>
         <p>
           If you are looking for a developer for a website, admin system, or database-driven platform, feel free to reach out.
         </p>
       </div>
 
-      <div class="row g-4">
-       <div class="col-lg-6">
-  <div class="contact-card">
-    <h3 class="mb-4">Let’s Work Together</h3>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3 class="mb-4">Contact Information</h3>
 
-    <div class="contact-item">
-      <i class="fas fa-envelope"></i>
-      <div>
-        <h5 class="mb-1">Email</h5>
-        <p class="mb-0"><a href="mailto:khalidkhalifa79@gmail.com">khalidkhalifa79@gmail.com</a></p>
-      </div>
-    </div>
-
-    <div class="contact-item">
-      <i class="fas fa-phone-alt"></i>
-      <div>
-        <h5 class="mb-1">Phone</h5>
-        <p class="mb-0"><a href="tel:+48721143224">+48721143224</a></p>
-      </div>
-    </div>
-
-    <div class="contact-item mb-0">
-      <i class="fas fa-briefcase"></i>
-      <div>
-        <h5 class="mb-1">Target Market</h5>
-        <p class="mb-0">Poland and international clients</p>
-      </div>
-    </div>
-  </div>
-</div>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h5 class="mb-1">Email</h5>
+              <p class="mb-0"><a href="mailto:khalidkhalifa79@gmail.com">khalidkhalifa79@gmail.com</a></p>
             </div>
+          </div>
+
+          <div class="contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <div>
+              <h5 class="mb-1">Phone</h5>
+              <p class="mb-0"><a href="tel:+48721143224">+48721143224</a></p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <i class="fas fa-briefcase"></i>
+            <div>
+              <h5 class="mb-1">Target Market</h5>
+              <p class="mb-0">Poland and international clients</p>
+            </div>
+          </div>
+
+          <div class="contact-item mb-0">
+            <i class="fas fa-code"></i>
+            <div>
+              <h5 class="mb-1">Work Focus</h5>
+              <p class="mb-0">Business websites, admin systems, and database-driven platforms</p>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="mailto:khalidkhalifa79@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="tel:+48721143224" aria-label="Phone"><i class="fas fa-phone-alt"></i></a>
+            <a href="https://khalidkhalifa-portfolio.vercel.app/" target="_blank" rel="noreferrer" aria-label="Portfolio website"><i class="fas fa-globe"></i></a>
+            <a href="#project" aria-label="Projects"><i class="fas fa-laptop-code"></i></a>
           </div>
         </div>
 
-        <div class="col-lg-6">
-          <div class="contact-card">
-            <h3 class="mb-4">Professional Direction</h3>
-            <p class="mb-4">
-              This portfolio represents the foundation of my professional online presence. It is built to present my work clearly to clients, companies, and project partners who need practical digital solutions with real operational value.
-            </p>
-            <p class="mb-4">
-              I am open to freelance opportunities, project-based collaboration, and custom development work involving business websites, admin systems, media platforms, and database-driven solutions.
-            </p>
-            <a href="mailto:khalidkhalifa79@gmail.com" class="btn btn-primary">Email Me</a>
-          </div>
+        <div class="contact-card">
+          <h3 class="mb-4">Send Message</h3>
+          <form class="contact-form">
+            <input type="text" class="form-control" placeholder="Your Name" />
+            <input type="email" class="form-control" placeholder="Your Email" />
+            <input type="text" class="form-control" placeholder="Subject" />
+            <textarea class="form-control" placeholder="Tell me about your project"></textarea>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
         </div>
       </div>
     </div>
@@ -1500,12 +1677,16 @@ My work focuses on practical, structured, and scalable solutions that improve wo
   <a href="#home" class="scroll-top" id="scrollTop" aria-label="Back to top">
     <i class="fas fa-arrow-up"></i>
   </a>
-    <script>
+
+  <script>
     const menuToggle = document.getElementById("menuToggle");
     const navbarNav = document.getElementById("navbarNav");
     const navLinks = document.querySelectorAll(".nav-link");
     const scrollTopBtn = document.getElementById("scrollTop");
     const typedText = document.getElementById("typedText");
+    const tabButtons = document.querySelectorAll(".tab-btn");
+    const experienceTab = document.getElementById("experience-tab");
+    const educationTab = document.getElementById("education-tab");
 
     if (menuToggle) {
       menuToggle.addEventListener("click", function () {
@@ -1588,7 +1769,27 @@ My work focuses on practical, structured, and scalable solutions that improve wo
       setTimeout(typeEffect, deleting ? 45 : 85);
     }
 
-    typeEffect();
+    if (typedText) {
+      typeEffect();
+    }
+
+    tabButtons.forEach(function(button) {
+      button.addEventListener("click", function() {
+        tabButtons.forEach(function(btn) {
+          btn.classList.remove("active");
+        });
+
+        this.classList.add("active");
+
+        if (this.dataset.tab === "experience") {
+          experienceTab.classList.add("active");
+          educationTab.classList.remove("active");
+        } else {
+          educationTab.classList.add("active");
+          experienceTab.classList.remove("active");
+        }
+      });
+    });
   </script>
 </body>
 </html>
