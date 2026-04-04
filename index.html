@@ -59,8 +59,8 @@
       top: 0;
       z-index: 50;
       backdrop-filter: blur(10px);
-      background: rgba(245, 247, 251, 0.9);
-      border-bottom: 1px solid rgba(219, 227, 239, 0.9);
+      background: rgba(245, 247, 251, 0.92);
+      border-bottom: 1px solid rgba(219, 227, 239, 0.95);
     }
 
     .nav {
@@ -136,7 +136,7 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 28px;
       align-items: center;
     }
@@ -148,7 +148,9 @@
     .skills-card,
     .contact-card,
     .why-card,
-    .link-card {
+    .link-card,
+    .gallery-card,
+    .timeline-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
@@ -203,6 +205,24 @@
       gap: 18px;
     }
 
+    .photo-card {
+      padding: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .profile-photo {
+      width: 100%;
+      max-width: 330px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      margin: 0 auto;
+    }
+
     .info-card {
       padding: 22px;
     }
@@ -216,24 +236,6 @@
       margin: 0;
       color: var(--muted);
       font-size: 0.96rem;
-    }
-
-    .photo-card {
-      padding: 18px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .profile-photo {
-      width: 100%;
-      max-width: 320px;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 22px;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      margin: 0 auto;
     }
 
     section {
@@ -253,7 +255,7 @@
     .section-head p {
       margin: 0;
       color: var(--muted);
-      max-width: 780px;
+      max-width: 820px;
     }
 
     .about-card {
@@ -273,7 +275,8 @@
     .services-grid,
     .why-grid,
     .skills-grid,
-    .contact-grid {
+    .contact-grid,
+    .gallery-grid {
       display: grid;
       gap: 18px;
     }
@@ -328,29 +331,16 @@
 
     .projects {
       display: grid;
-      gap: 22px;
+      gap: 26px;
     }
 
     .project-card {
       overflow: hidden;
-    }
-
-    .project-cover {
-      height: 190px;
-      background: linear-gradient(135deg, #dce8ff 0%, #f3f7ff 100%);
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--primary-dark);
-      font-size: 1.2rem;
-      font-weight: 800;
-      text-align: center;
-      padding: 20px;
+      padding: 0;
     }
 
     .project-body {
-      padding: 26px;
+      padding: 28px;
     }
 
     .project-type {
@@ -401,6 +391,41 @@
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .gallery-card {
+      padding: 20px;
+      border-top: 1px solid var(--border);
+      background: linear-gradient(180deg, #fcfdff 0%, #f6f9ff 100%);
+    }
+
+    .gallery-title {
+      margin: 0 0 14px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .gallery-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gallery-grid.four {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #fff;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
     }
 
     .link-card {
@@ -475,7 +500,9 @@
       .services-grid,
       .skills-grid,
       .why-grid,
-      .contact-grid {
+      .contact-grid,
+      .gallery-grid,
+      .gallery-grid.four {
         grid-template-columns: 1fr 1fr;
       }
     }
@@ -498,7 +525,9 @@
       .services-grid,
       .skills-grid,
       .why-grid,
-      .contact-grid {
+      .contact-grid,
+      .gallery-grid,
+      .gallery-grid.four {
         grid-template-columns: 1fr;
       }
 
@@ -509,7 +538,8 @@
       .project-body,
       .why-card,
       .contact-card,
-      .link-card {
+      .link-card,
+      .gallery-card {
         padding-left: 20px;
         padding-right: 20px;
       }
@@ -518,8 +548,8 @@
         font-size: 2.2rem;
       }
 
-      .project-cover {
-        height: 150px;
+      .gallery-item img {
+        height: auto;
       }
     }
   </style>
@@ -546,9 +576,10 @@
           <h1>Khalid Khalifa</h1>
           <div class="title-line">Full-Stack Web Developer | Admin Panels & Business Systems</div>
           <p class="hero-text">
-            I design and develop complete digital solutions, including business websites,
-            admin systems, and database-driven platforms built to support real operational
-            needs and improve digital products from concept to launch.
+            I design and develop complete digital solutions, including professional business websites,
+            custom admin panels, and database-driven platforms built to support real operational needs.
+            I also work on improving existing digital products by proposing and implementing practical
+            technical enhancements that increase usability, efficiency, and business value.
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#projects">View Projects</a>
@@ -558,17 +589,17 @@
 
         <div class="hero-side">
           <div class="hero-card photo-card">
-            <img src="profile.jpg" alt="Khalid Khalifa" class="profile-photo" />
+            <img src="khalidkhalifa.jpg" alt="Khalid Khalifa" class="profile-photo" />
           </div>
 
           <div class="info-card">
             <h3>What I Build</h3>
-            <p>Professional websites, internal admin systems, business workflows, and database-driven platforms.</p>
+            <p>Professional business websites, internal admin systems, business workflows, and database-driven web platforms.</p>
           </div>
 
           <div class="info-card">
             <h3>Main Focus</h3>
-            <p>Business websites, admin panels, certificate systems, editorial platforms, and product improvement.</p>
+            <p>Websites, admin panels, certificate systems, media platforms, database design, and technical product enhancement.</p>
           </div>
         </div>
       </div>
@@ -578,7 +609,7 @@
       <div class="container">
         <div class="section-head">
           <h2>About</h2>
-          <p>A concise overview of who I am and the kind of solutions I develop.</p>
+          <p>A concise overview of my profile, development focus, and the type of solutions I build.</p>
         </div>
         <div class="about-card">
           <p>
@@ -587,8 +618,8 @@
             and business needs. I develop complete digital products from concept to launch,
             covering front-end experience, back-end structure, database design, and control panel
             functionality. I also improve existing products by identifying development opportunities
-            and implementing practical enhancements that increase usability, efficiency, and overall
-            business value.
+            and implementing practical enhancements that strengthen usability, workflow efficiency,
+            and long-term business value.
           </p>
         </div>
       </div>
@@ -598,25 +629,25 @@
       <div class="container">
         <div class="section-head">
           <h2>Services</h2>
-          <p>Core services I provide for businesses, organizations, and digital projects.</p>
+          <p>Core services I provide for companies, organizations, and digital products.</p>
         </div>
 
         <div class="services-grid">
           <div class="service-card">
-            <h3>Business Website Development</h3>
-            <p>Professional websites built to present services, strengthen credibility, and support business growth.</p>
+            <h3>Professional Business Website Development</h3>
+            <p>Business-focused websites built to present services clearly, strengthen trust, and support growth.</p>
           </div>
           <div class="service-card">
-            <h3>Admin Panels & Internal Systems</h3>
-            <p>Custom management systems and control panels designed around real workflows and structured operations.</p>
+            <h3>Custom Admin Panels & Internal Management Systems</h3>
+            <p>Internal control systems designed around real business workflows, operations, and structured management logic.</p>
           </div>
           <div class="service-card">
-            <h3>Database-Driven Web Systems</h3>
-            <p>Platforms that combine front-end interfaces, back-end logic, and organized database structure.</p>
+            <h3>Database-Driven Web System Development</h3>
+            <p>Platforms that combine front-end interfaces, back-end functionality, and organized database structure.</p>
           </div>
           <div class="service-card">
-            <h3>Product Improvement & Enhancement</h3>
-            <p>Technical improvements and practical development ideas that strengthen usability, efficiency, and product value.</p>
+            <h3>Improvement & Technical Enhancement of Existing Products</h3>
+            <p>Practical enhancements and technical improvements that raise efficiency, usability, and product value.</p>
           </div>
         </div>
       </div>
@@ -626,7 +657,7 @@
       <div class="container">
         <div class="section-head">
           <h2>Skills & Technologies</h2>
-          <p>The main areas and technologies behind the work I build.</p>
+          <p>The technologies and strengths behind the systems and websites I build.</p>
         </div>
 
         <div class="skills-grid">
@@ -657,9 +688,9 @@
           </div>
 
           <div class="skills-card">
-            <h3>Supporting Strengths</h3>
+            <h3>Additional Value</h3>
             <div class="tag-list">
-              <span class="tag">Product Improvement</span>
+              <span class="tag">End-to-End Product Development</span>
               <span class="tag">System Analysis</span>
               <span class="tag">Business Requirement Understanding</span>
               <span class="tag">Admin Workflow Design</span>
@@ -676,28 +707,38 @@
         <div class="section-head">
           <h2>Featured Projects</h2>
           <p>
-            A selection of projects that demonstrate my ability to design and develop complete
-            digital solutions, from public-facing business websites to internal management
-            systems and content platforms.
+            Selected projects that demonstrate my ability to build complete digital solutions,
+            from internal management systems to public-facing corporate and media platforms.
           </p>
         </div>
 
         <div class="projects">
           <article class="project-card">
-            <div class="project-cover">Safety Horizon System</div>
             <div class="project-body">
               <div class="project-type">Business Management System / Admin Panel / Certificate Management Platform</div>
               <h3>Safety Horizon System</h3>
               <p>
-                A custom-developed business management platform built to handle certificate workflows,
-                client records, product information, and internal administrative operations within a
-                secure, database-driven environment.
+                Safety Horizon System is a custom-developed business management platform built to
+                handle certificate workflows, client records, product information, and internal
+                administrative operations within a secure, database-driven environment.
+              </p>
+              <p>
+                The system supports multiple certificate categories, structured data management,
+                controlled user access, and operational efficiency through a dedicated admin interface.
+                It also includes certificate preview and final print output functionality, allowing
+                users to review certificate content before generating the official printable PDF version
+                with stamp, company signature, and QR code integration.
               </p>
               <ul class="mini-list">
+                <li>Secure login system</li>
                 <li>Multi-type certificate management</li>
                 <li>Admin dashboard and record control</li>
-                <li>Preview and final print-ready PDF generation</li>
-                <li>Stamp, signature, QR code, and linked product list output</li>
+                <li>Client and company management</li>
+                <li>Product, scope, and standard management</li>
+                <li>Office, producer, importer, and exporter handling</li>
+                <li>Role-based access and permissions</li>
+                <li>Certificate preview for content review</li>
+                <li>Final print-ready PDF generation with stamp, signature, and QR code</li>
               </ul>
               <div class="project-tech">
                 <span class="tech-pill">ASP.NET Web Forms</span>
@@ -708,7 +749,22 @@
                 <span class="tech-pill">JavaScript</span>
               </div>
               <div class="project-actions">
-                <a class="btn btn-secondary" href="https://safetyhorizonsystem.com/" target="_blank" rel="noreferrer">Visit Project</a>
+                <span class="btn btn-secondary">Internal Business System</span>
+              </div>
+            </div>
+
+            <div class="gallery-card">
+              <div class="gallery-title">Selected Screenshots</div>
+              <div class="gallery-grid">
+                <div class="gallery-item">
+                  <img src="safethorizon-system-1.jpg" alt="Safety Horizon System Screenshot 1" />
+                </div>
+                <div class="gallery-item">
+                  <img src="safethorizon-system-2.jpg" alt="Safety Horizon System Screenshot 2" />
+                </div>
+                <div class="gallery-item">
+                  <img src="safethorizon-system-3.jpg" alt="Safety Horizon System Screenshot 3" />
+                </div>
               </div>
             </div>
           </article>
@@ -717,27 +773,36 @@
             <h3>Connected Business Solution</h3>
             <p>
               For Safety Horizon ECI, I developed both the company’s public-facing corporate website
-              and its internal business management system. Together, these two projects demonstrate
-              my ability to build integrated digital solutions that connect public business presence
-              with internal operational functionality.
+              and its internal business management system. The website was built to present the company’s
+              services, certifications, credibility, and international presence, while the internal system
+              was designed to manage certificate workflows, client records, product data, and administrative
+              operations. Together, these two projects demonstrate my ability to build integrated digital
+              solutions that connect public business presence with internal operational functionality.
             </p>
           </div>
 
           <article class="project-card">
-            <div class="project-cover">Safety Horizon ECI</div>
             <div class="project-body">
               <div class="project-type">Corporate Business Website / Company Profile Website</div>
               <h3>Safety Horizon ECI</h3>
               <p>
-                The official corporate website of the company, developed to present its brand,
-                services, certifications, expertise, and international presence in a clear
-                and professional way.
+                Safety Horizon ECI is the official corporate website of the company, developed to present
+                its brand, services, certifications, expertise, and international presence in a clear and
+                professional way.
+              </p>
+              <p>
+                The website includes structured business content such as the homepage, about page, services
+                page, contact page, team section, client section, accreditations, and a system verification
+                link connected to the company’s internal platform.
               </p>
               <ul class="mini-list">
+                <li>Professional corporate website structure</li>
                 <li>Homepage, About, Services, and Contact pages</li>
+                <li>Clear presentation of Halal, ISO, and training services</li>
                 <li>Team and client showcase sections</li>
                 <li>Accreditations and certifications display</li>
-                <li>Verification link connected to the internal system</li>
+                <li>Contact form and international contact points</li>
+                <li>Verification link connected to the company’s internal system</li>
               </ul>
               <div class="project-tech">
                 <span class="tech-pill">ASP.NET Web Forms</span>
@@ -746,26 +811,46 @@
                 <span class="tech-pill">JavaScript</span>
               </div>
               <div class="project-actions">
-                <a class="btn btn-secondary" href="https://safetyhorizoneci.com/" target="_blank" rel="noreferrer">Visit Project</a>
+                <a class="btn btn-secondary" href="https://safetyhorizoneci.com/" target="_blank" rel="noreferrer">Visit Website</a>
+              </div>
+            </div>
+
+            <div class="gallery-card">
+              <div class="gallery-title">Website Preview</div>
+              <div class="gallery-grid">
+                <div class="gallery-item">
+                  <img src="safethorizon.jpg" alt="Safety Horizon ECI Website Screenshot" />
+                </div>
               </div>
             </div>
           </article>
 
           <article class="project-card">
-            <div class="project-cover">ABC News 24/7</div>
             <div class="project-body">
               <div class="project-type">News Platform / Content Management Website / Media Admin System</div>
               <h3>ABC News 24/7</h3>
               <p>
-                A custom-built news and content publishing platform designed to manage category-based
-                media content through both a public-facing news website and an internal administrative
-                control panel.
+                ABC News 24/7 is a custom-built news and content publishing platform designed to manage
+                category-based media content through both a public-facing news website and an internal
+                administrative control panel.
+              </p>
+              <p>
+                The platform supports structured article publishing across multiple news sections, author
+                management, advertising section handling, user and admin account management, page-level
+                access permissions, and internal dashboard statistics for content performance and publishing
+                activity. It also supports a broader digital media presence connected to social platforms
+                and a WhatsApp news channel.
               </p>
               <ul class="mini-list">
-                <li>Multi-category article publishing structure</li>
-                <li>Admin login and internal dashboard</li>
-                <li>Author, article, and advertisement management</li>
-                <li>User permissions and content statistics</li>
+                <li>Public-facing multi-category news website</li>
+                <li>Category-based article publishing structure</li>
+                <li>Admin dashboard and publishing workflow</li>
+                <li>Article insertion, editing, and deletion workflows</li>
+                <li>Author creation and management</li>
+                <li>Advertisement management sections</li>
+                <li>User and admin account management</li>
+                <li>Page-level access permissions</li>
+                <li>Internal publishing statistics and analytics panels</li>
               </ul>
               <div class="project-tech">
                 <span class="tech-pill">ASP.NET Web Forms</span>
@@ -776,7 +861,25 @@
                 <span class="tech-pill">JavaScript</span>
               </div>
               <div class="project-actions">
-                <a class="btn btn-secondary" href="https://www.abcnews-247.com/" target="_blank" rel="noreferrer">Visit Project</a>
+                <a class="btn btn-secondary" href="https://abcnews-247.com/" target="_blank" rel="noreferrer">Visit Website</a>
+              </div>
+            </div>
+
+            <div class="gallery-card">
+              <div class="gallery-title">Selected Screenshots</div>
+              <div class="gallery-grid four">
+                <div class="gallery-item">
+                  <img src="abcnews247-1.jpg" alt="ABC News 24/7 Screenshot 1" />
+                </div>
+                <div class="gallery-item">
+                  <img src="abcnews247-2.jpg" alt="ABC News 24/7 Screenshot 2" />
+                </div>
+                <div class="gallery-item">
+                  <img src="abcnews247-3.jpg" alt="ABC News 24/7 Screenshot 3" />
+                </div>
+                <div class="gallery-item">
+                  <img src="abcnews247-4.jpg" alt="ABC News 24/7 Screenshot 4" />
+                </div>
               </div>
             </div>
           </article>
@@ -788,25 +891,25 @@
       <div class="container">
         <div class="section-head">
           <h2>What I Bring to a Project</h2>
-          <p>Beyond coding, I focus on structure, business value, and practical execution.</p>
+          <p>Beyond writing code, I focus on structure, business logic, operational value, and practical execution.</p>
         </div>
 
         <div class="why-grid">
           <div class="why-card">
-            <h3>End-to-End Development</h3>
-            <p>I can work on the full process, from the initial concept to the final usable product.</p>
+            <h3>End-to-End Digital Product Development</h3>
+            <p>I can develop a digital product from concept and structure to the final usable implementation.</p>
           </div>
           <div class="why-card">
             <h3>Business-Focused Thinking</h3>
-            <p>I build systems around real operational needs, not only around visual presentation.</p>
+            <p>I build systems around real operational and business needs, not only around surface-level design.</p>
           </div>
           <div class="why-card">
-            <h3>Structured Admin Logic</h3>
-            <p>I pay strong attention to workflows, permissions, records, and database organization.</p>
+            <h3>Structured Workflow Design</h3>
+            <p>I pay strong attention to permissions, records, administrative flow, and database organization.</p>
           </div>
           <div class="why-card">
-            <h3>Product Improvement</h3>
-            <p>I do not only build new systems, but also improve existing products with practical ideas.</p>
+            <h3>Product Improvement Mindset</h3>
+            <p>I do not only build new systems, but also identify opportunities to improve and strengthen existing products.</p>
           </div>
         </div>
       </div>
@@ -816,15 +919,15 @@
       <div class="container">
         <div class="section-head">
           <h2>Contact</h2>
-          <p>If you are looking for a developer for a website, admin system, or database-driven project, feel free to contact me.</p>
+          <p>If you are looking for a developer for a website, admin system, or database-driven platform, feel free to contact me.</p>
         </div>
 
         <div class="contact-grid">
           <div class="contact-card">
             <h3>Let’s Work Together</h3>
             <p>
-              I am open to freelance opportunities, project-based work, and digital solutions
-              for businesses that need practical websites or internal systems.
+              I am open to freelance opportunities, project-based work, and digital solutions for
+              businesses that need practical websites, internal systems, or database-driven platforms.
             </p>
             <div class="contact-list">
               <div>Email: khalidkhalifa79@gmail.com</div>
@@ -834,11 +937,11 @@
           </div>
 
           <div class="contact-card">
-            <h3>Next Step</h3>
+            <h3>Professional Direction</h3>
             <p>
-              This portfolio is the foundation of my professional online presence. The next step
-              is connecting it to a custom domain and using it in client-facing platforms such as
-              Useme and Oferteo.
+              This portfolio represents the foundation of my professional online presence. It is intended
+              to support direct presentation of my work to clients and businesses through freelance and
+              project-based channels.
             </p>
             <a class="btn btn-primary" href="mailto:khalidkhalifa79@gmail.com">Email Me</a>
           </div>
@@ -854,8 +957,3 @@
   </footer>
 </body>
 </html>
-
-
-عدل الكود كامل 
-كامل شامل بناءا على الكلام اللي اتفقنا عليه حتى يكون صح 100% 
-لو لا تضع رابط الادمين لهذا السبب لا تضع رابط المشروع الرئيسي كذلك بشكل علني والافضل وضع اسكرين شوت من المواقع اليس كذلك؟ 
