@@ -409,12 +409,10 @@
     }
 
     #home {
-      padding-top: 120px;
-      margin-bottom: 0;
-      background:
-        radial-gradient(circle at top left, rgba(98, 68, 197, 0.13), transparent 35%),
-        radial-gradient(circle at right center, rgba(255, 196, 72, 0.18), transparent 28%),
-        #fafafb;
+      margin-bottom: 6rem;
+      padding-top: 140px;
+      background: url("bg-header.png") left top no-repeat;
+      background-color: #fafafb;
     }
 
     .hero-card {
@@ -430,6 +428,11 @@
       font-size: 0.92rem;
       font-weight: 700;
       margin-bottom: 1rem;
+    }
+
+    .eyebrow,
+    .mini-stats {
+      display: none;
     }
 
     .typed-text-output {
@@ -503,25 +506,20 @@
     }
 
     .hero-image-wrap::before {
-      content: "";
-      position: absolute;
-      inset: 40px 30px -20px 30px;
-      background: linear-gradient(135deg, rgba(98, 68, 197, 0.16), rgba(255, 196, 72, 0.25));
-      border-radius: 28px;
-      z-index: 0;
+      display: none;
     }
 
     .hero-image {
       position: relative;
       z-index: 1;
       width: 100%;
-      max-width: 430px;
+      max-width: 670px;
       margin: 0 auto;
-      border-radius: 24px;
-      object-fit: cover;
-      box-shadow: var(--shadow);
-      border: 8px solid rgba(255, 255, 255, 0.85);
-      background: #fff;
+      border-radius: 0;
+      object-fit: contain;
+      box-shadow: none;
+      border: 0;
+      background: transparent;
     }
 
     .mini-stats {
@@ -682,16 +680,17 @@
     }
 
     .service-icon {
-      width: 72px;
-      height: 72px;
-      border-radius: 18px;
+      width: 100px;
+      height: 100px;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 1.2rem;
-      background: linear-gradient(135deg, rgba(98, 68, 197, 0.12), rgba(255, 196, 72, 0.22));
-      color: var(--primary);
-      font-size: 1.6rem;
+      background: url("bg-icon.png") center center no-repeat;
+      background-size: cover;
+      color: var(--dark);
+      font-size: 1.8rem;
+      border-radius: 0;
     }
 
     .project-card {
@@ -1112,7 +1111,7 @@
 
         <div class="col-lg-5">
           <div class="hero-image-wrap">
-            <img src="khalidkhalifa.jpg" alt="Khalid Khalifa" class="hero-image" />
+            <img src="khalidkhalifa2.jpg" alt="Khalid Khalifa" class="hero-image" />
           </div>
         </div>
       </div>
@@ -1310,7 +1309,8 @@
       </div>
     </div>
   </section>
-    <section class="container-xxl py-6" id="service">
+
+  <section class="container-xxl py-6" id="service">
     <div class="container">
       <div class="section-title">
         <h2>Services</h2>
