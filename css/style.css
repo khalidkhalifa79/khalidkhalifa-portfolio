@@ -47,6 +47,8 @@
     border-color: var(--bs-primary);
 }
 
+
+
 .btn {
     font-weight: 500;
     transition: .5s;
@@ -105,9 +107,10 @@
     .navbar .navbar-nav .nav-link {
         padding: 10px 0;
     }
-
-      .navbar .lang-btn {
+    .navbar .lang-btn {
         min-width: 46px;
+        padding: 6px 12px;
+        border-radius: 999px;
     }
 }
 
@@ -342,5 +345,13 @@
 
     .reference-text {
         font-size: 1rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar .lang-btn {
+        min-width: 46px;
+        padding: 6px 12px;
+        border-radius: 999px;
     }
 }
