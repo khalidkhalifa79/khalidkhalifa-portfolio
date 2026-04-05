@@ -98,6 +98,7 @@
         dots[index].classList.add("active");
     }
 
+   
     function setLanguage(lang) {
         document.documentElement.lang = lang;
         localStorage.setItem('siteLanguage', lang);
@@ -112,6 +113,8 @@
         const buttons = [
             'btn-en-desktop',
             'btn-pl-desktop',
+            'btn-en-desktop-fixed',
+            'btn-pl-desktop-fixed',
             'btn-en-mobile',
             'btn-pl-mobile'
         ];
@@ -122,19 +125,20 @@
         });
 
         if (lang === 'en') {
-            const enDesktop = document.getElementById('btn-en-desktop');
-            const enMobile = document.getElementById('btn-en-mobile');
-            if (enDesktop) enDesktop.classList.add('active');
-            if (enMobile) enMobile.classList.add('active');
+            ['btn-en-desktop', 'btn-en-desktop-fixed', 'btn-en-mobile'].forEach(id => {
+                const btn = document.getElementById(id);
+                if (btn) btn.classList.add('active');
+            });
         } else {
-            const plDesktop = document.getElementById('btn-pl-desktop');
-            const plMobile = document.getElementById('btn-pl-mobile');
-            if (plDesktop) plDesktop.classList.add('active');
-            if (plMobile) plMobile.classList.add('active');
+            ['btn-pl-desktop', 'btn-pl-desktop-fixed', 'btn-pl-mobile'].forEach(id => {
+                const btn = document.getElementById(id);
+                if (btn) btn.classList.add('active');
+            });
         }
 
         showReference(currentReferenceIndex);
     }
+
 
     document.addEventListener('DOMContentLoaded', function () {
         const savedLanguage = localStorage.getItem('siteLanguage') || 'pl';
@@ -187,10 +191,10 @@
     <a href="#contact" class="nav-item nav-link" data-en="Contact" data-pl="Kontakt">Kontakt</a>
 
     <!-- Mobile Language Switch -->
-    <div class="d-flex d-lg-none align-items-center mt-3">
-        <button type="button" class="btn btn-sm btn-outline-primary me-2 lang-btn" onclick="setLanguage('en')" id="btn-en-mobile">EN</button>
-        <button type="button" class="btn btn-sm btn-outline-primary lang-btn active" onclick="setLanguage('pl')" id="btn-pl-mobile">PL</button>
-    </div>
+   <div class="d-none d-lg-flex align-items-center ms-auto order-lg-3 desktop-lang-inside">
+    <button type="button" class="btn btn-sm btn-outline-primary me-2 lang-btn" onclick="setLanguage('en')" id="btn-en-desktop">EN</button>
+    <button type="button" class="btn btn-sm btn-outline-primary lang-btn active" onclick="setLanguage('pl')" id="btn-pl-desktop">PL</button>
+</div>
 </div>
 
 
@@ -199,8 +203,8 @@
 </nav>
 <!-- Desktop Fixed Language Switch Start -->
 <div class="language-switch-desktop d-none d-lg-flex">
-    <button type="button" class="btn btn-sm btn-outline-primary me-2 lang-btn" onclick="setLanguage('en')" id="btn-en-desktop">EN</button>
-    <button type="button" class="btn btn-sm btn-outline-primary lang-btn active" onclick="setLanguage('pl')" id="btn-pl-desktop">PL</button>
+    <button type="button" class="btn btn-sm btn-outline-primary me-2 lang-btn" onclick="setLanguage('en')" id="btn-en-desktop-fixed">EN</button>
+    <button type="button" class="btn btn-sm btn-outline-primary lang-btn active" onclick="setLanguage('pl')" id="btn-pl-desktop-fixed">PL</button>
 </div>
 <!-- Desktop Fixed Language Switch End -->
     <!-- Navbar End -->
