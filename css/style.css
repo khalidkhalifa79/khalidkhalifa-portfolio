@@ -40,6 +40,13 @@
     }
 
 /*** Button ***/
+
+.lang-btn.active {
+    background-color: var(--bs-primary);
+    color: #fff;
+    border-color: var(--bs-primary);
+}
+
 .btn {
     font-weight: 500;
     transition: .5s;
