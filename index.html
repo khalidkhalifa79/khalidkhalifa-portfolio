@@ -99,45 +99,43 @@
     }
 
    
-    function setLanguage(lang) {
-        document.documentElement.lang = lang;
-        localStorage.setItem('siteLanguage', lang);
+   function setLanguage(lang) {
+    document.documentElement.lang = lang;
+    localStorage.setItem('siteLanguage', lang);
 
-        document.querySelectorAll('[data-en]').forEach(function (el) {
-            const value = el.getAttribute('data-' + lang);
-            if (value) {
-                el.textContent = value;
-            }
-        });
-
-        const buttons = [
-            'btn-en-desktop',
-            'btn-pl-desktop',
-            'btn-en-desktop-fixed',
-            'btn-pl-desktop-fixed',
-            'btn-en-mobile',
-            'btn-pl-mobile'
-        ];
-
-        buttons.forEach(id => {
-            const btn = document.getElementById(id);
-            if (btn) btn.classList.remove('active');
-        });
-
-        if (lang === 'en') {
-            ['btn-en-desktop', 'btn-en-desktop-fixed', 'btn-en-mobile'].forEach(id => {
-                const btn = document.getElementById(id);
-                if (btn) btn.classList.add('active');
-            });
-        } else {
-            ['btn-pl-desktop', 'btn-pl-desktop-fixed', 'btn-pl-mobile'].forEach(id => {
-                const btn = document.getElementById(id);
-                if (btn) btn.classList.add('active');
-            });
+    document.querySelectorAll('[data-en]').forEach(function (el) {
+        const value = el.getAttribute('data-' + lang);
+        if (value) {
+            el.textContent = value;
         }
+    });
 
-        showReference(currentReferenceIndex);
+    const buttons = [
+        'btn-en-desktop',
+        'btn-pl-desktop',
+        'btn-en-desktop-fixed',
+        'btn-pl-desktop-fixed'
+    ];
+
+    buttons.forEach(id => {
+        const btn = document.getElementById(id);
+        if (btn) btn.classList.remove('active');
+    });
+
+    if (lang === 'en') {
+        ['btn-en-desktop', 'btn-en-desktop-fixed'].forEach(id => {
+            const btn = document.getElementById(id);
+            if (btn) btn.classList.add('active');
+        });
+    } else {
+        ['btn-pl-desktop', 'btn-pl-desktop-fixed'].forEach(id => {
+            const btn = document.getElementById(id);
+            if (btn) btn.classList.add('active');
+        });
     }
+
+    showReference(currentReferenceIndex);
+}
 
 
     document.addEventListener('DOMContentLoaded', function () {
@@ -944,6 +942,16 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+window.addEventListener("scroll", function () {
+    if (window.scrollY > 120) {
+        document.body.classList.add("navbar-visible");
+    } else {
+        document.body.classList.remove("navbar-visible");
+    }
+});
+</script>
 </body>
 
 </html>
