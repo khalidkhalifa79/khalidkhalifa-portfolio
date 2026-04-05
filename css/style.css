@@ -52,6 +52,7 @@
     top: 18px;
     right: 32px;
     z-index: 2000;
+    display: flex;
     align-items: center;
 }
 
@@ -61,7 +62,6 @@
     border-radius: 999px;
     background-color: #fff;
 }
-
 
 
 
@@ -102,7 +102,7 @@
 
 /*** Navbar ***/
 .navbar.fixed-top {
-    display: none;
+    display: block;
     transition: .5s;
 }
 
@@ -369,9 +369,15 @@
 }
 
 @media (min-width: 992px) {
-    .navbar .lang-btn {
+.navbar .lang-btn {
         min-width: 46px;
         padding: 6px 12px;
         border-radius: 999px;
     }
+
+    .navbar.fixed-top {
+        padding-right: 120px !important;
+    }
+
+   
 }
