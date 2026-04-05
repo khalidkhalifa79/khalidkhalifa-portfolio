@@ -41,11 +41,23 @@
 
 /*** Button ***/
 
+.lang-btn {
+    min-width: 50px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
 
 .lang-btn.active {
-    background-color: var(--bs-primary);
-    color: #fff;
-    border-color: var(--bs-primary);
+    background-color: var(--primary);
+    color: #fff !important;
+    border-color: var(--primary);
+}
+
+.lang-btn:hover {
+    background-color: rgba(98, 68, 197, 0.08);
+    color: var(--primary);
 }
 
 /* زر اللغة الثابت أعلى الصفحة */
@@ -56,25 +68,34 @@
     z-index: 2000;
     display: flex;
     align-items: center;
+    gap: 8px;
     transition: opacity .3s ease, visibility .3s ease;
 }
 
-.language-switch-desktop .lang-btn {
-    min-width: 46px;
-    padding: 6px 12px;
-    border-radius: 999px;
-    background-color: #fff;
-}
-
-/* في البداية: زر اللغة داخل النافبار مخفي على الديسكتوب */
+/* الزر داخل النافبار */
 .navbar .desktop-lang-inside {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
     transition: opacity .3s ease, visibility .3s ease;
+    margin-left: 20px;
+    gap: 8px;
 }
 
-/* لما النافبار يدخل وضع الظهور بعد السكروول */
+/* قبل السكرول */
+body:not(.navbar-visible) .language-switch-desktop {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+body:not(.navbar-visible) .navbar .desktop-lang-inside {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* بعد السكرول */
 body.navbar-visible .language-switch-desktop {
     opacity: 0;
     visibility: hidden;
@@ -86,6 +107,7 @@ body.navbar-visible .navbar .desktop-lang-inside {
     visibility: visible;
     pointer-events: auto;
 }
+
 
 
 
@@ -147,16 +169,7 @@ body.navbar-visible .navbar .desktop-lang-inside {
     .navbar .navbar-nav .nav-link {
         padding: 10px 0;
     }
-    .navbar .lang-btn {
-        min-width: 46px;
-        padding: 6px 12px;
-        border-radius: 999px;
-    }
-
-
-     .language-switch-desktop {
-        display: none !important;
-    }
+   
 }
 
 /*** Header ***/
@@ -393,16 +406,4 @@ body.navbar-visible .navbar .desktop-lang-inside {
     }
 }
 
-@media (min-width: 992px) {
-.navbar .lang-btn {
-        min-width: 46px;
-        padding: 6px 12px;
-        border-radius: 999px;
-    }
 
-    .navbar.fixed-top {
-        padding-right: 120px !important;
-    }
-
-   
-}
