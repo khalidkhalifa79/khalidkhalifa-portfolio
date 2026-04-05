@@ -32,114 +32,115 @@
     <link href="css/style.css" rel="stylesheet">
 
     <style>
-        .lang-btn.active {
-            background-color: var(--bs-primary);
-            color: #fff;
-            border-color: var(--bs-primary);
-        }
+  
     </style>
 
-    <script>
-        let currentReferenceIndex = 0;
+   <script>
+    let currentReferenceIndex = 0;
 
-        const references = [
-            {
-                image: "img/Dr_Anas_Khalifa.png",
-                name: "Dr. Anas Khalifa",
-                company: "Safety Horizon ECI",
-                role_en: "Business Owner",
-                role_pl: "Właściciel firmy",
-                text_en: "Trusted by clients and business owners for building professional websites, admin systems, and practical digital solutions tailored to real operational needs.",
-                text_pl: "Zaufany przez klientów i właścicieli firm w zakresie tworzenia profesjonalnych stron internetowych, systemów administracyjnych oraz praktycznych rozwiązań cyfrowych dopasowanych do rzeczywistych potrzeb operacyjnych."
-            },
-            {
-                image: "img/Dr_Mohamed_Ghobashy.png",
-                name: "Dr. Mohamed Ghobashy",
-                company: "ABCNews-247",
-                role_en: "Business Owner",
-                role_pl: "Właściciel firmy",
-                text_en: "Developed practical and structured web solutions focused on publishing systems, content workflows, and business needs.",
-                text_pl: "Opracowano praktyczne i uporządkowane rozwiązania webowe skoncentrowane na systemach publikacji, przepływach treści i potrzebach biznesowych."
-            },
-            {
-                image: "img/Ali_Alzakary.png",
-                name: "Ali Alzakary",
-                company: "Qahwa World",
-                role_en: "Business Owner",
-                role_pl: "Właściciel firmy",
-                text_en: "Delivered professional website solutions designed to improve digital presence, branding, and customer-facing presentation.",
-                text_pl: "Dostarczono profesjonalne rozwiązania internetowe zaprojektowane w celu poprawy obecności cyfrowej, wizerunku marki i prezentacji skierowanej do klientów."
-            },
-            {
-                image: "img/Andra_Oproiu.png",
-                name: "Andra Oproiu",
-                company: "School Website Project",
-                role_en: "School Director",
-                role_pl: "Dyrektor szkoły",
-                text_en: "Built clear and organized web structures to support educational presentation and accessible online communication.",
-                text_pl: "Stworzono przejrzyste i uporządkowane struktury internetowe wspierające prezentację edukacyjną i dostępną komunikację online."
-            },
-            {
-                image: "img/Sofea_Collins.png",
-                name: "Sofea Collins",
-                company: "WWL Incorporated",
-                role_en: "Finance Analyst",
-                role_pl: "Analityk finansowy",
-                text_en: "Provided tailored digital project work focused on clarity, usability, and practical implementation for real client needs.",
-                text_pl: "Zrealizowano dopasowane projekty cyfrowe skoncentrowane na przejrzystości, użyteczności i praktycznym wdrożeniu dla rzeczywistych potrzeb klienta."
+    const references = [
+        {
+            image: "img/Dr_Anas_Khalifa.png",
+            name: "Dr. Anas Khalifa",
+            company: "Safety Horizon ECI",
+            role_en: "Business Owner",
+            role_pl: "Właściciel firmy",
+            text_en: "Trusted by clients and business owners for building professional websites, admin systems, and practical digital solutions tailored to real operational needs.",
+            text_pl: "Zaufany przez klientów i właścicieli firm w zakresie tworzenia profesjonalnych stron internetowych, systemów administracyjnych oraz praktycznych rozwiązań cyfrowych dopasowanych do rzeczywistych potrzeb operacyjnych."
+        },
+        {
+            image: "img/Dr_Mohamed_Ghobashy.png",
+            name: "Dr. Mohamed Ghobashy",
+            company: "ABCNews-247",
+            role_en: "Business Owner",
+            role_pl: "Właściciel firmy",
+            text_en: "Developed practical and structured web solutions focused on publishing systems, content workflows, and business needs.",
+            text_pl: "Opracowano praktyczne i uporządkowane rozwiązania webowe skoncentrowane na systemach publikacji, przepływach treści i potrzebach biznesowych."
+        },
+        {
+            image: "img/Ali_Alzakary.png",
+            name: "Ali Alzakary",
+            company: "Qahwa World",
+            role_en: "Business Owner",
+            role_pl: "Właściciel firmy",
+            text_en: "Delivered professional website solutions designed to improve digital presence, branding, and customer-facing presentation.",
+            text_pl: "Dostarczono profesjonalne rozwiązania internetowe zaprojektowane w celu poprawy obecności cyfrowej, wizerunku marki i prezentacji skierowanej do klientów."
+        },
+        {
+            image: "img/Andra_Oproiu.png",
+            name: "Andra Oproiu",
+            company: "School Website Project",
+            role_en: "School Director",
+            role_pl: "Dyrektor szkoły",
+            text_en: "Built clear and organized web structures to support educational presentation and accessible online communication.",
+            text_pl: "Stworzono przejrzyste i uporządkowane struktury internetowe wspierające prezentację edukacyjną i dostępną komunikację online."
+        },
+        {
+            image: "img/Sofea_Collins.png",
+            name: "Sofea Collins",
+            company: "WWL Incorporated",
+            role_en: "Finance Analyst",
+            role_pl: "Analityk finansowy",
+            text_en: "Provided tailored digital project work focused on clarity, usability, and practical implementation for real client needs.",
+            text_pl: "Zrealizowano dopasowane projekty cyfrowe skoncentrowane na przejrzystości, użyteczności i praktycznym wdrożeniu dla rzeczywistych potrzeb klienta."
+        }
+    ];
+
+    function showReference(index) {
+        currentReferenceIndex = index;
+        const lang = localStorage.getItem('siteLanguage') || 'pl';
+        const ref = references[index];
+
+        document.getElementById("mainReferenceImage").src = ref.image;
+        document.getElementById("referenceName").textContent = ref.name;
+        document.getElementById("referenceCompany").textContent = ref.company;
+        document.getElementById("referenceRole").textContent = lang === 'pl' ? ref.role_pl : ref.role_en;
+        document.getElementById("referenceText").textContent = lang === 'pl' ? ref.text_pl : ref.text_en;
+
+        const dots = document.querySelectorAll(".reference-dots .dot");
+        dots.forEach(dot => dot.classList.remove("active"));
+        dots[index].classList.add("active");
+    }
+
+    function setLanguage(lang) {
+        document.documentElement.lang = lang;
+        localStorage.setItem('siteLanguage', lang);
+
+        document.querySelectorAll('[data-en]').forEach(function (el) {
+            const value = el.getAttribute('data-' + lang);
+            if (value) {
+                el.textContent = value;
             }
+        });
+
+        const allLangButtons = [
+            document.getElementById('btn-en-desktop'),
+            document.getElementById('btn-pl-desktop'),
+            document.getElementById('btn-en-mobile'),
+            document.getElementById('btn-pl-mobile')
         ];
 
-        function showReference(index) {
-            currentReferenceIndex = index;
-            const lang = localStorage.getItem('siteLanguage') || 'en';
-            const ref = references[index];
-
-            document.getElementById("mainReferenceImage").src = ref.image;
-            document.getElementById("referenceName").textContent = ref.name;
-            document.getElementById("referenceCompany").textContent = ref.company;
-            document.getElementById("referenceRole").textContent = lang === 'pl' ? ref.role_pl : ref.role_en;
-            document.getElementById("referenceText").textContent = lang === 'pl' ? ref.text_pl : ref.text_en;
-
-            const dots = document.querySelectorAll(".reference-dots .dot");
-            dots.forEach(dot => dot.classList.remove("active"));
-            dots[index].classList.add("active");
-        }
-
-        function setLanguage(lang) {
-            document.documentElement.lang = lang;
-            localStorage.setItem('siteLanguage', lang);
-
-            document.querySelectorAll('[data-en]').forEach(function (el) {
-                const value = el.getAttribute('data-' + lang);
-                if (value) {
-                    el.textContent = value;
-                }
-            });
-
-            const btnEn = document.getElementById('btn-en');
-            const btnPl = document.getElementById('btn-pl');
-
-            if (btnEn && btnPl) {
-                btnEn.classList.remove('active');
-                btnPl.classList.remove('active');
-
-                if (lang === 'en') {
-                    btnEn.classList.add('active');
-                } else {
-                    btnPl.classList.add('active');
-                }
-            }
-
-            showReference(currentReferenceIndex);
-        }
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const savedLanguage = localStorage.getItem('siteLanguage') || 'en';
-            setLanguage(savedLanguage);
-            showReference(0);
+        allLangButtons.forEach(btn => {
+            if (btn) btn.classList.remove('active');
         });
-    </script>
+
+        if (lang === 'en') {
+            if (document.getElementById('btn-en-desktop')) document.getElementById('btn-en-desktop').classList.add('active');
+            if (document.getElementById('btn-en-mobile')) document.getElementById('btn-en-mobile').classList.add('active');
+        } else {
+            if (document.getElementById('btn-pl-desktop')) document.getElementById('btn-pl-desktop').classList.add('active');
+            if (document.getElementById('btn-pl-mobile')) document.getElementById('btn-pl-mobile').classList.add('active');
+        }
+
+        showReference(currentReferenceIndex);
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const savedLanguage = localStorage.getItem('siteLanguage') || 'pl';
+        setLanguage(savedLanguage);
+        showReference(0);
+    });
+</script>
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51">
