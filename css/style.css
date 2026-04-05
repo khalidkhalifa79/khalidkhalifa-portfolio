@@ -105,6 +105,10 @@
     .navbar .navbar-nav .nav-link {
         padding: 10px 0;
     }
+
+      .navbar .lang-btn {
+        min-width: 46px;
+    }
 }
 
 /*** Header ***/
