@@ -31,8 +31,7 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 
-
-   <script>
+<script>
     let currentReferenceIndex = 0;
 
     const references = [
@@ -110,23 +109,28 @@
             }
         });
 
-        const allLangButtons = [
-            document.getElementById('btn-en-desktop'),
-            document.getElementById('btn-pl-desktop'),
-            document.getElementById('btn-en-mobile'),
-            document.getElementById('btn-pl-mobile')
+        const buttons = [
+            'btn-en-desktop',
+            'btn-pl-desktop',
+            'btn-en-mobile',
+            'btn-pl-mobile'
         ];
 
-        allLangButtons.forEach(btn => {
+        buttons.forEach(id => {
+            const btn = document.getElementById(id);
             if (btn) btn.classList.remove('active');
         });
 
         if (lang === 'en') {
-            if (document.getElementById('btn-en-desktop')) document.getElementById('btn-en-desktop').classList.add('active');
-            if (document.getElementById('btn-en-mobile')) document.getElementById('btn-en-mobile').classList.add('active');
+            const enDesktop = document.getElementById('btn-en-desktop');
+            const enMobile = document.getElementById('btn-en-mobile');
+            if (enDesktop) enDesktop.classList.add('active');
+            if (enMobile) enMobile.classList.add('active');
         } else {
-            if (document.getElementById('btn-pl-desktop')) document.getElementById('btn-pl-desktop').classList.add('active');
-            if (document.getElementById('btn-pl-mobile')) document.getElementById('btn-pl-mobile').classList.add('active');
+            const plDesktop = document.getElementById('btn-pl-desktop');
+            const plMobile = document.getElementById('btn-pl-mobile');
+            if (plDesktop) plDesktop.classList.add('active');
+            if (plMobile) plMobile.classList.add('active');
         }
 
         showReference(currentReferenceIndex);
@@ -138,6 +142,7 @@
         showReference(0);
     });
 </script>
+ 
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51">
@@ -176,18 +181,27 @@
         <a href="index.html" class="navbar-brand bg-secondary py-3 px-4 mx-3 d-none d-lg-block">
             <h1 class="text-primary fw-bold m-0">Khalid Khalifa</h1>
         </a>
+<div class="navbar-nav me-auto py-0">
+    <a href="#project" class="nav-item nav-link" data-en="Projects" data-pl="Projekty">Projekty</a>
+    <a href="#references" class="nav-item nav-link" data-en="References" data-pl="Referencje">Referencje</a>
+    <a href="#contact" class="nav-item nav-link" data-en="Contact" data-pl="Kontakt">Kontakt</a>
 
-        <div class="navbar-nav me-auto py-0">
-            <a href="#project" class="nav-item nav-link" data-en="Projects" data-pl="Projekty">Projekty</a>
-            <a href="#references" class="nav-item nav-link" data-en="References" data-pl="Referencje">Referencje</a>
-            <a href="#contact" class="nav-item nav-link" data-en="Contact" data-pl="Kontakt">Kontakt</a>
+    <!-- Mobile Language Switch -->
+    <div class="d-flex d-lg-none align-items-center mt-3">
+        <button type="button" class="btn btn-sm btn-outline-primary me-2 lang-btn" onclick="setLanguage('en')" id="btn-en-mobile">EN</button>
+        <button type="button" class="btn btn-sm btn-outline-primary lang-btn active" onclick="setLanguage('pl')" id="btn-pl-mobile">PL</button>
+    </div>
+</div>
 
-            <!-- Mobile Language Switch -->
-            <div class="d-flex d-lg-none align-items-center mt-3">
-                <button type="button" class="btn btn-sm btn-outline-primary me-2 lang-btn" onclick="setLanguage('en')" id="btn-en-mobile">EN</button>
-                <button type="button" class="btn btn-sm btn-outline-primary lang-btn active" onclick="setLanguage('pl')" id="btn-pl-mobile">PL</button>
-            </div>
-        </div>
+
+
+<!-- Desktop Fixed Language Switch Start -->
+<div class="language-switch-desktop d-none d-lg-flex">
+    <button type="button" class="btn btn-sm btn-outline-primary me-2 lang-btn" onclick="setLanguage('en')" id="btn-en-desktop">EN</button>
+    <button type="button" class="btn btn-sm btn-outline-primary lang-btn active" onclick="setLanguage('pl')" id="btn-pl-desktop">PL</button>
+</div>
+<!-- Desktop Fixed Language Switch End -->
+
     </div>
 </nav>
 
