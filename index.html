@@ -1,1795 +1,1033 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Khalid Khalifa | Full-Stack Developer Portfolio</title>
-  <meta
-    name="description"
-    content="Khalid Khalifa - Full-Stack Web Developer specializing in business websites, admin panels, internal systems, and database-driven platforms."
-  />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
-
-  <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
-    rel="stylesheet"
-  />
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
-    rel="stylesheet"
-  />
-
-  <style>
-    :root {
-      --primary: #6244c5;
-      --secondary: #ffc448;
-      --light: #fafafb;
-      --dark: #12141d;
-      --text: #5a5a5a;
-      --white: #ffffff;
-      --border: rgba(18, 20, 29, 0.08);
-      --shadow: 0 15px 45px rgba(18, 20, 29, 0.08);
-      --radius: 16px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Open Sans", sans-serif;
-      font-size: 1rem;
-      font-weight: 400;
-      line-height: 1.6;
-      color: var(--text);
-      background: #fff;
-      -webkit-text-size-adjust: 100%;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      margin-top: 0;
-      color: var(--dark);
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: #4d36a5;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .container,
-    .container-fluid,
-    .container-xxl {
-      width: 100%;
-      padding-right: 0.75rem;
-      padding-left: 0.75rem;
-      margin-right: auto;
-      margin-left: auto;
-    }
-
-    @media (min-width: 576px) {
-      .container,
-      .container-sm {
-        max-width: 540px;
-      }
-    }
-
-    @media (min-width: 768px) {
-      .container,
-      .container-md,
-      .container-sm {
-        max-width: 720px;
-      }
-    }
-
-    @media (min-width: 992px) {
-      .container,
-      .container-lg,
-      .container-md,
-      .container-sm {
-        max-width: 960px;
-      }
-    }
-
-    @media (min-width: 1200px) {
-      .container,
-      .container-lg,
-      .container-md,
-      .container-sm,
-      .container-xl {
-        max-width: 1140px;
-      }
-    }
-
-    @media (min-width: 1400px) {
-      .container,
-      .container-lg,
-      .container-md,
-      .container-sm,
-      .container-xl,
-      .container-xxl {
-        max-width: 1320px;
-      }
-    }
-
-    .row {
-      --bs-gutter-x: 1.5rem;
-      --bs-gutter-y: 0;
-      display: flex;
-      flex-wrap: wrap;
-      margin-top: calc(var(--bs-gutter-y) * -1);
-      margin-right: calc(var(--bs-gutter-x) / -2);
-      margin-left: calc(var(--bs-gutter-x) / -2);
-    }
-
-    .row > * {
-      flex-shrink: 0;
-      width: 100%;
-      max-width: 100%;
-      padding-right: calc(var(--bs-gutter-x) / 2);
-      padding-left: calc(var(--bs-gutter-x) / 2);
-      margin-top: var(--bs-gutter-y);
-    }
-
-    .g-5,
-    .gx-5 {
-      --bs-gutter-x: 3rem;
-    }
-
-    .g-5,
-    .gy-5 {
-      --bs-gutter-y: 3rem;
-    }
-
-    .g-4,
-    .gx-4 {
-      --bs-gutter-x: 1.5rem;
-    }
-
-    .g-4,
-    .gy-4 {
-      --bs-gutter-y: 1.5rem;
-    }
-
-    .g-3,
-    .gx-3 {
-      --bs-gutter-x: 1rem;
-    }
-
-    .g-3,
-    .gy-3 {
-      --bs-gutter-y: 1rem;
-    }
-
-    .col-lg-3,
-    .col-lg-4,
-    .col-lg-5,
-    .col-lg-6,
-    .col-lg-7,
-    .col-lg-8,
-    .col-md-4,
-    .col-md-6 {
-      flex: 0 0 auto;
-      width: 100%;
-    }
-
-    @media (min-width: 768px) {
-      .col-md-4 {
-        width: 33.333333%;
-      }
-
-      .col-md-6 {
-        width: 50%;
-      }
-    }
-
-    @media (min-width: 992px) {
-      .col-lg-3 {
-        width: 25%;
-      }
-
-      .col-lg-4 {
-        width: 33.333333%;
-      }
-
-      .col-lg-5 {
-        width: 41.666667%;
-      }
-
-      .col-lg-6 {
-        width: 50%;
-      }
-
-      .col-lg-7 {
-        width: 58.333333%;
-      }
-
-      .col-lg-8 {
-        width: 66.666667%;
-      }
-    }
-
-    .d-flex {
-      display: flex;
-    }
-
-    .align-items-center {
-      align-items: center;
-    }
-
-    .justify-content-between {
-      justify-content: space-between;
-    }
-
-    .justify-content-center {
-      justify-content: center;
-    }
-
-    .text-center {
-      text-align: center;
-    }
-
-    .text-primary {
-      color: var(--primary) !important;
-    }
-
-    .bg-light {
-      background-color: var(--light);
-    }
-
-    .bg-white {
-      background-color: var(--white);
-    }
-
-    .rounded {
-      border-radius: var(--radius);
-    }
-
-    .shadow-sm {
-      box-shadow: var(--shadow);
-    }
-
-    .py-6 {
-      padding-top: 6rem;
-      padding-bottom: 6rem;
-    }
-
-    .my-6 {
-      margin-top: 6rem;
-      margin-bottom: 6rem;
-    }
-
-    .mb-0 { margin-bottom: 0 !important; }
-    .mb-1 { margin-bottom: 0.25rem !important; }
-    .mb-2 { margin-bottom: 0.5rem !important; }
-    .mb-3 { margin-bottom: 1rem !important; }
-    .mb-4 { margin-bottom: 1.5rem !important; }
-    .mb-5 { margin-bottom: 3rem !important; }
-    .me-3 { margin-right: 1rem !important; }
-    .me-4 { margin-right: 1.5rem !important; }
-    .ms-4 { margin-left: 1.5rem !important; }
-    .mt-3 { margin-top: 1rem !important; }
-    .mt-4 { margin-top: 1.5rem !important; }
-    .mt-5 { margin-top: 3rem !important; }
-    .pt-4 { padding-top: 1.5rem !important; }
-    .pt-5 { padding-top: 3rem !important; }
-    .pb-0 { padding-bottom: 0 !important; }
-    .py-0 { padding-top: 0 !important; padding-bottom: 0 !important; }
-    .px-4 { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
-    .py-3 { padding-top: 1rem !important; padding-bottom: 1rem !important; }
-    .px-5 { padding-left: 3rem !important; padding-right: 3rem !important; }
-
-    @media (min-width: 992px) {
-      .py-lg-0 { padding-top: 0 !important; padding-bottom: 0 !important; }
-      .py-lg-5 { padding-top: 3rem !important; padding-bottom: 3rem !important; }
-      .pt-lg-0 { padding-top: 0 !important; }
-      .d-lg-none { display: none !important; }
-      .d-lg-block { display: block !important; }
-      .px-lg-5 { padding-left: 3rem !important; padding-right: 3rem !important; }
-    }
-
-    @media (max-width: 991.98px) {
-      .d-none-mobile { display: none !important; }
-    }
-
-    .display-3 {
-      font-size: clamp(2.2rem, 5vw, 4rem);
-      line-height: 1.1;
-    }
-
-    .display-5 {
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      line-height: 1.2;
-    }
-
-    .lead {
-      font-size: 1.08rem;
-      color: #666;
-    }
-
-    .section-title {
-      max-width: 760px;
-      margin: 0 auto 3rem;
-      text-align: center;
-    }
-
-    .section-title h2 {
-      font-size: clamp(1.8rem, 3vw, 2.8rem);
-      margin-bottom: 1rem;
-    }
-
-    .section-title p {
-      margin: 0;
-      color: #666;
-    }
-
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 999;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(18, 20, 29, 0.06);
-      transition: 0.3s ease;
-    }
-
-    .navbar-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 82px;
-      gap: 1.25rem;
-    }
-
-    .navbar-brand {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--dark);
-      white-space: nowrap;
-    }
-
-    .navbar-brand span {
-      color: var(--primary);
-    }
-
-    .navbar-nav {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .nav-link {
-      color: var(--dark);
-      font-size: 0.98rem;
-      font-weight: 700;
-      transition: 0.3s ease;
-    }
-
-    .nav-link:hover,
-    .nav-link.active {
-      color: var(--primary);
-    }
-
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: 0;
-      font-size: 1.5rem;
-      color: var(--dark);
-      cursor: pointer;
-    }
-
-    #home {
-      margin-bottom: 6rem;
-      padding-top: 140px;
-      background: url("bg-header.png") left top no-repeat;
-      background-color: #fafafb;
-    }
-
-    .hero-card {
-      padding: 1rem 0;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      padding: 0.6rem 1rem;
-      border-radius: 999px;
-      background: rgba(98, 68, 197, 0.1);
-      color: var(--primary);
-      font-size: 0.92rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    .eyebrow,
-    .mini-stats {
-      display: none;
-    }
-
-    .typed-text-output {
-      display: inline-block;
-      min-height: 2.5rem;
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 1rem;
-    }
-
-    .typed-cursor {
-      color: var(--dark);
-      font-weight: 800;
-      animation: blink 0.8s infinite;
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-top: 2rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      font-weight: 700;
-      padding: 0.95rem 1.75rem;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      transition: 0.3s ease;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: #fff;
-      box-shadow: 0 12px 24px rgba(98, 68, 197, 0.2);
-    }
-
-    .btn-primary:hover {
-      background: #5037a8;
-      color: #fff;
-      transform: translateY(-2px);
-    }
-
-    .btn-outline-primary {
-      background: #fff;
-      color: var(--dark);
-      border-color: rgba(98, 68, 197, 0.2);
-    }
-
-    .btn-outline-primary:hover {
-      color: var(--primary);
-      border-color: var(--primary);
-      transform: translateY(-2px);
-    }
-
-    .hero-image-wrap {
-      position: relative;
-      max-width: 520px;
-      margin: 0 auto;
-    }
-
-    .hero-image-wrap::before {
-      display: none;
-    }
-
-    .hero-image {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      max-width: 670px;
-      margin: 0 auto;
-      border-radius: 0;
-      object-fit: contain;
-      box-shadow: none;
-      border: 0;
-      background: transparent;
-    }
-
-    .mini-stats {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .stat-box {
-      background: #fff;
-      border-radius: var(--radius);
-      padding: 1.2rem 1rem;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      text-align: center;
-    }
-
-    .stat-box h3 {
-      font-size: 1.6rem;
-      color: var(--primary);
-      margin-bottom: 0.35rem;
-    }
-
-    .stat-box p {
-      margin: 0;
-      font-size: 0.92rem;
-      color: #666;
-    }
-
-    .about-box,
-    .service-item,
-    .project-card,
-    .reference-card,
-    .contact-card,
-    .skills-panel,
-    .timeline-panel {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-    }
-
-    .about-box {
-      padding: 2rem;
-    }
-
-    .check-list {
-      display: grid;
-      gap: 0.75rem;
-      margin-top: 1.5rem;
-    }
-
-    .check-list div {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      color: #555;
-    }
-
-    .check-list i {
-      color: var(--primary);
-      margin-top: 0.25rem;
-    }
-
-    .skills-panel,
-    .timeline-panel {
-      padding: 2rem;
-      height: 100%;
-    }
-
-    .progress-item {
-      margin-bottom: 1.4rem;
-    }
-
-    .progress-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 0.5rem;
-      color: var(--dark);
-      font-weight: 700;
-    }
-
-    .progress-bar-wrap {
-      width: 100%;
-      height: 8px;
-      background: rgba(98, 68, 197, 0.12);
-      border-radius: 999px;
-      overflow: hidden;
-    }
-
-    .progress-bar-fill {
-      height: 100%;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-    }
-
-    .timeline-title {
-      display: flex;
-      gap: 0.75rem;
-      align-items: center;
-      margin-bottom: 1.5rem;
-    }
-
-    .timeline-title i {
-      width: 44px;
-      height: 44px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: rgba(98, 68, 197, 0.1);
-      color: var(--primary);
-      font-size: 1.1rem;
-    }
-
-    .timeline-item {
-      position: relative;
-      padding-left: 1.2rem;
-      margin-bottom: 1.5rem;
-      border-left: 2px solid rgba(98, 68, 197, 0.15);
-    }
-
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      left: -6px;
-      top: 0.25rem;
-      width: 10px;
-      height: 10px;
-      background: var(--primary);
-      border-radius: 50%;
-    }
-
-    .timeline-item h5 {
-      margin-bottom: 0.35rem;
-      font-size: 1.06rem;
-    }
-
-    .timeline-item small {
-      display: block;
-      margin-bottom: 0.45rem;
-      color: var(--primary);
-      font-weight: 700;
-    }
-
-    .service-item {
-      padding: 2rem 1.5rem;
-      height: 100%;
-      transition: 0.3s ease;
-    }
-
-    .service-item:hover,
-    .project-card:hover,
-    .reference-card:hover {
-      transform: translateY(-6px);
-    }
-
-    .service-icon {
-      width: 100px;
-      height: 100px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.2rem;
-      background: url("bg-icon.png") center center no-repeat;
-      background-size: cover;
-      color: var(--dark);
-      font-size: 1.8rem;
-      border-radius: 0;
-    }
-
-    .project-card {
-      overflow: hidden;
-      margin-bottom: 2rem;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 0;
-    }
-
-    .project-content {
-      padding: 2rem;
-    }
-
-    .project-badge {
-      display: inline-block;
-      padding: 0.45rem 0.8rem;
-      border-radius: 999px;
-      background: rgba(98, 68, 197, 0.1);
-      color: var(--primary);
-      font-size: 0.85rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-    }
-
-    .project-content p {
-      color: #666;
-    }
-
-    .feature-list {
-      padding-left: 1.15rem;
-      margin: 1rem 0 1.25rem;
-    }
-
-    .feature-list li {
-      margin-bottom: 0.55rem;
-      color: #555;
-    }
-
-    .tech-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-top: 1rem;
-    }
-
-    .tech-stack span {
-      padding: 0.55rem 0.85rem;
-      border-radius: 999px;
-      background: #f5f3fd;
-      color: var(--dark);
-      font-size: 0.87rem;
-      font-weight: 700;
-    }
-
-    .project-gallery {
-      background: #f9f8fd;
-      padding: 1.5rem;
-      border-left: 1px solid var(--border);
-    }
-
-    .project-gallery h5 {
-      margin-bottom: 1rem;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.85rem;
-    }
-
-    .gallery-grid.one {
-      grid-template-columns: 1fr;
-    }
-
-    .gallery-grid.three {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .gallery-grid.four {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .gallery-grid img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 14px;
-      border: 1px solid rgba(18, 20, 29, 0.08);
-      background: #fff;
-    }
-
-    .project-actions {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      margin-top: 1.25rem;
-    }
-
-    .link-box {
-      background: linear-gradient(135deg, rgba(98, 68, 197, 0.05), rgba(255, 196, 72, 0.12));
-      border: 1px dashed rgba(98, 68, 197, 0.2);
-      border-radius: 20px;
-      padding: 2rem;
-      margin: 1rem 0 2rem;
-    }
-
-    .reference-card {
-      padding: 1.6rem;
-      text-align: center;
-      height: 100%;
-    }
-
-    .reference-card img {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin: 0 auto 1rem;
-      border: 4px solid rgba(98, 68, 197, 0.1);
-      box-shadow: 0 8px 20px rgba(18, 20, 29, 0.08);
-    }
-
-    .reference-card h5 {
-      margin-bottom: 0.4rem;
-      font-size: 1.06rem;
-    }
-
-    .reference-role {
-      color: var(--primary);
-      font-weight: 700;
-      font-size: 0.92rem;
-      margin-bottom: 0.9rem;
-    }
-
-    .contact-card {
-      padding: 2rem;
-      height: 100%;
-    }
-
-    .contact-item {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 1rem;
-      align-items: flex-start;
-    }
-
-    .contact-item i {
-      width: 44px;
-      height: 44px;
-      flex-shrink: 0;
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(98, 68, 197, 0.1);
-      color: var(--primary);
-    }
-
-    .footer {
-      padding: 2rem 0 3rem;
-      text-align: center;
-      color: #666;
-    }
-
-    .scroll-top {
-      position: fixed;
-      right: 24px;
-      bottom: 24px;
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      background: var(--primary);
-      color: #fff;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 12px 24px rgba(98, 68, 197, 0.22);
-      opacity: 0;
-      visibility: hidden;
-      transition: 0.3s ease;
-      z-index: 998;
-    }
-
-    .scroll-top.show {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .tabs-wrap {
-      display: flex;
-      border: 2px solid var(--primary);
-      border-radius: 14px;
-      overflow: hidden;
-      margin-bottom: 2rem;
-      width: 100%;
-      max-width: 420px;
-    }
-
-    .tab-btn {
-      flex: 1;
-      border: 0;
-      background: #fff;
-      color: var(--dark);
-      font-weight: 700;
-      padding: 1rem 1.25rem;
-      cursor: pointer;
-      transition: 0.3s ease;
-    }
-
-    .tab-btn.active {
-      background: var(--primary);
-      color: #fff;
-    }
-
-    .tab-panel {
-      display: none;
-    }
-
-    .tab-panel.active {
-      display: block;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.5rem;
-    }
-
-    .contact-form {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .form-control {
-      width: 100%;
-      padding: 0.95rem 1rem;
-      border: 1px solid rgba(18, 20, 29, 0.12);
-      border-radius: 14px;
-      font-family: inherit;
-      font-size: 1rem;
-      color: var(--dark);
-      outline: none;
-      transition: 0.3s ease;
-      background: #fff;
-    }
-
-    .form-control:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 4px rgba(98, 68, 197, 0.08);
-    }
-
-    textarea.form-control {
-      min-height: 160px;
-      resize: vertical;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 0.75rem;
-      margin-top: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .social-links a {
-      width: 42px;
-      height: 42px;
-      border-radius: 10px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--primary);
-      color: #fff;
-      transition: 0.3s ease;
-    }
-
-    .social-links a:hover {
-      transform: translateY(-3px);
-      background: #5037a8;
-      color: #fff;
-    }
-
-    @media (max-width: 991.98px) {
-      .menu-toggle {
-        display: inline-flex;
-      }
-
-      .navbar-nav {
-        position: absolute;
-        top: calc(100% + 1px);
-        left: 0;
-        right: 0;
-        background: #fff;
-        border-bottom: 1px solid rgba(18, 20, 29, 0.06);
-        box-shadow: 0 16px 35px rgba(18, 20, 29, 0.08);
-        padding: 1rem;
-        display: none;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-      }
-
-      .navbar-nav.show {
-        display: flex;
-      }
-
-      .project-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .project-gallery {
-        border-left: 0;
-        border-top: 1px solid var(--border);
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 767.98px) {
-      #home {
-        padding-top: 105px;
-      }
-
-      .hero-actions,
-      .project-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .mini-stats {
-        grid-template-columns: 1fr;
-      }
-
-      .gallery-grid,
-      .gallery-grid.three,
-      .gallery-grid.four {
-        grid-template-columns: 1fr;
-      }
-
-      .gallery-grid img {
-        height: auto;
-      }
-
-      .tabs-wrap {
-        max-width: 100%;
-      }
-    }
-  </style>
+    <meta charset="utf-8">
+    <title>Khalid Khalifa | Full-Stack Developer Portfolio</title>
+    <meta content="" name="keywords">
+    <meta name="description" content="Khalid Khalifa - Full-Stack Web Developer specializing in business websites, admin panels, internal systems, and database-driven platforms.">
+
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <style>
+		/********** Template CSS **********/
+
+		:root {
+			--primary: #6244C5;
+			--secondary: #FFC448;
+			--light: #FAFAFB;
+			--dark: #12141D;
+		}
+
+		.back-to-top {
+			position: fixed;
+			display: none;
+			right: 45px;
+			bottom: 45px;
+			z-index: 99;
+		}
+
+		.my-6 {
+			margin-top: 6rem;
+			margin-bottom: 6rem;
+		}
+
+		.py-6 {
+			padding-top: 6rem;
+			padding-bottom: 6rem;
+		}
+
+		/*** Spinner ***/
+		#spinner {
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity .5s ease-out, visibility 0s linear .5s;
+			z-index: 99999;
+		}
+
+			#spinner.show {
+				transition: opacity .5s ease-out, visibility 0s linear 0s;
+				visibility: visible;
+				opacity: 1;
+			}
+
+		/*** Button ***/
+		.btn {
+			font-weight: 500;
+			transition: .5s;
+		}
+
+			.btn.btn-primary,
+			.btn.btn-secondary {
+				color: #FFFFFF;
+			}
+
+		.btn-square {
+			width: 38px;
+			height: 38px;
+		}
+
+		.btn-sm-square {
+			width: 32px;
+			height: 32px;
+		}
+
+		.btn-lg-square {
+			width: 48px;
+			height: 48px;
+		}
+
+		.btn-square,
+		.btn-sm-square,
+		.btn-lg-square {
+			padding: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-weight: normal;
+		}
+
+		/*** Navbar ***/
+		.navbar.fixed-top {
+			display: none;
+			transition: .5s;
+		}
+
+		.navbar .navbar-nav .nav-link {
+			padding: 20px 15px;
+			color: var(--dark);
+			font-size: 18px;
+			font-weight: 600;
+			outline: none;
+		}
+
+			.navbar .navbar-nav .nav-link:hover,
+			.navbar .navbar-nav .nav-link.active {
+				color: var(--primary);
+			}
+
+		@media (max-width: 991.98px) {
+			.navbar .navbar-nav .nav-link {
+				padding: 10px 0;
+			}
+		}
+
+		/*** Header ***/
+		#home {
+			margin-bottom: 6rem;
+			background: url(../img/bg-header.png) left top no-repeat;
+		}
+
+		.typed-cursor {
+			font-size: 30px;
+			color: var(--dark);
+		}
+
+		/*** Skills ***/
+		#skill .progress {
+			height: 5px;
+			border-radius: 5px;
+		}
+
+			#skill .progress .progress-bar {
+				width: 0px;
+				border-radius: 5px;
+				transition: 3s;
+			}
+
+		#skill .nav-pills .nav-link {
+			color: var(--dark);
+		}
+
+			#skill .nav-pills .nav-link.active {
+				color: #FFFFFF;
+			}
+
+		#skill .tab-content hr {
+			width: 30px;
+		}
+
+		/*** Service ***/
+		.service-item .bg-icon {
+			width: 100px;
+			height: 100px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: url(../img/bg-icon.png) center center no-repeat;
+			background-size: cover;
+		}
+
+		/*** Project Portfolio ***/
+		#portfolio-flters li {
+			display: inline-block;
+			font-weight: 500;
+			color: var(--dark);
+			cursor: pointer;
+			transition: .5s;
+			border-bottom: 2px solid transparent;
+		}
+
+			#portfolio-flters li:hover,
+			#portfolio-flters li.active {
+				color: var(--primary);
+				border-color: var(--primary);
+			}
+
+		.portfolio-img {
+			position: relative;
+		}
+
+		.portfolio-card {
+			transition: 0.3s;
+			border: 1px solid rgba(0, 0, 0, 0.05);
+		}
+
+			.portfolio-card:hover {
+				transform: translateY(-6px);
+				box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.12);
+			}
+
+			.portfolio-card .portfolio-img img {
+				width: 100%;
+				height: 250px;
+				object-fit: cover;
+			}
+
+			.portfolio-card h4 {
+				font-size: 1.25rem;
+				font-weight: 700;
+			}
+
+			.portfolio-card p {
+				font-size: 0.95rem;
+				line-height: 1.6;
+			}
+
+		/*** References ***/
+		.references-showcase {
+			position: relative;
+			min-height: 620px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			overflow: hidden;
+		}
+
+		.reference-center {
+			max-width: 760px;
+			margin: 0 auto;
+			padding: 40px 20px;
+			position: relative;
+			z-index: 2;
+		}
+
+		.reference-main-img-wrap {
+			position: relative;
+			width: 130px;
+			height: 130px;
+			margin: 0 auto 30px;
+		}
+
+		.reference-main-img {
+			width: 130px;
+			height: 130px;
+			object-fit: cover;
+			border-radius: 50%;
+			border: 4px solid #f7c04a;
+		}
+
+		.reference-quote-icon {
+			position: absolute;
+			bottom: -6px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 42px;
+			height: 42px;
+			background: #fff;
+			border: 1px solid #f7c04a;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.reference-text {
+			max-width: 820px;
+			margin: 0 auto 20px;
+			font-size: 1.35rem;
+			font-style: italic;
+			line-height: 1.7;
+			color: #6c757d;
+		}
+
+		.reference-role {
+			color: #6c757d;
+			font-size: 1rem;
+		}
+
+		.reference-floating {
+			position: absolute;
+			width: 68px;
+			height: 68px;
+			object-fit: cover;
+			border-radius: 50%;
+			border: 3px solid #f7c04a;
+			background: #fff;
+			z-index: 1;
+		}
+
+		.ref-pos-1 {
+			top: 90px;
+			left: 12%;
+		}
+
+		.ref-pos-2 {
+			top: 210px;
+			left: 4%;
+		}
+
+		.ref-pos-3 {
+			top: 210px;
+			right: 12%;
+		}
+
+		.ref-pos-4 {
+			top: 90px;
+			right: 6%;
+		}
+
+		.reference-dots {
+			display: flex;
+			justify-content: center;
+			gap: 12px;
+		}
+
+			.reference-dots .dot {
+				width: 18px;
+				height: 18px;
+				border-radius: 50%;
+				border: 2px solid #f7c04a;
+				background: #fff;
+				display: inline-block;
+				padding: 0;
+				cursor: pointer;
+			}
+
+				.reference-dots .dot.active {
+					background: #6244c5;
+				}
+
+		@media (max-width: 991.98px) {
+			.references-showcase {
+				min-height: auto;
+				padding-top: 40px;
+				padding-bottom: 40px;
+			}
+
+			.reference-floating {
+				display: none;
+			}
+
+			.reference-text {
+				font-size: 1.1rem;
+			}
+		}
+
+		@media (max-width: 575.98px) {
+			.reference-main-img,
+			.reference-main-img-wrap {
+				width: 110px;
+				height: 110px;
+			}
+
+			.reference-text {
+				font-size: 1rem;
+			}
+		}
+
+    </style>
+
+    <script>
+        const references = [
+            {
+                image: "img/team-1.jpg",
+                name: "Dr. Anas Khalifa",
+                company: "Safety Horizon ECI",
+                role: "Business Owner",
+                text: "Trusted by clients and business owners for building professional websites, admin systems, and practical digital solutions tailored to real operational needs."
+            },
+            {
+                image: "img/team-2.jpg",
+                name: "Dr. Mohamed Ghobashy",
+                company: "ABCNews-247",
+                role: "Business Owner",
+                text: "Developed practical and structured web solutions focused on publishing systems, content workflows, and business needs."
+            },
+            {
+                image: "img/team-3.jpg",
+                name: "Ali Alzakary",
+                company: "Qahwa World",
+                role: "Business Owner",
+                text: "Delivered professional website solutions designed to improve digital presence, branding, and customer-facing presentation."
+            },
+            {
+                image: "img/team-4.jpg",
+                name: "Andra Oproiu",
+                company: "School Website Project",
+                role: "School Director",
+                text: "Built clear and organized web structures to support educational presentation and accessible online communication."
+            },
+            {
+                image: "img/team-5.jpg",
+                name: "Sofea Collins",
+                company: "WWL Incorporated",
+                role: "Finance Analyst",
+                text: "Provided tailored digital project work focused on clarity, usability, and practical implementation for real client needs."
+            }
+        ];
+
+        function showReference(index) {
+            document.getElementById("mainReferenceImage").src = references[index].image;
+            document.getElementById("referenceName").textContent = references[index].name;
+            document.getElementById("referenceCompany").textContent = references[index].company;
+            document.getElementById("referenceRole").textContent = references[index].role;
+            document.getElementById("referenceText").textContent = references[index].text;
+
+            const dots = document.querySelectorAll(".reference-dots .dot");
+            dots.forEach(dot => dot.classList.remove("active"));
+            dots[index].classList.add("active");
+        }
+    </script>
 </head>
-<body>
-  <nav class="navbar">
-    <div class="container navbar-wrap">
-      <a href="#home" class="navbar-brand">Khalid <span>Khalifa</span></a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
-        <i class="fas fa-bars"></i>
-      </button>
-
-      <div class="navbar-nav" id="navbarNav">
-        <a href="#home" class="nav-link active">Home</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#skill" class="nav-link">Skills</a>
-        <a href="#service" class="nav-link">Services</a>
-        <a href="#project" class="nav-link">Projects</a>
-        <a href="#references" class="nav-link">References</a>
-        <a href="#contact" class="nav-link">Contact</a>
-      </div>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51">
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
     </div>
-  </nav>
-
-  <section class="container-fluid py-6" id="home">
-    <div class="container">
-      <div class="row g-5 align-items-center">
-        <div class="col-lg-7">
-          <div class="hero-card">
-            <div class="eyebrow">Available for Business Websites • Admin Panels • Web Systems</div>
-            <h1 class="display-3 mb-3">Khalid Khalifa</h1>
-            <div class="typed-text-output" id="typedText"></div>
-
-            <p class="lead mb-4">
-              I build professional business websites, custom admin panels, and database-driven web systems designed around real operational needs.
-            </p>
-
-            <p class="mb-0">
-              My work focuses on practical, structured, and scalable solutions that improve workflows, support management, and strengthen digital presence.
-            </p>
-
-            <div class="hero-actions">
-              <a href="#project" class="btn btn-primary">View My Projects</a>
-              <a href="#contact" class="btn btn-outline-primary">Let’s Work Together</a>
+    <!-- Spinner End -->
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light fixed-top shadow py-lg-0 px-4 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+        <a href="index.html" class="navbar-brand d-block d-lg-none">
+            <h1 class="text-primary fw-bold m-0">Khalid Khalifa</h1>
+        </a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between py-4 py-lg-0" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="#home" class="nav-item nav-link active">Home</a>
+                <a href="#about" class="nav-item nav-link">About</a>
+                <a href="#skill" class="nav-item nav-link">Skills</a>
+                <a href="#service" class="nav-item nav-link">Services</a>
             </div>
-
-            <div class="mini-stats">
-              <div class="stat-box">
-                <h3>3+</h3>
-                <p>Featured Projects</p>
-              </div>
-              <div class="stat-box">
-                <h3>108</h3>
-                <p>Systems & Projects Built</p>
-              </div>
-              <div class="stat-box">
-                <h3>100%</h3>
-                <p>Custom Project Focus</p>
-              </div>
+            <a href="index.html" class="navbar-brand bg-secondary py-3 px-4 mx-3 d-none d-lg-block">
+                <h1 class="text-primary fw-bold m-0">Khalid Khalifa</h1>
+            </a>
+            <div class="navbar-nav me-auto py-0">
+                <a href="#project" class="nav-item nav-link">Projects</a>
+                <a href="#references" class="nav-item nav-link">References</a>
+                <a href="#contact" class="nav-item nav-link">Contact</a>
             </div>
-          </div>
         </div>
+    </nav>
+    <!-- Navbar End -->
+    <!-- Header Start -->
+    <div class="container-fluid bg-light my-6 mt-0" id="home">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-7 py-6 pb-0 pt-lg-0">
+                    <h3 class="text-primary mb-3">Professional Web Solutions</h3>
+                    <h1 class="display-3 mb-3">Khalid Khalifa</h1>
+                    <h2 class="typed-text-output d-inline"></h2>
+                    <div class="typed-text d-none">Business Websites, Admin Panels, Web Systems, Database-Driven Platforms</div>
 
-        <div class="col-lg-5">
-          <div class="hero-image-wrap">
-            <img src="khalidkhalifa2.png" alt="Khalid Khalifa" class="hero-image" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-    <section class="container-xxl py-6" id="about">
-    <div class="container">
-      <div class="section-title">
-        <h2>About Me</h2>
-        <p>
-          A concise overview of my development focus, project direction, and the type of digital solutions I build.
-        </p>
-      </div>
+                    <p class="lead mb-4">
+                        I build professional business websites, custom admin panels, and database-driven web systems designed around real operational needs.
+                    </p>
 
-      <div class="row g-5 align-items-center">
-        <div class="col-lg-6">
-          <div class="about-box">
-            <h3 class="mb-4">Full-Stack Web Developer with a business-focused approach</h3>
-            <p class="mb-3">
-              I specialize in developing professional websites, internal admin systems, and custom
-              database-driven platforms designed to support real business operations. I work across the
-              full development cycle, from planning the structure and database logic to implementing the
-              user interface and administrative workflows.
-            </p>
-            <p class="mb-0">
-              In addition to building new products, I also improve existing systems by identifying practical
-              development opportunities that can enhance usability, workflow efficiency, and business value.
-            </p>
-          </div>
-        </div>
+                    <p class="mb-4">
+                        My work focuses on practical, structured, and scalable solutions that improve workflows, support management, and strengthen digital presence.
+                    </p>
 
-        <div class="col-lg-6">
-          <div class="about-box">
-            <h3 class="mb-4">What I focus on</h3>
-            <div class="check-list">
-              <div><i class="fas fa-check-circle"></i><span>Professional business website development</span></div>
-              <div><i class="fas fa-check-circle"></i><span>Admin panels and internal management systems</span></div>
-              <div><i class="fas fa-check-circle"></i><span>Database design and structured system logic</span></div>
-              <div><i class="fas fa-check-circle"></i><span>Certificate, content, and workflow management systems</span></div>
-              <div><i class="fas fa-check-circle"></i><span>Improvement and technical enhancement of existing digital products</span></div>
-              <div><i class="fas fa-check-circle"></i><span>End-to-end delivery from concept to launch</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="container-xxl py-6 bg-light" id="skill">
-    <div class="container">
-      <div class="section-title">
-        <h2>Skills & Experience</h2>
-        <p>
-          The technologies, strengths, and real project capabilities behind the systems and websites I build.
-        </p>
-      </div>
-
-      <div class="row g-5">
-        <div class="col-lg-6">
-          <div class="skills-panel">
-            <h3 class="mb-4">Core Technologies</h3>
-
-            <div class="progress-item">
-              <div class="progress-head"><span>ASP.NET Web Forms</span><span>Advanced</span></div>
-              <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width: 95%;"></div></div>
-            </div>
-
-            <div class="progress-item">
-              <div class="progress-head"><span>VB.NET</span><span>Advanced</span></div>
-              <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width: 93%;"></div></div>
-            </div>
-
-            <div class="progress-item">
-              <div class="progress-head"><span>SQL Server</span><span>Advanced</span></div>
-              <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width: 92%;"></div></div>
-            </div>
-
-            <div class="progress-item">
-              <div class="progress-head"><span>HTML / CSS</span><span>Strong</span></div>
-              <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width: 90%;"></div></div>
-            </div>
-
-            <div class="progress-item">
-              <div class="progress-head"><span>JavaScript</span><span>Strong</span></div>
-              <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width: 82%;"></div></div>
-            </div>
-
-            <div class="progress-item mb-0">
-              <div class="progress-head"><span>Business System Analysis</span><span>Strong</span></div>
-              <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width: 88%;"></div></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-6">
-          <div class="timeline-panel">
-            <div class="tabs-wrap">
-              <button class="tab-btn active" data-tab="experience" type="button">Experience</button>
-              <button class="tab-btn" data-tab="education" type="button">Education</button>
-            </div>
-
-            <div class="tab-panel active" id="experience-tab">
-              <div class="timeline-title">
-                <i class="fas fa-briefcase"></i>
-                <div>
-                  <h3 class="mb-1">Project Experience</h3>
-                  <p class="mb-0">Selected examples of the type of work I focus on.</p>
+                    <div class="d-flex align-items-center pt-4 flex-wrap">
+                        <a href="#project" class="btn btn-primary py-3 px-4 me-3 mb-3">View My Projects</a>
+                        <a href="#contact" class="btn btn-outline-primary py-3 px-4 mb-3">Let’s Work Together</a>
+                    </div>
                 </div>
-              </div>
-
-              <div class="timeline-item">
-                <h5>Safety Horizon System</h5>
-                <small>Business Management System / Certificate Platform</small>
-                <p class="mb-0">
-                  Developed a custom internal system for certificate workflows, client records,
-                  product data, permissions, and print-ready PDF generation.
-                </p>
-              </div>
-
-              <div class="timeline-item">
-                <h5>Safety Horizon ECI</h5>
-                <small>Corporate Website</small>
-                <p class="mb-0">
-                  Built the company’s professional public-facing website to present services,
-                  certifications, credibility, and international business presence.
-                </p>
-              </div>
-
-              <div class="timeline-item">
-                <h5>ABC News 24/7</h5>
-                <small>News Platform / Media Admin System</small>
-                <p class="mb-0">
-                  Developed a public news website and an internal publishing system for article
-                  management, authors, ads, permissions, and editorial workflow.
-                </p>
-              </div>
-
-              <div class="timeline-item mb-0">
-                <h5>Client-Oriented Website Projects</h5>
-                <small>Custom Web Development</small>
-                <p class="mb-0">
-                  Designed and developed additional websites for business and education-focused
-                  clients in different international contexts.
-                </p>
-              </div>
-            </div>
-
-            <div class="tab-panel" id="education-tab">
-              <div class="timeline-title">
-                <i class="fas fa-graduation-cap"></i>
-                <div>
-                  <h3 class="mb-1">Education</h3>
-                  <p class="mb-0">Academic background and continuous practical learning.</p>
+                <div class="col-lg-5">
+                    <img class="img-fluid" src="img/khalidkhalifa2.png" alt="Khalid Khalifa">
                 </div>
-              </div>
-
-              <div class="timeline-item">
-                <h5>Biotechnology Studies</h5>
-                <small>University Education</small>
-                <p class="mb-0">
-                  Academic studies with a scientific background that strengthened analytical thinking,
-                  structured problem solving, and disciplined learning.
-                </p>
-              </div>
-
-              <div class="timeline-item">
-                <h5>Self-Directed Full-Stack Development</h5>
-                <small>Practical Technical Training</small>
-                <p class="mb-0">
-                  Developed practical expertise through real projects involving front-end interfaces,
-                  back-end logic, business workflows, and database systems.
-                </p>
-              </div>
-
-              <div class="timeline-item">
-                <h5>Database & System Logic</h5>
-                <small>Applied Project Learning</small>
-                <p class="mb-0">
-                  Built hands-on experience in designing structured data relationships,
-                  administrative flows, and system behavior for real operational needs.
-                </p>
-              </div>
-
-              <div class="timeline-item mb-0">
-                <h5>Continuous Improvement</h5>
-                <small>Project-Based Growth</small>
-                <p class="mb-0">
-                  Ongoing refinement through developing business websites, media systems,
-                  internal dashboards, and custom management platforms.
-                </p>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </section>
+    <!-- Header End -->
+    <!-- About Start -->
+    <div class="container-xxl py-6" id="about">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h1 class="display-5 mb-4">About Me</h1>
+                    <h3 class="lh-base mb-4">Full-Stack Web Developer with a business-focused approach</h3>
+                    <p class="mb-4">
+                        I specialize in developing professional websites, internal admin systems, and custom
+                        database-driven platforms designed to support real business operations.
+                    </p>
+                    <p class="mb-4">
+                        I work across the full development cycle, from planning the structure and database logic
+                        to implementing the user interface and administrative workflows.
+                    </p>
+                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Professional business website development</p>
+                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Admin panels and internal management systems</p>
+                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Database design and structured system logic</p>
+                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Certificate, content, and workflow management systems</p>
+                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Improvement and technical enhancement of existing digital products</p>
+                    <a class="btn btn-primary py-3 px-5 mt-3" href="#contact">Let’s Work Together</a>
+                </div>
 
-  <section class="container-xxl py-6" id="service">
-    <div class="container">
-      <div class="section-title">
-        <h2>Services</h2>
-        <p>
-          Core services I provide for companies, organizations, and clients who need practical and structured digital solutions.
-        </p>
-      </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="row g-3 mb-4">
+                        <div class="col-sm-6">
+                            <img class="img-fluid rounded" src="img/about-1.jpg" alt="">
+                        </div>
+                        <div class="col-sm-6">
+                            <img class="img-fluid rounded" src="img/about-2.jpg" alt="">
+                        </div>
+                    </div>
 
-      <div class="row g-4">
-        <div class="col-lg-3 col-md-6">
-          <div class="service-item">
-            <div class="service-icon"><i class="fas fa-globe"></i></div>
-            <h4 class="mb-3">Business Website Development</h4>
-            <p class="mb-0">
-              Professional websites built to present services clearly, support trust, and strengthen the client’s online presence.
-            </p>
-          </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <h5 class="border-end pe-3 me-3 mb-0">Featured Projects</h5>
+                        <h2 class="text-primary fw-bold mb-0">3+</h2>
+                    </div>
+                    <p class="mb-4">
+                        Selected projects that reflect my ability to develop complete business and management solutions.
+                    </p>
+
+                    <div class="d-flex align-items-center mb-3">
+                        <h5 class="border-end pe-3 me-3 mb-0">Systems & Projects Built</h5>
+                        <h2 class="text-primary fw-bold mb-0">108</h2>
+                    </div>
+                    <p class="mb-0">
+                        Practical work focused on structured systems, custom workflows, and scalable digital products.
+                    </p>
+                </div>
+            </div>
         </div>
-
-        <div class="col-lg-3 col-md-6">
-          <div class="service-item">
-            <div class="service-icon"><i class="fas fa-cogs"></i></div>
-            <h4 class="mb-3">Admin Panels & Internal Systems</h4>
-            <p class="mb-0">
-              Custom administrative systems designed around real workflows, operational needs, and structured management logic.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-          <div class="service-item">
-            <div class="service-icon"><i class="fas fa-database"></i></div>
-            <h4 class="mb-3">Database-Driven Platforms</h4>
-            <p class="mb-0">
-              Web platforms that connect interfaces, back-end functionality, and well-structured database design into one working solution.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-          <div class="service-item">
-            <div class="service-icon"><i class="fas fa-tools"></i></div>
-            <h4 class="mb-3">Product Improvement & Enhancement</h4>
-            <p class="mb-0">
-              Practical technical improvements that raise efficiency, usability, and business value in existing digital products.
-            </p>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
+    <!-- About End -->
+    <!-- Expertise Start -->
+    <div class="container-xxl py-6 pb-5" id="skill">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h1 class="display-5 mb-5">Skills & Experience</h1>
+                    <p class="mb-4">
+                        The technologies, strengths, and real project capabilities behind the systems and websites I build.
+                    </p>
+                    <h3 class="mb-4">Core Technologies</h3>
 
-  <section class="container-xxl py-6 bg-light" id="project">
-    <div class="container">
-      <div class="section-title">
-        <h2>Featured Projects</h2>
-        <p>
-          Selected projects that reflect my ability to build complete solutions, from public-facing websites to internal systems and media platforms.
-        </p>
-      </div>
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <div class="skill mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="font-weight-bold">ASP.NET Web Forms</h6>
+                                    <h6 class="font-weight-bold">95%</h6>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
 
-      <article class="project-card">
-        <div class="project-grid">
-          <div class="project-content">
-            <div class="project-badge">Business Management System / Admin Panel / Certificate Management Platform</div>
-            <h3>Safety Horizon System</h3>
-            <p>
-              Safety Horizon System is a custom-developed internal business platform built to manage certificate workflows,
-              client records, product information, and administrative operations within a structured database-driven environment.
-            </p>
-            <p>
-              The system was designed to support multiple certificate categories, controlled user access, organized data handling,
-              and final print-ready PDF generation with stamp, signature, and QR code integration.
-            </p>
+                            <div class="skill mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="font-weight-bold">VB.NET</h6>
+                                    <h6 class="font-weight-bold">93%</h6>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="93" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
 
-            <ul class="feature-list">
-              <li>Secure login and role-based access</li>
-              <li>Multi-type certificate management</li>
-              <li>Client, company, and product record handling</li>
-              <li>Producer, importer, exporter, and office management</li>
-              <li>Certificate preview and final printable PDF output</li>
-              <li>Structured business workflow support inside the admin interface</li>
-            </ul>
+                            <div class="skill mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="font-weight-bold">SQL Server</h6>
+                                    <h6 class="font-weight-bold">92%</h6>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
 
-            <div class="tech-stack">
-              <span>ASP.NET Web Forms</span>
-              <span>VB.NET</span>
-              <span>SQL Server</span>
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
+                        <div class="col-md-6">
+                            <div class="skill mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="font-weight-bold">HTML / CSS</h6>
+                                    <h6 class="font-weight-bold">90%</h6>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="font-weight-bold">JavaScript</h6>
+                                    <h6 class="font-weight-bold">82%</h6>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-dark" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <div class="skill mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="font-weight-bold">Business System Analysis</h6>
+                                    <h6 class="font-weight-bold">88%</h6>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <ul class="nav nav-pills rounded border border-2 border-primary mb-5">
+                        <li class="nav-item w-50">
+                            <button class="nav-link w-100 py-3 fs-5 active" data-bs-toggle="pill" href="#tab-1">Experience</button>
+                        </li>
+                        <li class="nav-item w-50">
+                            <button class="nav-link w-100 py-3 fs-5" data-bs-toggle="pill" href="#tab-2">Education</button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+
+                        <div id="tab-1" class="tab-pane fade show p-0 active">
+                            <div class="row gy-5 gx-4">
+                                <div class="col-sm-6">
+                                    <h5>Full-Stack Web Development</h5>
+                                    <hr class="text-primary my-2">
+                                    <p class="text-primary mb-1">Professional Development Experience</p>
+                                    <h6 class="mb-0">Building business websites, admin panels, and database-driven systems</h6>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <h5>Business Management Systems</h5>
+                                    <hr class="text-primary my-2">
+                                    <p class="text-primary mb-1">System Design & Workflow Logic</p>
+                                    <h6 class="mb-0">Developing structured platforms for operations, records, and internal processes</h6>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <h5>Custom Admin Panels</h5>
+                                    <hr class="text-primary my-2">
+                                    <p class="text-primary mb-1">Administrative Interface Development</p>
+                                    <h6 class="mb-0">Creating secure and practical dashboards for management and control</h6>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <h5>Database & Back-End Logic</h5>
+                                    <hr class="text-primary my-2">
+                                    <p class="text-primary mb-1">Applied Technical Experience</p>
+                                    <h6 class="mb-0">Designing SQL-based structures, business rules, and system behavior</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="tab-2" class="tab-pane fade show p-0">
+                            <div class="row gy-5 gx-4">
+                                <div class="col-sm-6">
+                                    <h5>Computer Science / Programming Studies</h5>
+                                    <hr class="text-primary my-2">
+                                    <p class="text-primary mb-1">University Education</p>
+                                    <h6 class="mb-0">Academic foundation in programming, software logic, and system development</h6>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <h5>Full-Stack Web Development</h5>
+                                    <hr class="text-primary my-2">
+                                    <p class="text-primary mb-1">Applied Technical Practice</p>
+                                    <h6 class="mb-0">Hands-on development of websites, admin panels, and database-driven systems</h6>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <h5>Database Systems & Business Logic</h5>
+                                    <hr class="text-primary my-2">
+                                    <p class="text-primary mb-1">Project-Based Learning</p>
+                                    <h6 class="mb-0">Experience in SQL databases, structured workflows, and operational system design</h6>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <h5>Continuous Development & Improvement</h5>
+                                    <hr class="text-primary my-2">
+                                    <p class="text-primary mb-1">Professional Growth</p>
+                                    <h6 class="mb-0">Ongoing refinement through real client work and custom development projects</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="project-actions">
-              <span class="btn btn-outline-primary">Internal Business System</span>
-            </div>
-          </div>
-
-          <div class="project-gallery">
-            <h5>Selected Screenshots</h5>
-            <div class="gallery-grid three">
-              <img src="safethorizon-system-1.jpg" alt="Safety Horizon System Screenshot 1" />
-              <img src="safethorizon-system-2.jpg" alt="Safety Horizon System Screenshot 2" />
-              <img src="safethorizon-system-3.jpg" alt="Safety Horizon System Screenshot 3" />
-            </div>
-          </div>
         </div>
-      </article>
-
-      <div class="link-box">
-        <h3 class="mb-3">Connected Business Solution</h3>
-        <p class="mb-0">
-          For Safety Horizon ECI, I developed both the company’s public-facing corporate website and its internal business management system.
-          Together, these projects show my ability to connect external business presentation with internal operational functionality through
-          integrated digital solutions.
-        </p>
-      </div>
-
-      <article class="project-card">
-        <div class="project-grid">
-          <div class="project-content">
-            <div class="project-badge">Corporate Business Website / Company Profile Website</div>
-            <h3>Safety Horizon ECI</h3>
-            <p>
-              Safety Horizon ECI is the official corporate website of the company, developed to present its brand, services,
-              certifications, expertise, and international presence in a professional and organized way.
-            </p>
-            <p>
-              The website includes key business sections such as the homepage, about page, services, contact, accreditations,
-              client-facing information, and a verification link connected to the internal system.
-            </p>
-
-            <ul class="feature-list">
-              <li>Professional corporate website structure</li>
-              <li>Homepage, About, Services, and Contact pages</li>
-              <li>Clear presentation of Halal, ISO, and training services</li>
-              <li>Accreditations and business credibility sections</li>
-              <li>Verification link connected to the internal platform</li>
-            </ul>
-
-            <div class="tech-stack">
-              <span>ASP.NET Web Forms</span>
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-            </div>
-
-            <div class="project-actions">
-              <a class="btn btn-primary" href="https://safetyhorizoneci.com/" target="_blank" rel="noreferrer">Visit Website</a>
-            </div>
-          </div>
-
-          <div class="project-gallery">
-            <h5>Website Preview</h5>
-            <div class="gallery-grid one">
-              <img src="safethorizon.jpg" alt="Safety Horizon ECI Website Screenshot" />
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="project-card">
-        <div class="project-grid">
-          <div class="project-content">
-            <div class="project-badge">News Platform / Content Management Website / Media Admin System</div>
-            <h3>ABC News 24/7</h3>
-            <p>
-              ABC News 24/7 is a custom-built news and content publishing platform that combines a public-facing website
-              with an internal administrative system used to manage category-based news publishing and editorial operations.
-            </p>
-            <p>
-              The project supports article management, authors, ads, users, access permissions, and internal publishing workflow,
-              making it a structured digital media platform rather than a simple static news site.
-            </p>
-
-            <ul class="feature-list">
-              <li>Public multi-category news website</li>
-              <li>Admin dashboard and article publishing workflow</li>
-              <li>Article insertion, editing, and deletion</li>
-              <li>Author and account management</li>
-              <li>Advertisement management sections</li>
-              <li>Permissions and internal statistics panels</li>
-            </ul>
-
-            <div class="tech-stack">
-              <span>ASP.NET Web Forms</span>
-              <span>VB.NET</span>
-              <span>SQL Server</span>
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-            </div>
-
-            <div class="project-actions">
-              <a class="btn btn-primary" href="https://abcnews-247.com/" target="_blank" rel="noreferrer">Visit Website</a>
-            </div>
-          </div>
-
-          <div class="project-gallery">
-            <h5>Selected Screenshots</h5>
-            <div class="gallery-grid four">
-              <img src="abcnews247-1.jpg" alt="ABC News 24/7 Screenshot 1" />
-              <img src="abcnews247-2.jpg" alt="ABC News 24/7 Screenshot 2" />
-              <img src="abcnews247-3.jpg" alt="ABC News 24/7 Screenshot 3" />
-              <img src="abcnews247-4.jpg" alt="ABC News 24/7 Screenshot 4" />
-            </div>
-          </div>
-        </div>
-      </article>
     </div>
-  </section>
-    <section class="container-xxl py-6" id="references">
-    <div class="container">
-      <div class="section-title">
-        <h2>Professional References & Collaborations</h2>
-        <p>
-          A selection of clients and professional connections associated with projects I have worked on or delivered.
-        </p>
-      </div>
+    <!-- Expertise End -->
+    <!-- Service Start -->
+    <div class="container-fluid bg-light my-5 py-6" id="service">
+        <div class="container">
+            <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-6">
+                    <h1 class="display-5 mb-0">Services</h1>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <a class="btn btn-primary py-3 px-5" href="#contact">Hire Me</a>
+                </div>
+            </div>
 
-      <div class="row g-4">
-        <div class="col-lg-4 col-md-6">
-          <div class="reference-card">
-            <img src="Dr. Anas Khalifa.jpg" alt="Dr. Anas Khalifa" />
-            <h5>Dr. Anas Khalifa</h5>
-            <div class="reference-role">Founder of Safety Horizon ECI</div>
-            <p class="mb-0">
-              Associated with the Safety Horizon ECI website and the internal business management system developed to support certificate workflows and company operations across multiple European markets.
-            </p>
-          </div>
-        </div>
+            <div class="row g-4">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
+                        <div class="bg-icon flex-shrink-0 mb-3">
+                            <i class="fa fa-globe fa-2x text-dark"></i>
+                        </div>
+                        <div class="ms-sm-4">
+                            <h4 class="mb-3">Business Website Development</h4>
+                            <span>
+                                Professional websites built to present services clearly, support trust, and strengthen the client’s online presence.
+                            </span>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="col-lg-4 col-md-6">
-          <div class="reference-card">
-            <img src="Dr. Mohamed Ghobashy.jpg" alt="Dr. Mohamed Ghobashy" />
-            <h5>Dr. Mohamed Ghobashy</h5>
-            <div class="reference-role">Founder of ABCNews-247</div>
-            <p class="mb-0">
-              Associated with the development of both the ABCNews-247 public news website and the internal publishing system used to manage article entry and editorial workflow.
-            </p>
-          </div>
-        </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
+                        <div class="bg-icon flex-shrink-0 mb-3">
+                            <i class="fa fa-cogs fa-2x text-dark"></i>
+                        </div>
+                        <div class="ms-sm-4">
+                            <h4 class="mb-3">Admin Panels & Internal Systems</h4>
+                            <span>
+                                Custom administrative systems designed around real workflows, operational needs, and structured management logic.
+                            </span>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="col-lg-4 col-md-6">
-          <div class="reference-card">
-            <img src="Ali Alzakary.jpg" alt="Ali Alzakary" />
-            <h5>Ali Alzakary</h5>
-            <div class="reference-role">Founder of Qahwa World, UAE</div>
-            <p class="mb-0">
-              Associated with a business website project developed to support the company’s digital presentation and online visibility in the UAE market.
-            </p>
-          </div>
-        </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
+                        <div class="bg-icon flex-shrink-0 mb-3">
+                            <i class="fa fa-database fa-2x text-dark"></i>
+                        </div>
+                        <div class="ms-sm-4">
+                            <h4 class="mb-3">Database-Driven Platforms</h4>
+                            <span>
+                                Web platforms that connect interfaces, back-end functionality, and well-structured database design into one working solution.
+                            </span>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="col-lg-4 col-md-6">
-          <div class="reference-card">
-            <img src="Andra Oproiu.jpg" alt="Andra Oproiu" />
-            <h5>Andra Oproiu</h5>
-            <div class="reference-role">School Director in Canada</div>
-            <p class="mb-0">
-              Associated with a school website project designed to present the institution’s profile, services, and educational presence in a clear and professional online format.
-            </p>
-          </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
+                        <div class="bg-icon flex-shrink-0 mb-3">
+                            <i class="fa fa-tools fa-2x text-dark"></i>
+                        </div>
+                        <div class="ms-sm-4">
+                            <h4 class="mb-3">Product Improvement & Enhancement</h4>
+                            <span>
+                                Practical technical improvements that raise efficiency, usability, and business value in existing digital products.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="col-lg-4 col-md-6">
-          <div class="reference-card">
-            <img src="Sofea Collins.jpg" alt="Sofea Collins" />
-            <h5>Sofea Collins</h5>
-            <div class="reference-role">Finance Analyst at WWL Incorporated</div>
-            <p class="mb-0">
-              Included as part of my wider professional network and references section, reflecting international professional connection and business-facing communication context.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6">
-          <div class="reference-card">
-            <div class="service-icon" style="margin: 0 auto 1rem;"><i class="fas fa-network-wired"></i></div>
-            <h5>International Project Orientation</h5>
-            <div class="reference-role">Business, Media, and Education Contexts</div>
-            <p class="mb-0">
-              My portfolio direction focuses on digital solutions for business operations, public-facing websites, and structured systems serving practical operational needs across different markets.
-            </p>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
-
-  <section class="container-xxl py-6 bg-light" id="contact">
-    <div class="container">
-      <div class="section-title">
-        <h2>Let’s Work Together</h2>
-        <p>
-          If you are looking for a developer for a website, admin system, or database-driven platform, feel free to reach out.
-        </p>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-card">
-          <h3 class="mb-4">Contact Information</h3>
-
-          <div class="contact-item">
-            <i class="fas fa-envelope"></i>
-            <div>
-              <h5 class="mb-1">Email</h5>
-              <p class="mb-0"><a href="mailto:khalidkhalifa79@gmail.com">khalidkhalifa79@gmail.com</a></p>
+    <!-- Service End -->
+    <!-- Projects Start -->
+    <div class="container-xxl py-6 pt-5" id="project">
+        <div class="container">
+            <div class="row g-5 mb-5 align-items-center wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-6">
+                    <h1 class="display-5 mb-0">My Projects</h1>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <ul class="list-inline mx-n3 mb-0" id="portfolio-flters">
+                        <li class="mx-3 active" data-filter="*">All Projects</li>
+                        <li class="mx-3" data-filter=".business">Business Systems</li>
+                        <li class="mx-3" data-filter=".website">Websites</li>
+                    </ul>
+                </div>
             </div>
-          </div>
 
-          <div class="contact-item">
-            <i class="fas fa-phone-alt"></i>
-            <div>
-              <h5 class="mb-1">Phone</h5>
-              <p class="mb-0"><a href="tel:+48721143224">+48721143224</a></p>
+            <div class="row g-4 portfolio-container wow fadeInUp" data-wow-delay="0.1s">
+
+                <!-- Project 1 -->
+                <div class="col-lg-4 col-md-6 portfolio-item business">
+                    <div class="portfolio-card bg-white rounded shadow-sm overflow-hidden h-100">
+                        <div class="portfolio-img">
+                            <img class="img-fluid w-100" src="img/project-1.jpg" alt="Safety Horizon System">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="mb-2">Safety Horizon System</h4>
+                            <p class="text-primary mb-2">Business Management System</p>
+                            <p class="mb-3">
+                                A custom internal platform for certificate workflows, records management,
+                                product handling, and administrative operations.
+                            </p>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <a class="btn btn-primary py-2 px-4"
+                                   href="https://safetyhorizonsystem.com/Login.aspx"
+                                   target="_blank"
+                                   rel="noopener noreferrer">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="col-lg-4 col-md-6 portfolio-item website">
+                    <div class="portfolio-card bg-white rounded shadow-sm overflow-hidden h-100">
+                        <div class="portfolio-img">
+                            <img class="img-fluid w-100" src="img/project-2.jpg" alt="Safety Horizon ECI Website">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="mb-2">Safety Horizon ECI</h4>
+                            <p class="text-primary mb-2">Corporate Website</p>
+                            <p class="mb-3">
+                                A professional company website designed to present services, build trust,
+                                and strengthen the business identity online.
+                            </p>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <a class="btn btn-primary py-2 px-4"
+                                   href="https://safetyhorizoneci.com/"
+                                   target="_blank"
+                                   rel="noopener noreferrer">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="col-lg-4 col-md-6 portfolio-item business website">
+                    <div class="portfolio-card bg-white rounded shadow-sm overflow-hidden h-100">
+                        <div class="portfolio-img">
+                            <img class="img-fluid w-100" src="img/project-3.jpg" alt="ABC News 24/7">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="mb-2">ABC News 24/7</h4>
+                            <p class="text-primary mb-2">News Platform & Admin System</p>
+                            <p class="mb-3">
+                                A news website with a structured admin panel for publishing articles,
+                                content management, and editorial workflow control.
+                            </p>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <a class="btn btn-primary py-2 px-4"
+                                   href="https://abcnews-247.com/"
+                                   target="_blank"
+                                   rel="noopener noreferrer">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="col-lg-4 col-md-6 portfolio-item website">
+                    <div class="portfolio-card bg-white rounded shadow-sm overflow-hidden h-100">
+                        <div class="portfolio-img">
+                            <img class="img-fluid w-100" src="img/project-4.jpg" alt="Qahwa World Website">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="mb-2">Qahwa World</h4>
+                            <p class="text-primary mb-2">Business Website</p>
+                            <p class="mb-3">
+                                A branded website created to present the business professionally and improve
+                                its online visibility and customer-facing image.
+                            </p>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <a class="btn btn-primary py-2 px-4"
+                                   href="https://qahwaworld.com/"
+                                   target="_blank"
+                                   rel="noopener noreferrer">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="col-lg-4 col-md-6 portfolio-item website">
+                    <div class="portfolio-card bg-white rounded shadow-sm overflow-hidden h-100">
+                        <div class="portfolio-img">
+                            <img class="img-fluid w-100" src="img/project-5.jpg" alt="School Website">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="mb-2">School Website Project</h4>
+                            <p class="text-primary mb-2">Education Website</p>
+                            <p class="mb-3">
+                                A website developed for an educational institution to present information,
+                                structure content clearly, and improve communication online.
+                            </p>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <a class="btn btn-primary py-2 px-4" href="#">Private Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="col-lg-4 col-md-6 portfolio-item business website">
+                    <div class="portfolio-card bg-white rounded shadow-sm overflow-hidden h-100">
+                        <div class="portfolio-img">
+                            <img class="img-fluid w-100" src="img/project-6.jpg" alt="Custom Client Projects">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="mb-2">Custom Client Projects</h4>
+                            <p class="text-primary mb-2">Web Development</p>
+                            <p class="mb-3">
+                                Tailored websites and systems developed for different clients based on
+                                business needs, workflow requirements, and project goals.
+                            </p>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <a class="btn btn-primary py-2 px-4" href="#">Private Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-          </div>
-
-          <div class="contact-item">
-            <i class="fas fa-briefcase"></i>
-            <div>
-              <h5 class="mb-1">Target Market</h5>
-              <p class="mb-0">Poland and international clients</p>
-            </div>
-          </div>
-
-          <div class="contact-item mb-0">
-            <i class="fas fa-code"></i>
-            <div>
-              <h5 class="mb-1">Work Focus</h5>
-              <p class="mb-0">Business websites, admin systems, and database-driven platforms</p>
-            </div>
-          </div>
-
-          <div class="social-links">
-            <a href="mailto:khalidkhalifa79@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            <a href="tel:+48721143224" aria-label="Phone"><i class="fas fa-phone-alt"></i></a>
-            <a href="https://khalidkhalifa-portfolio.vercel.app/" target="_blank" rel="noreferrer" aria-label="Portfolio website"><i class="fas fa-globe"></i></a>
-            <a href="#project" aria-label="Projects"><i class="fas fa-laptop-code"></i></a>
-          </div>
         </div>
+    </div>
+    <!-- Projects End -->
+    <!-- Team Start -->
+    <!-- References Start -->
+    <!-- References Start -->
+    <div class="container-fluid bg-light py-5 my-5" id="references">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">References</h1>
 
-        <div class="contact-card">
-          <h3 class="mb-4">Send Message</h3>
-          <form class="contact-form">
-            <input type="text" class="form-control" placeholder="Your Name" />
-            <input type="email" class="form-control" placeholder="Your Email" />
-            <input type="text" class="form-control" placeholder="Subject" />
-            <textarea class="form-control" placeholder="Tell me about your project"></textarea>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </form>
+            <div class="references-showcase position-relative">
+
+                <!-- Small floating images -->
+                <img class="reference-floating ref-pos-1" src="img/team-1.jpg" alt="Reference 1">
+                <img class="reference-floating ref-pos-2" src="img/team-2.jpg" alt="Reference 2">
+                <img class="reference-floating ref-pos-3" src="img/team-3.jpg" alt="Reference 3">
+                <img class="reference-floating ref-pos-4" src="img/team-4.jpg" alt="Reference 4">
+
+                <!-- Center reference -->
+                <div class="reference-center text-center wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="reference-main-img-wrap">
+                        <img class="reference-main-img" id="mainReferenceImage" src="img/team-5.jpg" alt="Main Reference">
+                        <div class="reference-quote-icon">
+                            <i class="fa fa-quote-left text-primary"></i>
+                        </div>
+                    </div>
+
+                    <p class="reference-text" id="referenceText">
+                        Trusted by clients and business owners for building professional websites,
+                        admin systems, and practical digital solutions tailored to real operational needs.
+                    </p>
+
+                    <hr class="w-25 mx-auto">
+
+                    <h4 class="mb-2" id="referenceName">Dr. Anas Khalifa</h4>
+                    <p class="text-primary mb-1" id="referenceCompany">Safety Horizon ECI</p>
+                    <span class="reference-role" id="referenceRole">Business Owner</span>
+
+                    <div class="reference-dots mt-4">
+                        <button class="dot active" type="button" onclick="showReference(0)"></button>
+                        <button class="dot" type="button" onclick="showReference(1)"></button>
+                        <button class="dot" type="button" onclick="showReference(2)"></button>
+                        <button class="dot" type="button" onclick="showReference(3)"></button>
+                        <button class="dot" type="button" onclick="showReference(4)"></button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </section>
+    <!-- References End -->
+    <!-- References End -->
+    <!-- Team End -->
+    <!-- Testimonial Start -->
+    <!-- Testimonial End -->
+    <!-- Contact Start -->
+    <div class="container-xxl py-6" id="contact">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h1 class="display-5 mb-5">Let’s Work Together</h1>
+                    <p class="mb-4">
+                        I am available for business websites, admin panels, and custom web systems for clients in Poland and international markets.
+                    </p>
+                    <p class="mb-3"><i class="fa fa-envelope text-primary me-3"></i>khalidkhalifa79@gmail.com</p>
+                    <p class="mb-3"><i class="fa fa-phone-alt text-primary me-3"></i>+48721143224</p>
+                    <p class="mb-3"><i class="fa fa-globe text-primary me-3"></i>Target Market: Poland and international clients</p>
+                </div>
 
-  <footer class="footer">
-    <div class="container">
-      © 2026 Khalid Khalifa. All rights reserved.
+
+            </div>
+        </div>
     </div>
-  </footer>
+    <!-- Contact End -->
+    <!-- Map Start -->
+    <!-- Map End -->
+    <!-- Copyright Start -->
+    <div class="container-fluid bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom text-secondary" href="#">2015 Khalid Khalifa. </a>, All Right Reserved.
+                </div>
 
-  <a href="#home" class="scroll-top" id="scrollTop" aria-label="Back to top">
-    <i class="fas fa-arrow-up"></i>
-  </a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Copyright End -->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
-  <script>
-    const menuToggle = document.getElementById("menuToggle");
-    const navbarNav = document.getElementById("navbarNav");
-    const navLinks = document.querySelectorAll(".nav-link");
-    const scrollTopBtn = document.getElementById("scrollTop");
-    const typedText = document.getElementById("typedText");
-    const tabButtons = document.querySelectorAll(".tab-btn");
-    const experienceTab = document.getElementById("experience-tab");
-    const educationTab = document.getElementById("education-tab");
 
-    if (menuToggle) {
-      menuToggle.addEventListener("click", function () {
-        navbarNav.classList.toggle("show");
-      });
-    }
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/typed/typed.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
 
-    navLinks.forEach(function (link) {
-      link.addEventListener("click", function () {
-        navLinks.forEach(function (item) {
-          item.classList.remove("active");
-        });
-        this.classList.add("active");
-        navbarNav.classList.remove("show");
-      });
-    });
-
-    window.addEventListener("scroll", function () {
-      if (window.scrollY > 300) {
-        scrollTopBtn.classList.add("show");
-      } else {
-        scrollTopBtn.classList.remove("show");
-      }
-
-      const sections = document.querySelectorAll("section[id]");
-      let current = "home";
-
-      sections.forEach(function (section) {
-        const sectionTop = section.offsetTop - 130;
-        if (window.scrollY >= sectionTop) {
-          current = section.getAttribute("id");
-        }
-      });
-
-      navLinks.forEach(function (link) {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) {
-          link.classList.add("active");
-        }
-      });
-    });
-
-    const typingWords = [
-      "Full-Stack Web Developer",
-      "Admin Panels & Business Systems Developer",
-      "Database-Driven Platform Builder",
-      "Business Website Developer"
-    ];
-
-    let wordIndex = 0;
-    let charIndex = 0;
-    let deleting = false;
-
-    function typeEffect() {
-      const currentWord = typingWords[wordIndex];
-
-      if (!deleting) {
-        typedText.innerHTML =
-          currentWord.substring(0, charIndex + 1) +
-          '<span class="typed-cursor">|</span>';
-        charIndex++;
-
-        if (charIndex === currentWord.length) {
-          deleting = true;
-          setTimeout(typeEffect, 1300);
-          return;
-        }
-      } else {
-        typedText.innerHTML =
-          currentWord.substring(0, charIndex - 1) +
-          '<span class="typed-cursor">|</span>';
-        charIndex--;
-
-        if (charIndex === 0) {
-          deleting = false;
-          wordIndex = (wordIndex + 1) % typingWords.length;
-        }
-      }
-
-      setTimeout(typeEffect, deleting ? 45 : 85);
-    }
-
-    if (typedText) {
-      typeEffect();
-    }
-
-    tabButtons.forEach(function(button) {
-      button.addEventListener("click", function() {
-        tabButtons.forEach(function(btn) {
-          btn.classList.remove("active");
-        });
-
-        this.classList.add("active");
-
-        if (this.dataset.tab === "experience") {
-          experienceTab.classList.add("active");
-          educationTab.classList.remove("active");
-        } else {
-          educationTab.classList.add("active");
-          experienceTab.classList.remove("active");
-        }
-      });
-    });
-  </script>
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
 </body>
+
 </html>
