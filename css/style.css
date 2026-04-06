@@ -50,9 +50,9 @@
 }
 
 .lang-btn.active {
-    background-color: #c4872f;
+    background-color: var(--primary);
     color: #fff !important;
-    border-color: #c4872f;
+    border-color: var(--primary);
 }
 
 .lang-btn:hover {
