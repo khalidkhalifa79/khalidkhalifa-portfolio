@@ -157,12 +157,11 @@
     <!-- Spinner End -->
 
     <!-- Navbar Start -->
-   <nav class="navbar navbar-expand-lg bg-white navbar-light fixed-top shadow py-lg-0 px-4 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+  <!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg bg-white navbar-light fixed-top shadow py-lg-0 px-4 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
     <a href="index.html" class="navbar-brand d-block d-lg-none">
         <h1 class="text-primary fw-bold m-0">Khalid Khalifa</h1>
     </a>
-
-  
 
     <button type="button" class="navbar-toggler ms-2" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
@@ -179,23 +178,28 @@
         <a href="index.html" class="navbar-brand bg-secondary py-3 px-4 mx-3 d-none d-lg-block">
             <h1 class="text-primary fw-bold m-0">Khalid Khalifa</h1>
         </a>
-<div class="navbar-nav me-auto py-0">
-    <a href="#project" class="nav-item nav-link" data-en="Projects" data-pl="Projekty">Projekty</a>
-    <a href="#references" class="nav-item nav-link" data-en="References" data-pl="Referencje">Referencje</a>
-    <a href="#contact" class="nav-item nav-link" data-en="Contact" data-pl="Kontakt">Kontakt</a>
-     </div>
- <!-- Desktop Language Switch INSIDE navbar -->
-        <div class="d-none d-lg-flex align-items-center desktop-lang-inside">
-            <button type="button" class="btn btn-sm btn-outline-primary me-2 lang-btn" onclick="setLanguage('en')" id="btn-en-desktop">EN</button>
-            <button type="button" class="btn btn-sm btn-outline-primary lang-btn" onclick="setLanguage('pl')" id="btn-pl-desktop">PL</button>
+
+        <div class="navbar-nav me-auto py-0">
+            <a href="#project" class="nav-item nav-link" data-en="Projects" data-pl="Projekty">Projekty</a>
+            <a href="#references" class="nav-item nav-link" data-en="References" data-pl="Referencje">Referencje</a>
+            <a href="#contact" class="nav-item nav-link" data-en="Contact" data-pl="Kontakt">Kontakt</a>
         </div>
-   
-</div>
 
-
+        <!-- Desktop Language Switch INSIDE navbar -->
+        <div class="d-none d-lg-flex align-items-center desktop-lang-inside">
+            <button type="button" class="btn btn-sm btn-outline-primary me-2 lang-btn" onclick="setLanguage('en')" id="btn-en-navbar">EN</button>
+            <button type="button" class="btn btn-sm btn-outline-primary lang-btn" onclick="setLanguage('pl')" id="btn-pl-navbar">PL</button>
+        </div>
     </div>
-       
 </nav>
+
+<!-- Desktop Fixed Language Switch Start -->
+<div class="language-switch-desktop d-none d-lg-flex">
+    <button type="button" class="btn btn-sm btn-outline-primary me-2 lang-btn" onclick="setLanguage('en')" id="btn-en-fixed">EN</button>
+    <button type="button" class="btn btn-sm btn-outline-primary lang-btn" onclick="setLanguage('pl')" id="btn-pl-fixed">PL</button>
+</div>
+<!-- Desktop Fixed Language Switch End -->
+<!-- Navbar End -->
 <!-- Desktop Fixed Language Switch Start -->
 <div class="language-switch-desktop d-none d-lg-flex">
     <button type="button" class="btn btn-sm btn-outline-primary me-2 lang-btn" onclick="setLanguage('en')" id="btn-en-desktop-fixed">EN</button>
