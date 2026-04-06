@@ -60,7 +60,7 @@
     color: var(--primary);
 }
 
-/* زر اللغة الثابت أعلى الصفحة */
+/* الزر الثابت أعلى الصفحة */
 .language-switch-desktop {
     position: fixed;
     top: 18px;
@@ -73,7 +73,7 @@
 }
 
 /* الزر داخل النافبار */
-.navbar .desktop-lang-inside {
+.desktop-lang-inside {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -89,7 +89,7 @@ body:not(.navbar-visible) .language-switch-desktop {
     pointer-events: auto;
 }
 
-body:not(.navbar-visible) .navbar .desktop-lang-inside {
+body:not(.navbar-visible) .desktop-lang-inside {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -102,7 +102,7 @@ body.navbar-visible .language-switch-desktop {
     pointer-events: none;
 }
 
-body.navbar-visible .navbar .desktop-lang-inside {
+body.navbar-visible .desktop-lang-inside {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
@@ -169,7 +169,13 @@ body.navbar-visible .navbar .desktop-lang-inside {
     .navbar .navbar-nav .nav-link {
         padding: 10px 0;
     }
-   
+     .language-switch-desktop {
+        display: none !important;
+    }
+
+    .desktop-lang-inside {
+        display: none !important;
+    }
 }
 
 /*** Header ***/
