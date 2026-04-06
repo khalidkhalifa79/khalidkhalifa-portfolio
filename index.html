@@ -98,50 +98,56 @@
         dots[index].classList.add("active");
     }
 
-   
-   function setLanguage(lang) {
-    document.documentElement.lang = lang;
-    localStorage.setItem('siteLanguage', lang);
+    function setLanguage(lang) {
+        document.documentElement.lang = lang;
+        localStorage.setItem('siteLanguage', lang);
 
-    document.querySelectorAll('[data-en]').forEach(function (el) {
-        const value = el.getAttribute('data-' + lang);
-        if (value) {
-            el.textContent = value;
+        document.querySelectorAll('[data-en]').forEach(function (el) {
+            const value = el.getAttribute('data-' + lang);
+            if (value) {
+                el.textContent = value;
+            }
+        });
+
+        const buttons = [
+            'btn-en-navbar',
+            'btn-pl-navbar',
+            'btn-en-fixed',
+            'btn-pl-fixed'
+        ];
+
+        buttons.forEach(id => {
+            const btn = document.getElementById(id);
+            if (btn) btn.classList.remove('active');
+        });
+
+        if (lang === 'en') {
+            ['btn-en-navbar', 'btn-en-fixed'].forEach(id => {
+                const btn = document.getElementById(id);
+                if (btn) btn.classList.add('active');
+            });
+        } else {
+            ['btn-pl-navbar', 'btn-pl-fixed'].forEach(id => {
+                const btn = document.getElementById(id);
+                if (btn) btn.classList.add('active');
+            });
         }
-    });
 
-    const buttons = [
-        'btn-en-desktop',
-        'btn-pl-desktop',
-        'btn-en-desktop-fixed',
-        'btn-pl-desktop-fixed'
-    ];
-
-    buttons.forEach(id => {
-        const btn = document.getElementById(id);
-        if (btn) btn.classList.remove('active');
-    });
-
-    if (lang === 'en') {
-        ['btn-en-desktop', 'btn-en-desktop-fixed'].forEach(id => {
-            const btn = document.getElementById(id);
-            if (btn) btn.classList.add('active');
-        });
-    } else {
-        ['btn-pl-desktop', 'btn-pl-desktop-fixed'].forEach(id => {
-            const btn = document.getElementById(id);
-            if (btn) btn.classList.add('active');
-        });
+        showReference(currentReferenceIndex);
     }
-
-    showReference(currentReferenceIndex);
-}
-
 
     document.addEventListener('DOMContentLoaded', function () {
         const savedLanguage = localStorage.getItem('siteLanguage') || 'pl';
         setLanguage(savedLanguage);
         showReference(0);
+    });
+
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 120) {
+            document.body.classList.add("navbar-visible");
+        } else {
+            document.body.classList.remove("navbar-visible");
+        }
     });
 </script>
  
