@@ -41,76 +41,6 @@
 
 /*** Button ***/
 
-.lang-btn {
-    min-width: 50px;
-    padding: 8px 14px;
-    border-radius: 999px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.lang-btn.active {
-    background-color: var(--primary);
-    color: #fff !important;
-    border-color: var(--primary);
-}
-
-.lang-btn:hover {
-    background-color: rgba(196, 135, 47, 0.12);
-    color: #c4872f !important;
-    border-color: #c4872f;
-}
-
-/* الزر الثابت أعلى الصفحة */
-.language-switch-desktop {
-    position: fixed;
-    top: 18px;
-    right: 32px;
-    z-index: 2000;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: opacity .3s ease, visibility .3s ease;
-}
-
-/* الزر داخل النافبار */
-.desktop-lang-inside {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity .3s ease, visibility .3s ease;
-    margin-left: 20px;
-    gap: 8px;
-}
-
-/* قبل السكرول */
-body:not(.navbar-visible) .language-switch-desktop {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-}
-
-body:not(.navbar-visible) .desktop-lang-inside {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-
-/* بعد السكرول */
-body.navbar-visible .language-switch-desktop {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-
-body.navbar-visible .desktop-lang-inside {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-}
-
-
-
 
 .btn {
     font-weight: 500;
@@ -170,13 +100,7 @@ body.navbar-visible .desktop-lang-inside {
     .navbar .navbar-nav .nav-link {
         padding: 10px 0;
     }
-     .language-switch-desktop {
-        display: none !important;
-    }
-
-    .desktop-lang-inside {
-        display: none !important;
-    }
+  
 }
 
 /*** Header ***/
