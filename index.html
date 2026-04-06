@@ -1,1 +1,658 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="utf-8"> <title>Khalid Khalifa | Full-Stack Developer Portfolio</title> <meta content="" name="keywords"> <meta name="description" content="Khalid Khalifa - Full-Stack Web Developer specializing in business websites, admin panels, internal systems, and database-driven platforms."> <meta content="width=device-width, initial-scale=1.0" name="viewport"> <!-- Favicon --> <link href="img/favicon.ico" rel="icon"> <!-- Google Web Fonts --> <link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"> <!-- Icon Font Stylesheet --> <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet"> <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet"> <!-- Libraries Stylesheet --> <link href="lib/animate/animate.min.css" rel="stylesheet"> <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet"> <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"> <!-- Customized Bootstrap Stylesheet --> <link href="css/bootstrap.min.css" rel="stylesheet"> <!-- Template Stylesheet --> <link href="css/style.css" rel="stylesheet"> <script> const references = [ { image: "img/Dr_Anas_Khalifa.png", name: "Dr. Anas Khalifa", company: "Safety Horizon ECI", role: "Business Owner", text: "Trusted by clients and business owners for building professional websites, admin systems, and practical digital solutions tailored to real operational needs." }, { image: "img/Dr_Mohamed_Ghobashy.png", name: "Dr. Mohamed Ghobashy", company: "ABCNews-247", role: "Business Owner", text: "Developed practical and structured web solutions focused on publishing systems, content workflows, and business needs." }, { image: "img/Ali_Alzakary.png", name: "Ali Alzakary", company: "Qahwa World", role: "Business Owner", text: "Delivered professional website solutions designed to improve digital presence, branding, and customer-facing presentation." }, { image: "img/Andra_Oproiu.png", name: "Andra Oproiu", company: "School Website Project", role: "School Director", text: "Built clear and organized web structures to support educational presentation and accessible online communication." }, { image: "img/Sofea_Collins.png", name: "Sofea Collins", company: "WWL Incorporated", role: "Finance Analyst", text: "Provided tailored digital project work focused on clarity, usability, and practical implementation for real client needs." } ]; function showReference(index) { document.getElementById("mainReferenceImage").src = references[index].image; document.getElementById("referenceName").textContent = references[index].name; document.getElementById("referenceCompany").textContent = references[index].company; document.getElementById("referenceRole").textContent = references[index].role; document.getElementById("referenceText").textContent = references[index].text; const dots = document.querySelectorAll(".reference-dots .dot"); dots.forEach(dot => dot.classList.remove("active")); dots[index].classList.add("active"); } </script> </head> <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51"> <!-- Spinner Start --> <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"> <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status"> <span class="sr-only">Loading...</span> </div> </div> <!-- Spinner End --> <!-- Navbar Start --> <nav class="navbar navbar-expand-lg bg-white navbar-light fixed-top shadow py-lg-0 px-4 px-lg-5 wow fadeIn" data-wow-delay="0.1s"> <a href="index.html" class="navbar-brand d-block d-lg-none"> <h1 class="text-primary fw-bold m-0">Khalid Khalifa</h1> </a> <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"> <span class="navbar-toggler-icon"></span> </button> <div class="collapse navbar-collapse justify-content-between py-4 py-lg-0" id="navbarCollapse"> <div class="navbar-nav ms-auto py-0"> <a href="#home" class="nav-item nav-link active">Home</a> <a href="#about" class="nav-item nav-link">About</a> <a href="#skill" class="nav-item nav-link">Skills</a> <a href="#service" class="nav-item nav-link">Services</a> </div> <a href="index.html" class="navbar-brand bg-secondary py-3 px-4 mx-3 d-none d-lg-block"> <h1 class="text-primary fw-bold m-0">Khalid Khalifa</h1> </a> <div class="navbar-nav me-auto py-0"> <a href="#project" class="nav-item nav-link">Projects</a> <a href="#references" class="nav-item nav-link">References</a> <a href="#contact" class="nav-item nav-link">Contact</a> </div> <div class="d-flex align-items-center ms-lg-3"> <button type="button" class="btn btn-sm btn-outline-primary me-2 lang-btn active" onclick="setLanguage('en')" id="btn-en">EN</button> <button type="button" class="btn btn-sm btn-outline-primary lang-btn" onclick="setLanguage('pl')" id="btn-pl">PL</button> </div> </div> </nav> <!-- Navbar End --> <!-- Header Start --> <div class="container-fluid bg-light my-6 mt-0" id="home"> <div class="container"> <div class="row g-5 align-items-center"> <div class="col-lg-7 py-6 pb-0 pt-lg-0"> <h3 class="text-primary mb-3">Professional Web Solutions</h3> <h1 class="display-3 mb-3">Khalid Khalifa</h1> <h2 class="mb-3" style="color: #c4872f;">Full-Stack Web Developer | Business Systems & Admin Panels</h2> <p class="lead mb-4"> I build professional business websites, custom admin panels, and database-driven web systems designed around real operational needs. </p> <p class="mb-4"> My work focuses on practical, structured, and scalable solutions that improve workflows, support management, and strengthen digital presence. </p> <div class="d-flex align-items-center pt-4 flex-wrap"> <a href="#project" class="btn btn-primary py-3 px-4 me-3 mb-3">View My Projects</a> <a href="#contact" class="btn btn-outline-primary py-3 px-4 mb-3">Let’s Work Together</a> </div> </div> <div class="col-lg-5"> <img class="img-fluid" src="img/khalidkhalifa.png" alt="Khalid Khalifa"> </div> </div> </div> </div> <!-- Header End --> <!-- About Start --> <div class="container-xxl py-6" id="about"> <div class="container"> <div class="row g-5 align-items-center"> <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s"> <h1 class="display-5 mb-4">About Me</h1> <h3 class="lh-base mb-4">Full-Stack Web Developer with a business-focused approach</h3> <p class="mb-4"> I specialize in developing professional websites, internal admin systems, and custom database-driven platforms designed to support real business operations. </p> <p class="mb-4"> My experience includes business websites, internal systems, certificate platforms, content management solutions, and custom workflows developed for real client and operational needs. </p> <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Professional business website development</p> <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Admin panels and internal management systems</p> <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Database design and structured system logic</p> <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Certificate, content, and workflow management systems</p> <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Improvement and technical enhancement of existing digital products</p> <a class="btn btn-primary py-3 px-5 mt-3" href="#contact">Let’s Work Together</a> </div> <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s"> <div class="row g-3 mb-4"> <div class="col-sm-6"> <img class="img-fluid rounded" src="img/about-1.jpg" alt=""> </div> <div class="col-sm-6"> <img class="img-fluid rounded" src="img/about-2.jpg" alt=""> </div> </div> <div class="d-flex align-items-center mb-3"> <h5 class="border-end pe-3 me-3 mb-0">Featured Projects</h5> <h2 class="text-primary fw-bold mb-0">3+</h2> </div> <p class="mb-4"> Selected projects that reflect my ability to develop complete business and management solutions. </p> <div class="d-flex align-items-center mb-3"> <h5 class="border-end pe-3 me-3 mb-0">Systems & Projects Built</h5> <h2 class="text-primary fw-bold mb-0">108</h2> </div> <p class="mb-0"> Practical work focused on structured systems, custom workflows, and scalable digital products. </p> </div> </div> </div> </div> <!-- About End --> <!-- Expertise Start --> <div class="container-xxl py-6 pb-5" id="skill"> <div class="container"> <div class="row g-5"> <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s"> <h1 class="display-5 mb-5">Skills & Experience</h1> <p class="mb-4"> The technologies, strengths, and real project capabilities behind the systems and websites I build. </p> <h3 class="mb-4">Core Technologies</h3> <div class="row align-items-center"> <div class="col-md-6"> <div class="skill mb-4"> <div class="d-flex justify-content-between"> <h6 class="font-weight-bold">ASP.NET Web Forms</h6> </div> </div> <div class="skill mb-4"> <div class="d-flex justify-content-between"> <h6 class="font-weight-bold">VB.NET</h6> </div> </div> <div class="skill mb-4"> <div class="d-flex justify-content-between"> <h6 class="font-weight-bold">SQL Server</h6> </div> </div> </div> <div class="col-md-6"> <div class="skill mb-4"> <div class="d-flex justify-content-between"> <h6 class="font-weight-bold">HTML / CSS</h6> </div> </div> <div class="skill mb-4"> <div class="d-flex justify-content-between"> <h6 class="font-weight-bold">JavaScript</h6> </div> </div> <div class="skill mb-4"> <div class="d-flex justify-content-between"> <h6 class="font-weight-bold">Business System Analysis</h6> </div> </div> </div> </div> </div> <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s"> <ul class="nav nav-pills rounded border border-2 border-primary mb-5"> <li class="nav-item w-50"> <button class="nav-link w-100 py-3 fs-5 active" data-bs-toggle="pill" href="#tab-1">Experience</button> </li> <li class="nav-item w-50"> <button class="nav-link w-100 py-3 fs-5" data-bs-toggle="pill" href="#tab-2">Education</button> </li> </ul> <div class="tab-content"> <div id="tab-1" class="tab-pane fade show p-0 active"> <div class="row gy-5 gx-4"> <div class="col-sm-6"> <h5>Full-Stack Web Development</h5> <hr class="text-primary my-2"> <p class="text-primary mb-1">Professional Development Experience</p> <h6 class="mb-0">Building business websites, admin panels, and database-driven systems</h6> </div> <div class="col-sm-6"> <h5>Business Management Systems</h5> <hr class="text-primary my-2"> <p class="text-primary mb-1">System Design & Workflow Logic</p> <h6 class="mb-0">Developing structured platforms for operations, records, and internal processes</h6> </div> <div class="col-sm-6"> <h5>Custom Admin Panels</h5> <hr class="text-primary my-2"> <p class="text-primary mb-1">Administrative Interface Development</p> <h6 class="mb-0">Creating secure and practical dashboards for management and control</h6> </div> <div class="col-sm-6"> <h5>Database & Back-End Logic</h5> <hr class="text-primary my-2"> <p class="text-primary mb-1">Applied Technical Experience</p> <h6 class="mb-0">Designing SQL-based structures, business rules, and system behavior</h6> </div> </div> </div> <div id="tab-2" class="tab-pane fade show p-0"> <div class="row gy-5 gx-4"> <div class="col-sm-6"> <h5>Computer Science / Programming Studies</h5> <hr class="text-primary my-2"> <p class="text-primary mb-1">University Education</p> <h6 class="mb-0">Academic foundation in programming, software logic, and system development</h6> </div> <div class="col-sm-6"> <h5>Full-Stack Web Development</h5> <hr class="text-primary my-2"> <p class="text-primary mb-1">Applied Technical Practice</p> <h6 class="mb-0">Hands-on development of websites, admin panels, and database-driven systems</h6> </div> <div class="col-sm-6"> <h5>Database Systems & Business Logic</h5> <hr class="text-primary my-2"> <p class="text-primary mb-1">Project-Based Learning</p> <h6 class="mb-0">Experience in SQL databases, structured workflows, and operational system design</h6> </div> <div class="col-sm-6"> <h5>Continuous Development & Improvement</h5> <hr class="text-primary my-2"> <p class="text-primary mb-1">Professional Growth</p> <h6 class="mb-0">Ongoing refinement through real client work and custom development projects</h6> </div> </div> </div> </div> </div> </div> </div> </div> <!-- Expertise End --> <!-- Service Start --> <div class="container-fluid bg-light my-5 py-6" id="service"> <div class="container"> <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s"> <div class="col-lg-6"> <h1 class="display-5 mb-0">Services</h1> </div> <div class="col-lg-6 text-lg-end"> <a class="btn btn-primary py-3 px-5" href="#contact">Hire Me</a> </div> </div> <div class="row g-4"> <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s"> <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5"> <div class="bg-icon flex-shrink-0 mb-3"> <i class="fa fa-globe fa-2x text-dark"></i> </div> <div class="ms-sm-4"> <h4 class="mb-3">Business Website Development</h4> <span> Professional websites built to present services clearly, support trust, and strengthen the client’s online presence. </span> </div> </div> </div> <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s"> <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5"> <div class="bg-icon flex-shrink-0 mb-3"> <i class="fa fa-cogs fa-2x text-dark"></i> </div> <div class="ms-sm-4"> <h4 class="mb-3">Admin Panels & Internal Systems</h4> <span> Custom administrative systems designed around real workflows, operational needs, and structured management logic. </span> </div> </div> </div> <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s"> <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5"> <div class="bg-icon flex-shrink-0 mb-3"> <i class="fa fa-database fa-2x text-dark"></i> </div> <div class="ms-sm-4"> <h4 class="mb-3">Database-Driven Platforms</h4> <span> Web platforms that connect interfaces, back-end functionality, and well-structured database design into one working solution. </span> </div> </div> </div> <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s"> <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5"> <div class="bg-icon flex-shrink-0 mb-3"> <i class="fa fa-tools fa-2x text-dark"></i> </div> <div class="ms-sm-4"> <h4 class="mb-3">Product Improvement & Enhancement</h4> <span> Practical technical improvements that raise efficiency, usability, and business value in existing digital products. </span> </div> </div> </div> </div> </div> </div> <!-- Service End --> <!-- Projects Start --> <div class="container-xxl py-6 pt-5" id="project"> <div class="container"> <div class="row g-5 mb-5 align-items-center wow fadeInUp" data-wow-delay="0.1s"> <div class="col-lg-6"> <h1 class="display-5 mb-0">My Projects</h1> </div> <div class="col-lg-6 text-lg-end"> <ul class="list-inline mx-n3 mb-0" id="portfolio-flters"> <li class="mx-3 active" data-filter="*">All Projects</li> <li class="mx-3" data-filter=".business">Business Systems</li> <li class="mx-3" data-filter=".website">Websites</li> </ul> </div> </div> <div class="row g-4 portfolio-container wow fadeInUp" data-wow-delay="0.1s"> <div class="col-lg-4 col-md-6 portfolio-item business"> <div class="portfolio-card bg-white rounded shadow-sm overflow-hidden h-100"> <div class="portfolio-img"> <img class="img-fluid w-100" src="img/project-1.jpg" alt="Safety Horizon System"> </div> <div class="p-4"> <h4 class="mb-2">Safety Horizon System</h4> <p class="text-primary mb-2">Business Management System</p> <p class="mb-3"> A custom internal platform for certificate workflows, records management, product handling, and administrative operations. </p> <div class="d-flex gap-2 flex-wrap"> <a class="btn btn-primary py-2 px-4" href="https://safetyhorizonsystem.com/Login.aspx" target="_blank" rel="noopener noreferrer">View System</a> </div> </div> </div> </div> <div class="col-lg-4 col-md-6 portfolio-item website"> <div class="portfolio-card bg-white rounded shadow-sm overflow-hidden h-100"> <div class="portfolio-img"> <img class="img-fluid w-100" src="img/project-2.jpg" alt="Safety Horizon ECI Website"> </div> <div class="p-4"> <h4 class="mb-2">Safety Horizon ECI</h4> <p class="text-primary mb-2">Corporate Website</p> <p class="mb-3"> A professional company website designed to present services, build trust, and strengthen the business identity online. </p> <div class="d-flex gap-2 flex-wrap"> <a class="btn btn-primary py-2 px-4" href="https://safetyhorizoneci.com/" target="_blank" rel="noopener noreferrer">View Website</a> </div> </div> </div> </div> <div class="col-lg-4 col-md-6 portfolio-item business website"> <div class="portfolio-card bg-white rounded shadow-sm overflow-hidden h-100"> <div class="portfolio-img"> <img class="img-fluid w-100" src="img/project-3.jpg" alt="ABC News 24/7"> </div> <div class="p-4"> <h4 class="mb-2">ABC News 24/7</h4> <p class="text-primary mb-2">News Platform & Admin System</p> <p class="mb-3"> A news website with a structured admin panel for publishing articles, content management, and editorial workflow control. </p> <div class="d-flex gap-2 flex-wrap"> <a class="btn btn-primary py-2 px-4" href="https://abcnews-247.com/" target="_blank" rel="noopener noreferrer">View Website</a> </div> </div> </div> </div> <div class="col-lg-4 col-md-6 portfolio-item website"> <div class="portfolio-card bg-white rounded shadow-sm overflow-hidden h-100"> <div class="portfolio-img"> <img class="img-fluid w-100" src="img/project-4.jpg" alt="Qahwa World Website"> </div> <div class="p-4"> <h4 class="mb-2">Qahwa World</h4> <p class="text-primary mb-2">Business Website</p> <p class="mb-3"> A branded website created to present the business professionally and improve its online visibility and customer-facing image. </p> <div class="d-flex gap-2 flex-wrap"> <a class="btn btn-primary py-2 px-4" href="https://qahwaworld.com/" target="_blank" rel="noopener noreferrer">View Website</a> </div> </div> </div> </div> <div class="col-lg-4 col-md-6 portfolio-item website"> <div class="portfolio-card bg-white rounded shadow-sm overflow-hidden h-100"> <div class="portfolio-img"> <img class="img-fluid w-100" src="img/project-5.jpg" alt="School Website"> </div> <div class="p-4"> <h4 class="mb-2">School Website Project</h4> <p class="text-primary mb-2">Education Website</p> <p class="mb-3"> A website developed for an educational institution to present information, structure content clearly, and improve communication online. </p> <div class="d-flex gap-2 flex-wrap"> <a class="btn btn-primary py-2 px-4" href="#">Private Project</a> </div> </div> </div> </div> <div class="col-lg-4 col-md-6 portfolio-item business website"> <div class="portfolio-card bg-white rounded shadow-sm overflow-hidden h-100"> <div class="portfolio-img"> <img class="img-fluid w-100" src="img/project-6.jpg" alt="Custom Client Projects"> </div> <div class="p-4"> <h4 class="mb-2">Custom Client Projects</h4> <p class="text-primary mb-2">Web Development</p> <p class="mb-3"> Tailored websites and systems developed for different clients based on business needs, workflow requirements, and project goals. </p> <div class="d-flex gap-2 flex-wrap"> <a class="btn btn-primary py-2 px-4" href="#">Private Project</a> </div> </div> </div> </div> </div> </div> </div> <!-- Projects End --> <!-- References Start --> <div class="container-fluid bg-light py-5 my-5" id="references"> <div class="container-fluid py-5"> <h1 class="display-5 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">References</h1> <div class="references-showcase position-relative"> <img class="reference-floating ref-pos-1" src="img/Sofea_Collins.png" alt="Reference 1"> <img class="reference-floating ref-pos-2" src="img/Dr_Mohamed_Ghobashy.png" alt="Reference 2"> <img class="reference-floating ref-pos-3" src="img/Ali_Alzakary.png" alt="Reference 3"> <img class="reference-floating ref-pos-4" src="img/Andra_Oproiu.png" alt="Reference 4"> <div class="reference-center text-center wow fadeInUp" data-wow-delay="0.3s"> <div class="reference-main-img-wrap"> <img class="reference-main-img" id="mainReferenceImage" src="img/Dr_Anas_Khalifa.png" alt="Main Reference"> <div class="reference-quote-icon"> <i class="fa fa-quote-left text-primary"></i> </div> </div> <p class="reference-text" id="referenceText"> Trusted by clients and business owners for building professional websites, admin systems, and practical digital solutions tailored to real operational needs. </p> <hr class="w-25 mx-auto"> <h4 class="mb-2" id="referenceName">Dr. Anas Khalifa</h4> <p class="text-primary mb-1" id="referenceCompany">Safety Horizon ECI</p> <span class="reference-role" id="referenceRole">Business Owner</span> <div class="reference-dots mt-4"> <button class="dot active" type="button" onclick="showReference(0)"></button> <button class="dot" type="button" onclick="showReference(1)"></button> <button class="dot" type="button" onclick="showReference(2)"></button> <button class="dot" type="button" onclick="showReference(3)"></button> <button class="dot" type="button" onclick="showReference(4)"></button> </div> </div> </div> </div> </div> <!-- References End --> <!-- Contact Start --> <div class="container-xxl py-6" id="contact"> <div class="container"> <div class="row g-5"> <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s"> <h1 class="display-5 mb-5">Let’s Work Together</h1> <p class="mb-4"> I develop business websites, admin panels, and custom web systems for clients in Poland and international markets. </p> <p class="mb-3"><i class="fa fa-envelope text-primary me-3"></i>khalidkhalifa79@gmail.com</p> <p class="mb-3"><i class="fa fa-phone-alt text-primary me-3"></i>+48721143224</p> </div> </div> </div> </div> <!-- Contact End --> <!-- Copyright Start --> <div class="container-fluid bg-dark text-white py-4"> <div class="container"> <div class="row"> <div class="col-md-6 text-center text-md-start mb-3 mb-md-0"> &copy; <a class="border-bottom text-secondary" href="#">2026 Khalid Khalifa.</a>, All Right Reserved. </div> </div> </div> </div> <!-- Copyright End --> <!-- Back to Top --> <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a> <!-- JavaScript Libraries --> <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script> <script src="lib/wow/wow.min.js"></script> <script src="lib/easing/easing.min.js"></script> <script src="lib/waypoints/waypoints.min.js"></script> <script src="lib/typed/typed.min.js"></script> <script src="lib/counterup/counterup.min.js"></script> <script src="lib/owlcarousel/owl.carousel.min.js"></script> <script src="lib/isotope/isotope.pkgd.min.js"></script> <script src="lib/lightbox/js/lightbox.min.js"></script> <!-- Template Javascript --> <script src="js/main.js"></script> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Khalid Khalifa | Full-Stack Developer Portfolio</title>
+    <meta content="" name="keywords">
+    <meta name="description" content="Khalid Khalifa - Full-Stack Web Developer specializing in business websites, admin panels, internal systems, and database-driven platforms.">
+
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <script>
+        const references = [
+            {
+                image: "img/Dr_Anas_Khalifa.png",
+                name: "Dr. Anas Khalifa",
+                company: "Safety Horizon ECI",
+                role: "Business Owner",
+                text: "Trusted by clients and business owners for building professional websites, admin systems, and practical digital solutions tailored to real operational needs."
+            },
+            {
+                image: "img/Dr_Mohamed_Ghobashy.png",
+                name: "Dr. Mohamed Ghobashy",
+                company: "ABCNews-247",
+                role: "Business Owner",
+                text: "Developed practical and structured web solutions focused on publishing systems, content workflows, and business needs."
+            },
+            {
+                image: "img/Ali_Alzakary.png",
+                name: "Ali Alzakary",
+                company: "Qahwa World",
+                role: "Business Owner",
+                text: "Delivered professional website solutions designed to improve digital presence, branding, and customer-facing presentation."
+            },
+            {
+                image: "img/Andra_Oproiu.png",
+                name: "Andra Oproiu",
+                company: "School Website Project",
+                role: "School Director",
+                text: "Built clear and organized web structures to support educational presentation and accessible online communication."
+            },
+            {
+                image: "img/Sofea_Collins.png",
+                name: "Sofea Collins",
+                company: "WWL Incorporated",
+                role: "Finance Analyst",
+                text: "Provided tailored digital project work focused on clarity, usability, and practical implementation for real client needs."
+            }
+        ];
+
+        function showReference(index) {
+            document.getElementById("mainReferenceImage").src = references[index].image;
+            document.getElementById("referenceName").textContent = references[index].name;
+            document.getElementById("referenceCompany").textContent = references[index].company;
+            document.getElementById("referenceRole").textContent = references[index].role;
+            document.getElementById("referenceText").textContent = references[index].text;
+
+            const dots = document.querySelectorAll(".reference-dots .dot");
+            dots.forEach(dot => dot.classList.remove("active"));
+            dots[index].classList.add("active");
+        }
+    </script>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51">
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light fixed-top shadow py-lg-0 px-4 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+        <a href="index.html" class="navbar-brand d-block d-lg-none">
+            <h1 class="text-primary fw-bold m-0">Khalid Khalifa</h1>
+        </a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between py-4 py-lg-0" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="#home" class="nav-item nav-link active">Home</a>
+                <a href="#about" class="nav-item nav-link">About</a>
+                <a href="#skill" class="nav-item nav-link">Skills</a>
+                <a href="#service" class="nav-item nav-link">Services</a>
+            </div>
+            <a href="index.html" class="navbar-brand bg-secondary py-3 px-4 mx-3 d-none d-lg-block">
+                <h1 class="text-primary fw-bold m-0">Khalid Khalifa</h1>
+            </a>
+            <div class="navbar-nav me-auto py-0">
+                <a href="#project" class="nav-item nav-link">Projects</a>
+                <a href="#references" class="nav-item nav-link">References</a>
+                <a href="#contact" class="nav-item nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-light my-6 mt-0" id="home">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-7 py-6 pb-0 pt-lg-0">
+                    <h3 class="text-primary mb-3">Professional Web Solutions</h3>
+                    <h1 class="display-3 mb-3">Khalid Khalifa</h1>
+                    <h2 class="typed-text-output d-inline"></h2>
+                    <div class="typed-text d-none">Full-Stack Web Developer, Business Websites, Admin Panels, Web Systems</div>
+
+                    <p class="lead mb-4">
+                        I build professional business websites, custom admin panels, and database-driven web systems designed around real operational needs.
+                    </p>
+
+                    <p class="mb-4">
+                        My work focuses on practical, structured, and scalable solutions that improve workflows, support management, and strengthen digital presence.
+                    </p>
+
+                    <div class="d-flex align-items-center pt-4 flex-wrap">
+                        <a href="#project" class="btn btn-primary py-3 px-4 me-3 mb-3">View My Projects</a>
+                        <a href="#contact" class="btn btn-outline-primary py-3 px-4 mb-3">Let’s Work Together</a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <img class="img-fluid" src="img/khalidkhalifa.png" alt="Khalid Khalifa">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- About Start -->
+    <div class="container-xxl py-6" id="about">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h1 class="display-5 mb-4">About Me</h1>
+                    <h3 class="lh-base mb-4">Full-Stack Web Developer with a business-focused approach</h3>
+                    <p class="mb-4">
+                        I specialize in developing professional websites, internal admin systems, and custom
+                        database-driven platforms designed to support real business operations.
+                    </p>
+                    <p class="mb-4">
+                        My experience includes business websites, internal systems, certificate platforms,
+                        content management solutions, and custom workflows developed for real client and operational needs.
+                    </p>
+                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Professional business website development</p>
+                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Admin panels and internal management systems</p>
+                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Database design and structured system logic</p>
+                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Certificate, content, and workflow management systems</p>
+                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Improvement and technical enhancement of existing digital products</p>
+                    <a class="btn btn-primary py-3 px-5 mt-3" href="#contact">Let’s Work Together</a>
+                </div>
+
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="row g-3 mb-4">
+                        <div class="col-sm-6">
+                            <img class="img-fluid rounded" src="img/about-1.jpg" alt="">
+                        </div>
+                        <div class="col-sm-6">
+                            <img class="img-fluid rounded" src="img/about-2.jpg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center mb-3">
+                        <h5 class="border-end pe-3 me-3 mb-0">Featured Projects</h5>
+                        <h2 class="text-primary fw-bold mb-0">3+</h2>
+                    </div>
+                    <p class="mb-4">
+                        Selected projects that reflect my ability to develop complete business and management solutions.
+                    </p>
+
+                    <div class="d-flex align-items-center mb-3">
+                        <h5 class="border-end pe-3 me-3 mb-0">Systems & Projects Built</h5>
+                        <h2 class="text-primary fw-bold mb-0">108</h2>
+                    </div>
+                    <p class="mb-0">
+                        Practical work focused on structured systems, custom workflows, and scalable digital products.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Expertise Start -->
+    <div class="container-xxl py-6 pb-5" id="skill">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h1 class="display-5 mb-5">Skills & Experience</h1>
+                    <p class="mb-4">
+                        The technologies, strengths, and real project capabilities behind the systems and websites I build.
+                    </p>
+                    <h3 class="mb-4">Core Technologies</h3>
+
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <div class="skill mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="font-weight-bold">ASP.NET Web Forms</h6>
+                                </div>
+                            </div>
+
+                            <div class="skill mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="font-weight-bold">VB.NET</h6>
+                                </div>
+                            </div>
+
+                            <div class="skill mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="font-weight-bold">SQL Server</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="skill mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="font-weight-bold">HTML / CSS</h6>
+                                </div>
+                            </div>
+
+                            <div class="skill mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="font-weight-bold">JavaScript</h6>
+                                </div>
+                            </div>
+
+                            <div class="skill mb-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="font-weight-bold">Business System Analysis</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <ul class="nav nav-pills rounded border border-2 border-primary mb-5">
+                        <li class="nav-item w-50">
+                            <button class="nav-link w-100 py-3 fs-5 active" data-bs-toggle="pill" href="#tab-1">Experience</button>
+                        </li>
+                        <li class="nav-item w-50">
+                            <button class="nav-link w-100 py-3 fs-5" data-bs-toggle="pill" href="#tab-2">Education</button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content">
+
+                        <div id="tab-1" class="tab-pane fade show p-0 active">
+                            <div class="row gy-5 gx-4">
+                                <div class="col-sm-6">
+                                    <h5>Full-Stack Web Development</h5>
+                                    <hr class="text-primary my-2">
+                                    <p class="text-primary mb-1">Professional Development Experience</p>
+                                    <h6 class="mb-0">Building business websites, admin panels, and database-driven systems</h6>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <h5>Business Management Systems</h5>
+                                    <hr class="text-primary my-2">
+                                    <p class="text-primary mb-1">System Design & Workflow Logic</p>
+                                    <h6 class="mb-0">Developing structured platforms for operations, records, and internal processes</h6>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <h5>Custom Admin Panels</h5>
+                                    <hr class="text-primary my-2">
+                                    <p class="text-primary mb-1">Administrative Interface Development</p>
+                                    <h6 class="mb-0">Creating secure and practical dashboards for management and control</h6>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <h5>Database & Back-End Logic</h5>
+                                    <hr class="text-primary my-2">
+                                    <p class="text-primary mb-1">Applied Technical Experience</p>
+                                    <h6 class="mb-0">Designing SQL-based structures, business rules, and system behavior</h6>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="tab-2" class="tab-pane fade show p-0">
+                            <div class="row gy-5 gx-4">
+                                <div class="col-sm-6">
+                                    <h5>Computer Science / Programming Studies</h5>
+                                    <hr class="text-primary my-2">
+                                    <p class="text-primary mb-1">University Education</p>
+                                    <h6 class="mb-0">Academic foundation in programming, software logic, and system development</h6>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <h5>Full-Stack Web Development</h5>
+                                    <hr class="text-primary my-2">
+                                    <p class="text-primary mb-1">Applied Technical Practice</p>
+                                    <h6 class="mb-0">Hands-on development of websites, admin panels, and database-driven systems</h6>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <h5>Database Systems & Business Logic</h5>
+                                    <hr class="text-primary my-2">
+                                    <p class="text-primary mb-1">Project-Based Learning</p>
+                                    <h6 class="mb-0">Experience in SQL databases, structured workflows, and operational system design</h6>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <h5>Continuous Development & Improvement</h5>
+                                    <hr class="text-primary my-2">
+                                    <p class="text-primary mb-1">Professional Growth</p>
+                                    <h6 class="mb-0">Ongoing refinement through real client work and custom development projects</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Expertise End -->
+
+    <!-- Service Start -->
+    <div class="container-fluid bg-light my-5 py-6" id="service">
+        <div class="container">
+            <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-6">
+                    <h1 class="display-5 mb-0">Services</h1>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <a class="btn btn-primary py-3 px-5" href="#contact">Hire Me</a>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
+                        <div class="bg-icon flex-shrink-0 mb-3">
+                            <i class="fa fa-globe fa-2x text-dark"></i>
+                        </div>
+                        <div class="ms-sm-4">
+                            <h4 class="mb-3">Business Website Development</h4>
+                            <span>
+                                Professional websites built to present services clearly, support trust, and strengthen the client’s online presence.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
+                        <div class="bg-icon flex-shrink-0 mb-3">
+                            <i class="fa fa-cogs fa-2x text-dark"></i>
+                        </div>
+                        <div class="ms-sm-4">
+                            <h4 class="mb-3">Admin Panels & Internal Systems</h4>
+                            <span>
+                                Custom administrative systems designed around real workflows, operational needs, and structured management logic.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
+                        <div class="bg-icon flex-shrink-0 mb-3">
+                            <i class="fa fa-database fa-2x text-dark"></i>
+                        </div>
+                        <div class="ms-sm-4">
+                            <h4 class="mb-3">Database-Driven Platforms</h4>
+                            <span>
+                                Web platforms that connect interfaces, back-end functionality, and well-structured database design into one working solution.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item d-flex flex-column flex-sm-row bg-white rounded h-100 p-4 p-lg-5">
+                        <div class="bg-icon flex-shrink-0 mb-3">
+                            <i class="fa fa-tools fa-2x text-dark"></i>
+                        </div>
+                        <div class="ms-sm-4">
+                            <h4 class="mb-3">Product Improvement & Enhancement</h4>
+                            <span>
+                                Practical technical improvements that raise efficiency, usability, and business value in existing digital products.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+    <!-- Projects Start -->
+    <div class="container-xxl py-6 pt-5" id="project">
+        <div class="container">
+            <div class="row g-5 mb-5 align-items-center wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-6">
+                    <h1 class="display-5 mb-0">My Projects</h1>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <ul class="list-inline mx-n3 mb-0" id="portfolio-flters">
+                        <li class="mx-3 active" data-filter="*">All Projects</li>
+                        <li class="mx-3" data-filter=".business">Business Systems</li>
+                        <li class="mx-3" data-filter=".website">Websites</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row g-4 portfolio-container wow fadeInUp" data-wow-delay="0.1s">
+
+                <div class="col-lg-4 col-md-6 portfolio-item business">
+                    <div class="portfolio-card bg-white rounded shadow-sm overflow-hidden h-100">
+                        <div class="portfolio-img">
+                            <img class="img-fluid w-100" src="img/project-1.jpg" alt="Safety Horizon System">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="mb-2">Safety Horizon System</h4>
+                            <p class="text-primary mb-2">Business Management System</p>
+                            <p class="mb-3">
+                                A custom internal platform for certificate workflows, records management,
+                                product handling, and administrative operations.
+                            </p>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <a class="btn btn-primary py-2 px-4"
+                                   href="https://safetyhorizonsystem.com/Login.aspx"
+                                   target="_blank"
+                                   rel="noopener noreferrer">View System</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item website">
+                    <div class="portfolio-card bg-white rounded shadow-sm overflow-hidden h-100">
+                        <div class="portfolio-img">
+                            <img class="img-fluid w-100" src="img/project-2.jpg" alt="Safety Horizon ECI Website">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="mb-2">Safety Horizon ECI</h4>
+                            <p class="text-primary mb-2">Corporate Website</p>
+                            <p class="mb-3">
+                                A professional company website designed to present services, build trust,
+                                and strengthen the business identity online.
+                            </p>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <a class="btn btn-primary py-2 px-4"
+                                   href="https://safetyhorizoneci.com/"
+                                   target="_blank"
+                                   rel="noopener noreferrer">View Website</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item business website">
+                    <div class="portfolio-card bg-white rounded shadow-sm overflow-hidden h-100">
+                        <div class="portfolio-img">
+                            <img class="img-fluid w-100" src="img/project-3.jpg" alt="ABC News 24/7">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="mb-2">ABC News 24/7</h4>
+                            <p class="text-primary mb-2">News Platform & Admin System</p>
+                            <p class="mb-3">
+                                A news website with a structured admin panel for publishing articles,
+                                content management, and editorial workflow control.
+                            </p>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <a class="btn btn-primary py-2 px-4"
+                                   href="https://abcnews-247.com/"
+                                   target="_blank"
+                                   rel="noopener noreferrer">View Website</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item website">
+                    <div class="portfolio-card bg-white rounded shadow-sm overflow-hidden h-100">
+                        <div class="portfolio-img">
+                            <img class="img-fluid w-100" src="img/project-4.jpg" alt="Qahwa World Website">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="mb-2">Qahwa World</h4>
+                            <p class="text-primary mb-2">Business Website</p>
+                            <p class="mb-3">
+                                A branded website created to present the business professionally and improve
+                                its online visibility and customer-facing image.
+                            </p>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <a class="btn btn-primary py-2 px-4"
+                                   href="https://qahwaworld.com/"
+                                   target="_blank"
+                                   rel="noopener noreferrer">View Website</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item website">
+                    <div class="portfolio-card bg-white rounded shadow-sm overflow-hidden h-100">
+                        <div class="portfolio-img">
+                            <img class="img-fluid w-100" src="img/project-5.jpg" alt="School Website">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="mb-2">School Website Project</h4>
+                            <p class="text-primary mb-2">Education Website</p>
+                            <p class="mb-3">
+                                A website developed for an educational institution to present information,
+                                structure content clearly, and improve communication online.
+                            </p>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <a class="btn btn-primary py-2 px-4" href="#">Private Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 portfolio-item business website">
+                    <div class="portfolio-card bg-white rounded shadow-sm overflow-hidden h-100">
+                        <div class="portfolio-img">
+                            <img class="img-fluid w-100" src="img/project-6.jpg" alt="Custom Client Projects">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="mb-2">Custom Client Projects</h4>
+                            <p class="text-primary mb-2">Web Development</p>
+                            <p class="mb-3">
+                                Tailored websites and systems developed for different clients based on
+                                business needs, workflow requirements, and project goals.
+                            </p>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <a class="btn btn-primary py-2 px-4" href="#">Private Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Projects End -->
+
+    <!-- References Start -->
+    <div class="container-fluid bg-light py-5 my-5" id="references">
+        <div class="container-fluid py-5">
+            <h1 class="display-5 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">References</h1>
+
+            <div class="references-showcase position-relative">
+                <img class="reference-floating ref-pos-1" src="img/Sofea_Collins.png" alt="Reference 1">
+                <img class="reference-floating ref-pos-2" src="img/Dr_Mohamed_Ghobashy.png" alt="Reference 2">
+                <img class="reference-floating ref-pos-3" src="img/Ali_Alzakary.png" alt="Reference 3">
+                <img class="reference-floating ref-pos-4" src="img/Andra_Oproiu.png" alt="Reference 4">
+
+                <div class="reference-center text-center wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="reference-main-img-wrap">
+                        <img class="reference-main-img" id="mainReferenceImage" src="img/Dr_Anas_Khalifa.png" alt="Main Reference">
+                        <div class="reference-quote-icon">
+                            <i class="fa fa-quote-left text-primary"></i>
+                        </div>
+                    </div>
+
+                    <p class="reference-text" id="referenceText">
+                        Trusted by clients and business owners for building professional websites,
+                        admin systems, and practical digital solutions tailored to real operational needs.
+                    </p>
+
+                    <hr class="w-25 mx-auto">
+
+                    <h4 class="mb-2" id="referenceName">Dr. Anas Khalifa</h4>
+                    <p class="text-primary mb-1" id="referenceCompany">Safety Horizon ECI</p>
+                    <span class="reference-role" id="referenceRole">Business Owner</span>
+
+                    <div class="reference-dots mt-4">
+                        <button class="dot active" type="button" onclick="showReference(0)"></button>
+                        <button class="dot" type="button" onclick="showReference(1)"></button>
+                        <button class="dot" type="button" onclick="showReference(2)"></button>
+                        <button class="dot" type="button" onclick="showReference(3)"></button>
+                        <button class="dot" type="button" onclick="showReference(4)"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- References End -->
+
+    <!-- Contact Start -->
+    <div class="container-xxl py-6" id="contact">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h1 class="display-5 mb-5">Let’s Work Together</h1>
+                    <p class="mb-4">
+                        I develop business websites, admin panels, and custom web systems for clients in Poland and international markets.
+                    </p>
+                    <p class="mb-3"><i class="fa fa-envelope text-primary me-3"></i>khalidkhalifa79@gmail.com</p>
+                    <p class="mb-3"><i class="fa fa-phone-alt text-primary me-3"></i>+48721143224</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a class="border-bottom text-secondary" href="#">2026 Khalid Khalifa.</a>, All Right Reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/typed/typed.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
