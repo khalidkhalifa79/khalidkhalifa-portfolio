@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Khalid Khalifa | Full-Stack Developer Portfolio</title>
     <meta content="" name="keywords">
-    <meta name="description" content="Khalid Khalifa - Full-Stack Web Developer specializing in business websites, admin panels, internal systems, and database-driven platforms.">
+    <meta id="meta-description" name="description" content="Khalid Khalifa - Full-Stack Web Developer specializing in business websites, admin panels, internal systems, and database-driven platforms.">
 
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -31,65 +31,22 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-
-    <script>
-        const references = [
-            {
-                image: "img/Dr_Anas_Khalifa.png",
-                name: "Dr. Anas Khalifa",
-                company: "Safety Horizon ECI",
-                role: "Business Owner",
-                text: "Trusted by clients and business owners for building professional websites, admin systems, and practical digital solutions tailored to real operational needs."
-            },
-            {
-                image: "img/Dr_Mohamed_Ghobashy.png",
-                name: "Dr. Mohamed Ghobashy",
-                company: "ABCNews-247",
-                role: "Business Owner",
-                text: "Developed practical and structured web solutions focused on publishing systems, content workflows, and business needs."
-            },
-            {
-                image: "img/Ali_Alzakary.png",
-                name: "Ali Alzakary",
-                company: "Qahwa World",
-                role: "Business Owner",
-                text: "Delivered professional website solutions designed to improve digital presence, branding, and customer-facing presentation."
-            },
-            {
-                image: "img/Andra_Oproiu.png",
-                name: "Andra Oproiu",
-                company: "School Website Project",
-                role: "School Director",
-                text: "Built clear and organized web structures to support educational presentation and accessible online communication."
-            },
-            {
-                image: "img/Sofea_Collins.png",
-                name: "Sofea Collins",
-                company: "WWL Incorporated",
-                role: "Finance Analyst",
-                text: "Provided tailored digital project work focused on clarity, usability, and practical implementation for real client needs."
-            }
-        ];
-
-        function showReference(index) {
-            document.getElementById("mainReferenceImage").src = references[index].image;
-            document.getElementById("referenceName").textContent = references[index].name;
-            document.getElementById("referenceCompany").textContent = references[index].company;
-            document.getElementById("referenceRole").textContent = references[index].role;
-            document.getElementById("referenceText").textContent = references[index].text;
-
-            const dots = document.querySelectorAll(".reference-dots .dot");
-            dots.forEach(dot => dot.classList.remove("active"));
-            dots[index].classList.add("active");
-        }
-    </script>
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51">
+
+    <!-- Language Switcher Start -->
+    <div class="language-switcher-fixed">
+        <button type="button" class="lang-switch-btn active" id="btn-en">EN</button>
+        <span class="lang-separator">|</span>
+        <button type="button" class="lang-switch-btn" id="btn-pl">PL</button>
+    </div>
+    <!-- Language Switcher End -->
+
     <!-- Spinner Start -->
     <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
+            <span class="sr-only" data-en="Loading..." data-pl="Ładowanie...">Loading...</span>
         </div>
     </div>
     <!-- Spinner End -->
@@ -99,23 +56,27 @@
         <a href="index.html" class="navbar-brand d-block d-lg-none">
             <h1 class="text-primary fw-bold m-0">Khalid Khalifa</h1>
         </a>
-        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse justify-content-between py-4 py-lg-0" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a href="#home" class="nav-item nav-link active">Home</a>
-                <a href="#about" class="nav-item nav-link">About</a>
-                <a href="#skill" class="nav-item nav-link">Skills</a>
-                <a href="#service" class="nav-item nav-link">Services</a>
+                <a href="#home" class="nav-item nav-link active" data-en="Home" data-pl="Start">Home</a>
+                <a href="#about" class="nav-item nav-link" data-en="About" data-pl="O mnie">About</a>
+                <a href="#skill" class="nav-item nav-link" data-en="Skills" data-pl="Umiejętności">Skills</a>
+                <a href="#service" class="nav-item nav-link" data-en="Services" data-pl="Usługi">Services</a>
             </div>
+
             <a href="index.html" class="navbar-brand bg-secondary py-3 px-4 mx-3 d-none d-lg-block">
                 <h1 class="text-primary fw-bold m-0">Khalid Khalifa</h1>
             </a>
+
             <div class="navbar-nav me-auto py-0">
-                <a href="#project" class="nav-item nav-link">Projects</a>
-                <a href="#references" class="nav-item nav-link">References</a>
-                <a href="#contact" class="nav-item nav-link">Contact</a>
+                <a href="#project" class="nav-item nav-link" data-en="Projects" data-pl="Projekty">Projects</a>
+                <a href="#references" class="nav-item nav-link" data-en="References" data-pl="Referencje">References</a>
+                <a href="#contact" class="nav-item nav-link" data-en="Contact" data-pl="Kontakt">Contact</a>
             </div>
         </div>
     </nav>
@@ -126,23 +87,47 @@
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-7 py-6 pb-0 pt-lg-0">
-                    <h3 class="text-primary mb-3">Professional Web Solutions</h3>
-                    <h1 class="display-3 mb-3">Khalid Khalifa</h1>
-                    <h2 class="mb-3">Full-Stack Web Developer | Business Systems & Admin Panels</h2>
+                    <h3 class="text-primary mb-3"
+                        data-en="Professional Web Solutions"
+                        data-pl="Profesjonalne rozwiązania internetowe">
+                        Professional Web Solutions
+                    </h3>
 
-                    <p class="lead mb-4">
+                    <h1 class="display-3 mb-3">Khalid Khalifa</h1>
+
+                    <h2 class="mb-3"
+                        data-en="Full-Stack Web Developer | Business Systems &amp; Admin Panels"
+                        data-pl="Programista Full-Stack | Systemy biznesowe i panele administracyjne">
+                        Full-Stack Web Developer | Business Systems &amp; Admin Panels
+                    </h2>
+
+                    <p class="lead mb-4"
+                       data-en="I build professional business websites, custom admin panels, and database-driven web systems designed around real operational needs."
+                       data-pl="Tworzę profesjonalne strony biznesowe, niestandardowe panele administracyjne oraz systemy webowe oparte na bazach danych, zaprojektowane pod realne potrzeby operacyjne.">
                         I build professional business websites, custom admin panels, and database-driven web systems designed around real operational needs.
                     </p>
 
-                    <p class="mb-4">
+                    <p class="mb-4"
+                       data-en="My work focuses on practical, structured, and scalable solutions that improve workflows, support management, and strengthen digital presence."
+                       data-pl="Moja praca koncentruje się na praktycznych, uporządkowanych i skalowalnych rozwiązaniach, które usprawniają procesy, wspierają zarządzanie i wzmacniają obecność cyfrową.">
                         My work focuses on practical, structured, and scalable solutions that improve workflows, support management, and strengthen digital presence.
                     </p>
 
                     <div class="d-flex align-items-center pt-4 flex-wrap">
-                        <a href="#project" class="btn btn-primary py-3 px-4 me-3 mb-3">View My Projects</a>
-                        <a href="#contact" class="btn btn-outline-primary py-3 px-4 mb-3">Let’s Work Together</a>
+                        <a href="#project" class="btn btn-primary py-3 px-4 me-3 mb-3"
+                           data-en="View My Projects"
+                           data-pl="Zobacz moje projekty">
+                            View My Projects
+                        </a>
+
+                        <a href="#contact" class="btn btn-outline-primary py-3 px-4 mb-3"
+                           data-en="Let’s Work Together"
+                           data-pl="Współpracujmy">
+                            Let’s Work Together
+                        </a>
                     </div>
                 </div>
+
                 <div class="col-lg-5">
                     <img class="img-fluid" src="img/khalidkhalifa.png" alt="Khalid Khalifa">
                 </div>
@@ -156,22 +141,63 @@
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <h1 class="display-5 mb-4">About Me</h1>
-                    <h3 class="lh-base mb-4">Full-Stack Web Developer with a business-focused approach</h3>
-                    <p class="mb-4">
+                    <h1 class="display-5 mb-4" data-en="About Me" data-pl="O mnie">About Me</h1>
+
+                    <h3 class="lh-base mb-4"
+                        data-en="Full-Stack Web Developer with a business-focused approach"
+                        data-pl="Programista Full-Stack z podejściem ukierunkowanym na biznes">
+                        Full-Stack Web Developer with a business-focused approach
+                    </h3>
+
+                    <p class="mb-4"
+                       data-en="I specialize in developing professional websites, internal admin systems, and custom database-driven platforms designed to support real business operations."
+                       data-pl="Specjalizuję się w tworzeniu profesjonalnych stron internetowych, wewnętrznych systemów administracyjnych oraz niestandardowych platform opartych na bazach danych, zaprojektowanych z myślą o rzeczywistych operacjach biznesowych.">
                         I specialize in developing professional websites, internal admin systems, and custom
                         database-driven platforms designed to support real business operations.
                     </p>
-                    <p class="mb-4">
+
+                    <p class="mb-4"
+                       data-en="My experience includes business websites, internal systems, certificate platforms, content management solutions, and custom workflows developed for real client and operational needs."
+                       data-pl="Moje doświadczenie obejmuje strony biznesowe, systemy wewnętrzne, platformy certyfikatów, rozwiązania do zarządzania treścią oraz niestandardowe procesy tworzone pod rzeczywiste potrzeby klientów i operacji.">
                         My experience includes business websites, internal systems, certificate platforms,
                         content management solutions, and custom workflows developed for real client and operational needs.
                     </p>
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Professional business website development</p>
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Admin panels and internal management systems</p>
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Database design and structured system logic</p>
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Certificate, content, and workflow management systems</p>
-                    <p class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Improvement and technical enhancement of existing digital products</p>
-                    <a class="btn btn-primary py-3 px-5 mt-3" href="#contact">Let’s Work Together</a>
+
+                    <p class="mb-3"
+                       data-en="<i class='far fa-check-circle text-primary me-3'></i>Professional business website development"
+                       data-pl="<i class='far fa-check-circle text-primary me-3'></i>Profesjonalne tworzenie stron biznesowych">
+                        <i class="far fa-check-circle text-primary me-3"></i>Professional business website development
+                    </p>
+
+                    <p class="mb-3"
+                       data-en="<i class='far fa-check-circle text-primary me-3'></i>Admin panels and internal management systems"
+                       data-pl="<i class='far fa-check-circle text-primary me-3'></i>Panele administracyjne i wewnętrzne systemy zarządzania">
+                        <i class="far fa-check-circle text-primary me-3"></i>Admin panels and internal management systems
+                    </p>
+
+                    <p class="mb-3"
+                       data-en="<i class='far fa-check-circle text-primary me-3'></i>Database design and structured system logic"
+                       data-pl="<i class='far fa-check-circle text-primary me-3'></i>Projektowanie baz danych i uporządkowana logika systemu">
+                        <i class="far fa-check-circle text-primary me-3"></i>Database design and structured system logic
+                    </p>
+
+                    <p class="mb-3"
+                       data-en="<i class='far fa-check-circle text-primary me-3'></i>Certificate, content, and workflow management systems"
+                       data-pl="<i class='far fa-check-circle text-primary me-3'></i>Systemy zarządzania certyfikatami, treścią i obiegiem pracy">
+                        <i class="far fa-check-circle text-primary me-3"></i>Certificate, content, and workflow management systems
+                    </p>
+
+                    <p class="mb-3"
+                       data-en="<i class='far fa-check-circle text-primary me-3'></i>Improvement and technical enhancement of existing digital products"
+                       data-pl="<i class='far fa-check-circle text-primary me-3'></i>Ulepszanie i techniczne rozwijanie istniejących produktów cyfrowych">
+                        <i class="far fa-check-circle text-primary me-3"></i>Improvement and technical enhancement of existing digital products
+                    </p>
+
+                    <a class="btn btn-primary py-3 px-5 mt-3" href="#contact"
+                       data-en="Let’s Work Together"
+                       data-pl="Współpracujmy">
+                        Let’s Work Together
+                    </a>
                 </div>
 
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
@@ -185,18 +211,32 @@
                     </div>
 
                     <div class="d-flex align-items-center mb-3">
-                        <h5 class="border-end pe-3 me-3 mb-0">Featured Projects</h5>
+                        <h5 class="border-end pe-3 me-3 mb-0"
+                            data-en="Featured Projects"
+                            data-pl="Wybrane projekty">
+                            Featured Projects
+                        </h5>
                         <h2 class="text-primary fw-bold mb-0">3+</h2>
                     </div>
-                    <p class="mb-4">
+
+                    <p class="mb-4"
+                       data-en="Selected projects that reflect my ability to develop complete business and management solutions."
+                       data-pl="Wybrane projekty pokazujące moją zdolność do tworzenia kompletnych rozwiązań biznesowych i zarządczych.">
                         Selected projects that reflect my ability to develop complete business and management solutions.
                     </p>
 
                     <div class="d-flex align-items-center mb-3">
-                        <h5 class="border-end pe-3 me-3 mb-0">Systems & Projects Built</h5>
+                        <h5 class="border-end pe-3 me-3 mb-0"
+                            data-en="Systems &amp; Projects Built"
+                            data-pl="Zrealizowane systemy i projekty">
+                            Systems &amp; Projects Built
+                        </h5>
                         <h2 class="text-primary fw-bold mb-0">108</h2>
                     </div>
-                    <p class="mb-0">
+
+                    <p class="mb-0"
+                       data-en="Practical work focused on structured systems, custom workflows, and scalable digital products."
+                       data-pl="Praktyczna praca skoncentrowana na uporządkowanych systemach, niestandardowych procesach i skalowalnych produktach cyfrowych.">
                         Practical work focused on structured systems, custom workflows, and scalable digital products.
                     </p>
                 </div>
@@ -210,11 +250,23 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <h1 class="display-5 mb-5">Skills & Experience</h1>
-                    <p class="mb-4">
+                    <h1 class="display-5 mb-5"
+                        data-en="Skills &amp; Experience"
+                        data-pl="Umiejętności i doświadczenie">
+                        Skills &amp; Experience
+                    </h1>
+
+                    <p class="mb-4"
+                       data-en="The technologies, strengths, and real project capabilities behind the systems and websites I build."
+                       data-pl="Technologie, mocne strony i realne kompetencje projektowe stojące za systemami i stronami, które tworzę.">
                         The technologies, strengths, and real project capabilities behind the systems and websites I build.
                     </p>
-                    <h3 class="mb-4">Core Technologies</h3>
+
+                    <h3 class="mb-4"
+                        data-en="Core Technologies"
+                        data-pl="Kluczowe technologie">
+                        Core Technologies
+                    </h3>
 
                     <div class="row align-items-center">
                         <div class="col-md-6">
@@ -252,7 +304,11 @@
 
                             <div class="skill mb-4">
                                 <div class="d-flex justify-content-between">
-                                    <h6 class="font-weight-bold">Business System Analysis</h6>
+                                    <h6 class="font-weight-bold"
+                                        data-en="Business System Analysis"
+                                        data-pl="Analiza systemów biznesowych">
+                                        Business System Analysis
+                                    </h6>
                                 </div>
                             </div>
                         </div>
@@ -262,10 +318,24 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <ul class="nav nav-pills rounded border border-2 border-primary mb-5">
                         <li class="nav-item w-50">
-                            <button class="nav-link w-100 py-3 fs-5 active" data-bs-toggle="pill" href="#tab-1">Experience</button>
+                            <button class="nav-link w-100 py-3 fs-5 active"
+                                    data-bs-toggle="pill"
+                                    data-bs-target="#tab-1"
+                                    type="button"
+                                    data-en="Experience"
+                                    data-pl="Doświadczenie">
+                                Experience
+                            </button>
                         </li>
                         <li class="nav-item w-50">
-                            <button class="nav-link w-100 py-3 fs-5" data-bs-toggle="pill" href="#tab-2">Education</button>
+                            <button class="nav-link w-100 py-3 fs-5"
+                                    data-bs-toggle="pill"
+                                    data-bs-target="#tab-2"
+                                    type="button"
+                                    data-en="Education"
+                                    data-pl="Edukacja">
+                                Education
+                            </button>
                         </li>
                     </ul>
 
@@ -274,31 +344,63 @@
                         <div id="tab-1" class="tab-pane fade show p-0 active">
                             <div class="row gy-5 gx-4">
                                 <div class="col-sm-6">
-                                    <h5>Full-Stack Web Development</h5>
+                                    <h5 data-en="Full-Stack Web Development" data-pl="Programowanie Full-Stack">Full-Stack Web Development</h5>
                                     <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">Professional Development Experience</p>
-                                    <h6 class="mb-0">Building business websites, admin panels, and database-driven systems</h6>
+                                    <p class="text-primary mb-1"
+                                       data-en="Professional Development Experience"
+                                       data-pl="Doświadczenie zawodowe w tworzeniu oprogramowania">
+                                        Professional Development Experience
+                                    </p>
+                                    <h6 class="mb-0"
+                                        data-en="Building business websites, admin panels, and database-driven systems"
+                                        data-pl="Tworzenie stron biznesowych, paneli administracyjnych i systemów opartych na bazach danych">
+                                        Building business websites, admin panels, and database-driven systems
+                                    </h6>
                                 </div>
 
                                 <div class="col-sm-6">
-                                    <h5>Business Management Systems</h5>
+                                    <h5 data-en="Business Management Systems" data-pl="Systemy zarządzania biznesem">Business Management Systems</h5>
                                     <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">System Design & Workflow Logic</p>
-                                    <h6 class="mb-0">Developing structured platforms for operations, records, and internal processes</h6>
+                                    <p class="text-primary mb-1"
+                                       data-en="System Design &amp; Workflow Logic"
+                                       data-pl="Projektowanie systemów i logika procesów">
+                                        System Design &amp; Workflow Logic
+                                    </p>
+                                    <h6 class="mb-0"
+                                        data-en="Developing structured platforms for operations, records, and internal processes"
+                                        data-pl="Tworzenie uporządkowanych platform do operacji, rejestrów i procesów wewnętrznych">
+                                        Developing structured platforms for operations, records, and internal processes
+                                    </h6>
                                 </div>
 
                                 <div class="col-sm-6">
-                                    <h5>Custom Admin Panels</h5>
+                                    <h5 data-en="Custom Admin Panels" data-pl="Niestandardowe panele administracyjne">Custom Admin Panels</h5>
                                     <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">Administrative Interface Development</p>
-                                    <h6 class="mb-0">Creating secure and practical dashboards for management and control</h6>
+                                    <p class="text-primary mb-1"
+                                       data-en="Administrative Interface Development"
+                                       data-pl="Tworzenie interfejsów administracyjnych">
+                                        Administrative Interface Development
+                                    </p>
+                                    <h6 class="mb-0"
+                                        data-en="Creating secure and practical dashboards for management and control"
+                                        data-pl="Tworzenie bezpiecznych i praktycznych paneli do zarządzania i kontroli">
+                                        Creating secure and practical dashboards for management and control
+                                    </h6>
                                 </div>
 
                                 <div class="col-sm-6">
-                                    <h5>Database & Back-End Logic</h5>
+                                    <h5 data-en="Database &amp; Back-End Logic" data-pl="Bazy danych i logika back-endu">Database &amp; Back-End Logic</h5>
                                     <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">Applied Technical Experience</p>
-                                    <h6 class="mb-0">Designing SQL-based structures, business rules, and system behavior</h6>
+                                    <p class="text-primary mb-1"
+                                       data-en="Applied Technical Experience"
+                                       data-pl="Praktyczne doświadczenie techniczne">
+                                        Applied Technical Experience
+                                    </p>
+                                    <h6 class="mb-0"
+                                        data-en="Designing SQL-based structures, business rules, and system behavior"
+                                        data-pl="Projektowanie struktur opartych na SQL, reguł biznesowych i zachowania systemu">
+                                        Designing SQL-based structures, business rules, and system behavior
+                                    </h6>
                                 </div>
                             </div>
                         </div>
@@ -306,34 +408,67 @@
                         <div id="tab-2" class="tab-pane fade show p-0">
                             <div class="row gy-5 gx-4">
                                 <div class="col-sm-6">
-                                    <h5>Computer Science / Programming Studies</h5>
+                                    <h5 data-en="Computer Science / Programming Studies" data-pl="Studia z informatyki / programowania">Computer Science / Programming Studies</h5>
                                     <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">University Education</p>
-                                    <h6 class="mb-0">Academic foundation in programming, software logic, and system development</h6>
+                                    <p class="text-primary mb-1"
+                                       data-en="University Education"
+                                       data-pl="Wykształcenie akademickie">
+                                        University Education
+                                    </p>
+                                    <h6 class="mb-0"
+                                        data-en="Academic foundation in programming, software logic, and system development"
+                                        data-pl="Podstawy akademickie w programowaniu, logice oprogramowania i tworzeniu systemów">
+                                        Academic foundation in programming, software logic, and system development
+                                    </h6>
                                 </div>
 
                                 <div class="col-sm-6">
-                                    <h5>Full-Stack Web Development</h5>
+                                    <h5 data-en="Full-Stack Web Development" data-pl="Programowanie Full-Stack">Full-Stack Web Development</h5>
                                     <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">Applied Technical Practice</p>
-                                    <h6 class="mb-0">Hands-on development of websites, admin panels, and database-driven systems</h6>
+                                    <p class="text-primary mb-1"
+                                       data-en="Applied Technical Practice"
+                                       data-pl="Praktyka techniczna">
+                                        Applied Technical Practice
+                                    </p>
+                                    <h6 class="mb-0"
+                                        data-en="Hands-on development of websites, admin panels, and database-driven systems"
+                                        data-pl="Praktyczne tworzenie stron, paneli administracyjnych i systemów opartych na bazach danych">
+                                        Hands-on development of websites, admin panels, and database-driven systems
+                                    </h6>
                                 </div>
 
                                 <div class="col-sm-6">
-                                    <h5>Database Systems & Business Logic</h5>
+                                    <h5 data-en="Database Systems &amp; Business Logic" data-pl="Systemy baz danych i logika biznesowa">Database Systems &amp; Business Logic</h5>
                                     <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">Project-Based Learning</p>
-                                    <h6 class="mb-0">Experience in SQL databases, structured workflows, and operational system design</h6>
+                                    <p class="text-primary mb-1"
+                                       data-en="Project-Based Learning"
+                                       data-pl="Nauka oparta na projektach">
+                                        Project-Based Learning
+                                    </p>
+                                    <h6 class="mb-0"
+                                        data-en="Experience in SQL databases, structured workflows, and operational system design"
+                                        data-pl="Doświadczenie w bazach SQL, uporządkowanych procesach i projektowaniu systemów operacyjnych">
+                                        Experience in SQL databases, structured workflows, and operational system design
+                                    </h6>
                                 </div>
 
                                 <div class="col-sm-6">
-                                    <h5>Continuous Development & Improvement</h5>
+                                    <h5 data-en="Continuous Development &amp; Improvement" data-pl="Ciągły rozwój i doskonalenie">Continuous Development &amp; Improvement</h5>
                                     <hr class="text-primary my-2">
-                                    <p class="text-primary mb-1">Professional Growth</p>
-                                    <h6 class="mb-0">Ongoing refinement through real client work and custom development projects</h6>
+                                    <p class="text-primary mb-1"
+                                       data-en="Professional Growth"
+                                       data-pl="Rozwój zawodowy">
+                                        Professional Growth
+                                    </p>
+                                    <h6 class="mb-0"
+                                        data-en="Ongoing refinement through real client work and custom development projects"
+                                        data-pl="Stałe doskonalenie poprzez realną pracę z klientami i niestandardowe projekty programistyczne">
+                                        Ongoing refinement through real client work and custom development projects
+                                    </h6>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -346,10 +481,14 @@
         <div class="container">
             <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="col-lg-6">
-                    <h1 class="display-5 mb-0">Services</h1>
+                    <h1 class="display-5 mb-0" data-en="Services" data-pl="Usługi">Services</h1>
                 </div>
                 <div class="col-lg-6 text-lg-end">
-                    <a class="btn btn-primary py-3 px-5" href="#contact">Hire Me</a>
+                    <a class="btn btn-primary py-3 px-5" href="#contact"
+                       data-en="Hire Me"
+                       data-pl="Skontaktuj się ze mną">
+                        Hire Me
+                    </a>
                 </div>
             </div>
 
@@ -360,8 +499,13 @@
                             <i class="fa fa-globe fa-2x text-dark"></i>
                         </div>
                         <div class="ms-sm-4">
-                            <h4 class="mb-3">Business Website Development</h4>
-                            <span>
+                            <h4 class="mb-3"
+                                data-en="Business Website Development"
+                                data-pl="Tworzenie stron biznesowych">
+                                Business Website Development
+                            </h4>
+                            <span data-en="Professional websites built to present services clearly, support trust, and strengthen the client’s online presence."
+                                  data-pl="Profesjonalne strony tworzone po to, aby jasno prezentować usługi, budować zaufanie i wzmacniać obecność klienta w internecie.">
                                 Professional websites built to present services clearly, support trust, and strengthen the client’s online presence.
                             </span>
                         </div>
@@ -374,8 +518,13 @@
                             <i class="fa fa-cogs fa-2x text-dark"></i>
                         </div>
                         <div class="ms-sm-4">
-                            <h4 class="mb-3">Admin Panels & Internal Systems</h4>
-                            <span>
+                            <h4 class="mb-3"
+                                data-en="Admin Panels &amp; Internal Systems"
+                                data-pl="Panele administracyjne i systemy wewnętrzne">
+                                Admin Panels &amp; Internal Systems
+                            </h4>
+                            <span data-en="Custom administrative systems designed around real workflows, operational needs, and structured management logic."
+                                  data-pl="Niestandardowe systemy administracyjne projektowane wokół rzeczywistych procesów, potrzeb operacyjnych i uporządkowanej logiki zarządzania.">
                                 Custom administrative systems designed around real workflows, operational needs, and structured management logic.
                             </span>
                         </div>
@@ -388,8 +537,13 @@
                             <i class="fa fa-database fa-2x text-dark"></i>
                         </div>
                         <div class="ms-sm-4">
-                            <h4 class="mb-3">Database-Driven Platforms</h4>
-                            <span>
+                            <h4 class="mb-3"
+                                data-en="Database-Driven Platforms"
+                                data-pl="Platformy oparte na bazach danych">
+                                Database-Driven Platforms
+                            </h4>
+                            <span data-en="Web platforms that connect interfaces, back-end functionality, and well-structured database design into one working solution."
+                                  data-pl="Platformy internetowe łączące interfejsy, funkcjonalność back-endu i dobrze zaprojektowaną bazę danych w jedno działające rozwiązanie.">
                                 Web platforms that connect interfaces, back-end functionality, and well-structured database design into one working solution.
                             </span>
                         </div>
@@ -402,8 +556,13 @@
                             <i class="fa fa-tools fa-2x text-dark"></i>
                         </div>
                         <div class="ms-sm-4">
-                            <h4 class="mb-3">Product Improvement & Enhancement</h4>
-                            <span>
+                            <h4 class="mb-3"
+                                data-en="Product Improvement &amp; Enhancement"
+                                data-pl="Ulepszanie i rozwój produktów">
+                                Product Improvement &amp; Enhancement
+                            </h4>
+                            <span data-en="Practical technical improvements that raise efficiency, usability, and business value in existing digital products."
+                                  data-pl="Praktyczne ulepszenia techniczne zwiększające efektywność, użyteczność i wartość biznesową istniejących produktów cyfrowych.">
                                 Practical technical improvements that raise efficiency, usability, and business value in existing digital products.
                             </span>
                         </div>
@@ -419,13 +578,13 @@
         <div class="container">
             <div class="row g-5 mb-5 align-items-center wow fadeInUp" data-wow-delay="0.1s">
                 <div class="col-lg-6">
-                    <h1 class="display-5 mb-0">My Projects</h1>
+                    <h1 class="display-5 mb-0" data-en="My Projects" data-pl="Moje projekty">My Projects</h1>
                 </div>
                 <div class="col-lg-6 text-lg-end">
                     <ul class="list-inline mx-n3 mb-0" id="portfolio-flters">
-                        <li class="mx-3 active" data-filter="*">All Projects</li>
-                        <li class="mx-3" data-filter=".business">Business Systems</li>
-                        <li class="mx-3" data-filter=".website">Websites</li>
+                        <li class="mx-3 active" data-filter="*" data-en="All Projects" data-pl="Wszystkie projekty">All Projects</li>
+                        <li class="mx-3" data-filter=".business" data-en="Business Systems" data-pl="Systemy biznesowe">Business Systems</li>
+                        <li class="mx-3" data-filter=".website" data-en="Websites" data-pl="Strony internetowe">Websites</li>
                     </ul>
                 </div>
             </div>
@@ -439,8 +598,14 @@
                         </div>
                         <div class="p-4">
                             <h4 class="mb-2">Safety Horizon System</h4>
-                            <p class="text-primary mb-2">Business Management System</p>
-                            <p class="mb-3">
+                            <p class="text-primary mb-2"
+                               data-en="Business Management System"
+                               data-pl="System zarządzania biznesem">
+                                Business Management System
+                            </p>
+                            <p class="mb-3"
+                               data-en="A custom internal platform for certificate workflows, records management, product handling, and administrative operations."
+                               data-pl="Niestandardowa platforma wewnętrzna do obsługi procesów certyfikatów, zarządzania rejestrami, produktami i operacjami administracyjnymi.">
                                 A custom internal platform for certificate workflows, records management,
                                 product handling, and administrative operations.
                             </p>
@@ -448,7 +613,11 @@
                                 <a class="btn btn-primary py-2 px-4"
                                    href="https://safetyhorizonsystem.com/Login.aspx"
                                    target="_blank"
-                                   rel="noopener noreferrer">View System</a>
+                                   rel="noopener noreferrer"
+                                   data-en="View System"
+                                   data-pl="Zobacz system">
+                                    View System
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -461,8 +630,14 @@
                         </div>
                         <div class="p-4">
                             <h4 class="mb-2">Safety Horizon ECI</h4>
-                            <p class="text-primary mb-2">Corporate Website</p>
-                            <p class="mb-3">
+                            <p class="text-primary mb-2"
+                               data-en="Corporate Website"
+                               data-pl="Strona firmowa">
+                                Corporate Website
+                            </p>
+                            <p class="mb-3"
+                               data-en="A professional company website designed to present services, build trust, and strengthen the business identity online."
+                               data-pl="Profesjonalna strona firmowa zaprojektowana w celu prezentacji usług, budowania zaufania i wzmacniania tożsamości marki w internecie.">
                                 A professional company website designed to present services, build trust,
                                 and strengthen the business identity online.
                             </p>
@@ -470,7 +645,11 @@
                                 <a class="btn btn-primary py-2 px-4"
                                    href="https://safetyhorizoneci.com/"
                                    target="_blank"
-                                   rel="noopener noreferrer">View Website</a>
+                                   rel="noopener noreferrer"
+                                   data-en="View Website"
+                                   data-pl="Zobacz stronę">
+                                    View Website
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -483,8 +662,14 @@
                         </div>
                         <div class="p-4">
                             <h4 class="mb-2">ABC News 24/7</h4>
-                            <p class="text-primary mb-2">News Platform & Admin System</p>
-                            <p class="mb-3">
+                            <p class="text-primary mb-2"
+                               data-en="News Platform &amp; Admin System"
+                               data-pl="Platforma newsowa i system administracyjny">
+                                News Platform &amp; Admin System
+                            </p>
+                            <p class="mb-3"
+                               data-en="A news website with a structured admin panel for publishing articles, content management, and editorial workflow control."
+                               data-pl="Serwis informacyjny z uporządkowanym panelem administracyjnym do publikacji artykułów, zarządzania treścią i kontroli procesów redakcyjnych.">
                                 A news website with a structured admin panel for publishing articles,
                                 content management, and editorial workflow control.
                             </p>
@@ -492,7 +677,11 @@
                                 <a class="btn btn-primary py-2 px-4"
                                    href="https://abcnews-247.com/"
                                    target="_blank"
-                                   rel="noopener noreferrer">View Website</a>
+                                   rel="noopener noreferrer"
+                                   data-en="View Website"
+                                   data-pl="Zobacz stronę">
+                                    View Website
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -505,8 +694,14 @@
                         </div>
                         <div class="p-4">
                             <h4 class="mb-2">Qahwa World</h4>
-                            <p class="text-primary mb-2">Business Website</p>
-                            <p class="mb-3">
+                            <p class="text-primary mb-2"
+                               data-en="Business Website"
+                               data-pl="Strona biznesowa">
+                                Business Website
+                            </p>
+                            <p class="mb-3"
+                               data-en="A branded website created to present the business professionally and improve its online visibility and customer-facing image."
+                               data-pl="Branded website created to present the business professionally and improve its online visibility and customer-facing image.">
                                 A branded website created to present the business professionally and improve
                                 its online visibility and customer-facing image.
                             </p>
@@ -514,7 +709,11 @@
                                 <a class="btn btn-primary py-2 px-4"
                                    href="https://qahwaworld.com/"
                                    target="_blank"
-                                   rel="noopener noreferrer">View Website</a>
+                                   rel="noopener noreferrer"
+                                   data-en="View Website"
+                                   data-pl="Zobacz stronę">
+                                    View Website
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -527,13 +726,23 @@
                         </div>
                         <div class="p-4">
                             <h4 class="mb-2">School Website Project</h4>
-                            <p class="text-primary mb-2">Education Website</p>
-                            <p class="mb-3">
+                            <p class="text-primary mb-2"
+                               data-en="Education Website"
+                               data-pl="Strona edukacyjna">
+                                Education Website
+                            </p>
+                            <p class="mb-3"
+                               data-en="A website developed for an educational institution to present information, structure content clearly, and improve communication online."
+                               data-pl="Strona internetowa stworzona dla instytucji edukacyjnej w celu jasnej prezentacji informacji, uporządkowania treści i poprawy komunikacji online.">
                                 A website developed for an educational institution to present information,
                                 structure content clearly, and improve communication online.
                             </p>
                             <div class="d-flex gap-2 flex-wrap">
-                                <a class="btn btn-primary py-2 px-4" href="#">Private Project</a>
+                                <a class="btn btn-primary py-2 px-4" href="#"
+                                   data-en="Private Project"
+                                   data-pl="Projekt prywatny">
+                                    Private Project
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -546,13 +755,23 @@
                         </div>
                         <div class="p-4">
                             <h4 class="mb-2">Custom Client Projects</h4>
-                            <p class="text-primary mb-2">Web Development</p>
-                            <p class="mb-3">
+                            <p class="text-primary mb-2"
+                               data-en="Web Development"
+                               data-pl="Tworzenie stron i systemów">
+                                Web Development
+                            </p>
+                            <p class="mb-3"
+                               data-en="Tailored websites and systems developed for different clients based on business needs, workflow requirements, and project goals."
+                               data-pl="Dopasowane strony i systemy tworzone dla różnych klientów w oparciu o potrzeby biznesowe, wymagania procesowe i cele projektu.">
                                 Tailored websites and systems developed for different clients based on
                                 business needs, workflow requirements, and project goals.
                             </p>
                             <div class="d-flex gap-2 flex-wrap">
-                                <a class="btn btn-primary py-2 px-4" href="#">Private Project</a>
+                                <a class="btn btn-primary py-2 px-4" href="#"
+                                   data-en="Private Project"
+                                   data-pl="Projekt prywatny">
+                                    Private Project
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -566,7 +785,12 @@
     <!-- References Start -->
     <div class="container-fluid bg-light py-5 my-5" id="references">
         <div class="container-fluid py-5">
-            <h1 class="display-5 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">References</h1>
+            <h1 class="display-5 text-center mb-5 wow fadeInUp"
+                data-wow-delay="0.1s"
+                data-en="References"
+                data-pl="Referencje">
+                References
+            </h1>
 
             <div class="references-showcase position-relative">
                 <img class="reference-floating ref-pos-1" src="img/Sofea_Collins.png" alt="Reference 1">
@@ -611,12 +835,33 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <h1 class="display-5 mb-5">Let’s Work Together</h1>
-                    <p class="mb-4">
+                    <h1 class="display-5 mb-5"
+                        data-en="Let’s Work Together"
+                        data-pl="Współpracujmy">
+                        Let’s Work Together
+                    </h1>
+
+                    <p class="mb-4"
+                       data-en="I develop business websites, admin panels, and custom web systems for clients in Poland and international markets."
+                       data-pl="Tworzę strony biznesowe, panele administracyjne i niestandardowe systemy webowe dla klientów w Polsce oraz na rynkach międzynarodowych.">
                         I develop business websites, admin panels, and custom web systems for clients in Poland and international markets.
                     </p>
-                    <p class="mb-3"><i class="fa fa-envelope text-primary me-3"></i>khalidkhalifa79@gmail.com</p>
-                    <p class="mb-3"><i class="fa fa-phone-alt text-primary me-3"></i>+48721143224</p>
+
+                    <p class="mb-3">
+                        <i class="fa fa-envelope text-primary me-3"></i>
+                        <span>khalidkhalifa79@gmail.com</span>
+                    </p>
+
+                    <p class="mb-3">
+                        <i class="fa fa-phone-alt text-primary me-3"></i>
+                        <span>+48721143224</span>
+                    </p>
+
+                    <p class="mb-0"
+                       data-en="Target Market: Poland and international clients"
+                       data-pl="Rynek docelowy: Polska i klienci międzynarodowi">
+                        Target Market: Poland and international clients
+                    </p>
                 </div>
             </div>
         </div>
@@ -628,7 +873,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom text-secondary" href="#">2026 Khalid Khalifa.</a>, All Right Reserved.
+                    &copy; <a class="border-bottom text-secondary" href="#">2026 Khalid Khalifa.</a>,
+                    <span data-en="All Right Reserved." data-pl="Wszelkie prawa zastrzeżone.">All Right Reserved.</span>
                 </div>
             </div>
         </div>
@@ -636,7 +882,9 @@
     <!-- Copyright End -->
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top" aria-label="Back to top">
+        <i class="bi bi-arrow-up"></i>
+    </a>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -652,6 +900,177 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+        let currentReferenceIndex = 0;
+
+        const references = [
+            {
+                image: "img/Dr_Anas_Khalifa.png",
+                name: {
+                    en: "Dr. Anas Khalifa",
+                    pl: "Dr. Anas Khalifa"
+                },
+                company: {
+                    en: "Safety Horizon ECI",
+                    pl: "Safety Horizon ECI"
+                },
+                role: {
+                    en: "Business Owner",
+                    pl: "Właściciel firmy"
+                },
+                text: {
+                    en: "Trusted by clients and business owners for building professional websites, admin systems, and practical digital solutions tailored to real operational needs.",
+                    pl: "Ceniony przez klientów i właścicieli firm za tworzenie profesjonalnych stron internetowych, systemów administracyjnych i praktycznych rozwiązań cyfrowych dopasowanych do rzeczywistych potrzeb operacyjnych."
+                }
+            },
+            {
+                image: "img/Dr_Mohamed_Ghobashy.png",
+                name: {
+                    en: "Dr. Mohamed Ghobashy",
+                    pl: "Dr. Mohamed Ghobashy"
+                },
+                company: {
+                    en: "ABCNews-247",
+                    pl: "ABCNews-247"
+                },
+                role: {
+                    en: "Business Owner",
+                    pl: "Właściciel firmy"
+                },
+                text: {
+                    en: "Developed practical and structured web solutions focused on publishing systems, content workflows, and business needs.",
+                    pl: "Stworzył praktyczne i uporządkowane rozwiązania internetowe skoncentrowane na systemach publikacji, obiegu treści i potrzebach biznesowych."
+                }
+            },
+            {
+                image: "img/Ali_Alzakary.png",
+                name: {
+                    en: "Ali Alzakary",
+                    pl: "Ali Alzakary"
+                },
+                company: {
+                    en: "Qahwa World",
+                    pl: "Qahwa World"
+                },
+                role: {
+                    en: "Business Owner",
+                    pl: "Właściciel firmy"
+                },
+                text: {
+                    en: "Delivered professional website solutions designed to improve digital presence, branding, and customer-facing presentation.",
+                    pl: "Dostarczył profesjonalne rozwiązania internetowe zaprojektowane w celu poprawy obecności cyfrowej, wizerunku marki i prezentacji skierowanej do klientów."
+                }
+            },
+            {
+                image: "img/Andra_Oproiu.png",
+                name: {
+                    en: "Andra Oproiu",
+                    pl: "Andra Oproiu"
+                },
+                company: {
+                    en: "School Website Project",
+                    pl: "Projekt strony szkoły"
+                },
+                role: {
+                    en: "School Director",
+                    pl: "Dyrektorka szkoły"
+                },
+                text: {
+                    en: "Built clear and organized web structures to support educational presentation and accessible online communication.",
+                    pl: "Stworzyła przejrzyste i uporządkowane struktury internetowe wspierające prezentację edukacyjną i dostępną komunikację online."
+                }
+            },
+            {
+                image: "img/Sofea_Collins.png",
+                name: {
+                    en: "Sofea Collins",
+                    pl: "Sofea Collins"
+                },
+                company: {
+                    en: "WWL Incorporated",
+                    pl: "WWL Incorporated"
+                },
+                role: {
+                    en: "Finance Analyst",
+                    pl: "Analityk finansowy"
+                },
+                text: {
+                    en: "Provided tailored digital project work focused on clarity, usability, and practical implementation for real client needs.",
+                    pl: "Zrealizowała dopasowane projekty cyfrowe skoncentrowane na przejrzystości, użyteczności i praktycznym wdrożeniu odpowiadającym rzeczywistym potrzebom klientów."
+                }
+            }
+        ];
+
+        function getCurrentLanguage() {
+            return localStorage.getItem("siteLanguage") || "en";
+        }
+
+        function updateMeta(lang) {
+            if (lang === "pl") {
+                document.title = "Khalid Khalifa | Portfolio Programisty Full-Stack";
+                document.getElementById("meta-description").setAttribute(
+                    "content",
+                    "Khalid Khalifa - Programista Full-Stack specjalizujący się w stronach biznesowych, panelach administracyjnych, systemach wewnętrznych i platformach opartych na bazach danych."
+                );
+            } else {
+                document.title = "Khalid Khalifa | Full-Stack Developer Portfolio";
+                document.getElementById("meta-description").setAttribute(
+                    "content",
+                    "Khalid Khalifa - Full-Stack Web Developer specializing in business websites, admin panels, internal systems, and database-driven platforms."
+                );
+            }
+        }
+
+        function setLanguage(lang) {
+            const elements = document.querySelectorAll("[data-en][data-pl]");
+
+            elements.forEach(function (el) {
+                el.innerHTML = el.getAttribute("data-" + lang);
+            });
+
+            localStorage.setItem("siteLanguage", lang);
+            document.documentElement.lang = lang;
+            updateMeta(lang);
+
+            document.getElementById("btn-en").classList.toggle("active", lang === "en");
+            document.getElementById("btn-pl").classList.toggle("active", lang === "pl");
+
+            showReference(currentReferenceIndex);
+        }
+
+        function showReference(index) {
+            currentReferenceIndex = index;
+            const lang = getCurrentLanguage();
+
+            document.getElementById("mainReferenceImage").src = references[index].image;
+            document.getElementById("referenceName").textContent = references[index].name[lang];
+            document.getElementById("referenceCompany").textContent = references[index].company[lang];
+            document.getElementById("referenceRole").textContent = references[index].role[lang];
+            document.getElementById("referenceText").textContent = references[index].text[lang];
+
+            const dots = document.querySelectorAll(".reference-dots .dot");
+            dots.forEach(function (dot) {
+                dot.classList.remove("active");
+            });
+
+            if (dots[index]) {
+                dots[index].classList.add("active");
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("btn-en").addEventListener("click", function () {
+                setLanguage("en");
+            });
+
+            document.getElementById("btn-pl").addEventListener("click", function () {
+                setLanguage("pl");
+            });
+
+            setLanguage(getCurrentLanguage());
+        });
+    </script>
 </body>
 
 </html>
