@@ -50,14 +50,15 @@
 }
 
 .lang-btn.active {
-    background-color: var(--primary);
+    background-color: #c4872f;
     color: #fff !important;
-    border-color: var(--primary);
+    border-color: #c4872f;
 }
 
 .lang-btn:hover {
-    background-color: rgba(98, 68, 197, 0.08);
-    color: var(--primary);
+    background-color: rgba(196, 135, 47, 0.12);
+    color: #c4872f !important;
+    border-color: #c4872f;
 }
 
 /* الزر الثابت أعلى الصفحة */
